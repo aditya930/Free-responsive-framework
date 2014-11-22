@@ -7,6 +7,21 @@ Demo
 =========================
 http://stas-melnikov.ru/responsive_elements
 
+Free version:
+=========================
+- only LESS;
+- only Jquery components;
+- minimum set of animations;
+- limited set of components;
+
+Full version:
+=========================
+- support LESS, SASS/SCSS, Stylus;
+- support pure JS and Jquery components;
+- all componrnts;
+- all animations;
+- round-the-clock consultation and help;
+
 License
 =========================
 MIT
