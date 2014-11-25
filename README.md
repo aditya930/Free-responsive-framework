@@ -22,6 +22,10 @@ Full version:
 - all animations;
 - round-the-clock consultation and help;
 
+Video:
+=========================
+https://www.youtube.com/playlist?list=PLLu-WYoyebB0NmckvY8HbJil-F8UTzkyq
+
 License
 =========================
 MIT
