@@ -32,6 +32,7 @@ Donate:
 =========================
 I suggest to get to you the full version at free price. Translate how many you can and you receive all functionality of a framework.
 http://stas-melnikov.ru/responsive_elements/donate.html
+Please specify the email. It is necessary for feedback and transfer of framework to you.
 
 License
 =========================
