@@ -1,4 +1,4 @@
-[![Analytics](https://ga-beacon.appspot.com/UA-57151587-1/ga-beacon/readme?pixel)](https://github.com/melnik909/free-responsive-framework)
+[![Analytics](https://ga-beacon.appspot.com/UA-57151587-1/free-responsive-framework/readme?pixel)](https://github.com/melnik909/free-responsive-framework)
 
 Free-responsive-framework
 =========================
