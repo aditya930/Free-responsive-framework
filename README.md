@@ -30,7 +30,7 @@ https://www.youtube.com/playlist?list=PLLu-WYoyebB0NmckvY8HbJil-F8UTzkyq
 
 Friends, please put a star if you it liked
 
-Donate:
+Please, help me (donate):
 =========================
 I suggest to get to you the full version at free price. Translate how many you can and you receive all functionality of a framework.
 http://stas-melnikov.ru/responsive_elements/donate.html
