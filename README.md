@@ -36,6 +36,11 @@ I suggest to get to you the full version at free price. Translate how many you c
 http://stas-melnikov.ru/responsive_elements/donate.html
 Please specify the email. It is necessary for feedback and transfer of framework to you.
 
+Contacts
+=========================
+e-mail: melnik909@ya.ri
+linkedin: http://www.linkedin.com/in/melnik909
+
 License
 =========================
 MIT
