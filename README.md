@@ -38,7 +38,7 @@ Please specify the email. It is necessary for feedback and transfer of framework
 
 Contacts
 =========================
-e-mail: melnik909@ya.ri
+e-mail: melnik909@ya.ru
 linkedin: http://www.linkedin.com/in/melnik909
 
 License
