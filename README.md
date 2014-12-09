@@ -9,6 +9,10 @@ Demo
 =========================
 http://stas-melnikov.ru/responsive_elements
 
+Web-site created with using Responsive Framework
+=========================
+http://stas-melnikov.ru/themes/responsive_ux_template/
+
 Free version:
 =========================
 - only LESS;
