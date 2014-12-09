@@ -38,8 +38,10 @@ Please specify the email. It is necessary for feedback and transfer of framework
 
 Contacts
 =========================
+Leave your questions on use or on donations. I will answer you!
 e-mail: melnik909@ya.ru
 linkedin: http://www.linkedin.com/in/melnik909
+facebook: https://www.facebook.com/melnik909
 
 License
 =========================
