@@ -1,49 +1,38 @@
-(function($){
-
+(function(){
  
-	var wrapper_menu = $('#wrapper_menu'),
-	icon_menu = wrapper_menu.find('#icon_menu'),
-	background_additional_menu = $('#background_additional_menu'),
-	close_menu = background_additional_menu.next().find('#close_menu'),
-	body = $('body'),
+	var wrapper_menu = document.body.querySelector('#wrapper_menu'),
+	icon_menu = wrapper_menu.querySelector('#icon_menu'),
+	background_additional_menu = document.body.querySelector('#background_additional_menu'),
+	close_menu = document.body.querySelector('#close_menu'),
 	id_body;
 	
 	if ("ontouchstart" in document.documentElement){
-	   body.attr('id','touch');
+	    document.body.setAttribute('id','touch');
 	}
 	else{
-		body.attr('id','no_touch');
+		document.body.setAttribute('id','no_touch');
 	} 
 	
-	id_body = body.attr('id');
+	id_body = document.body.id;
+	icon_menu.addEventListener( 'click', Show_Menu, false );
+	background_additional_menu.addEventListener( 'click', Hide_Menu, false );
+	close_menu.addEventListener( 'click', Hide_Menu, false );
 	
-	icon_menu.on('click', function(){
-		$(this).Show_Menu();
-	});
-	
-	background_additional_menu.on('click', function(){
-		$(this).Hide_Menu();
-	});
-	
-	close_menu.on('click', function(){
-		$(this).Hide_Menu();
-	});
-	
-	$.fn.Show_Menu = function( ) {
+	function Show_Menu( ) {
 
-		$(this).addClass('active_icon');
+		this.classList.add('active_icon');
 		
 		setTimeout(function(){
-			body.addClass('active_menu');
+			document.body.classList.add('active_menu');
 		}, 100);
 	}
 	 
-	$.fn.Hide_Menu = function( ) {
+	function Hide_Menu( ) {
 
-		$(this).removeClass('active_icon');
+		this.classList.remove('active_icon');
 		
 		setTimeout(function(){
-			body.removeClass('active_menu');
+			document.body.classList.remove('active_menu');
 		}, 100);
 	}
-})(jQuery);
+})();

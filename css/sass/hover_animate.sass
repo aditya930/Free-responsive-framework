@@ -1,0 +1,436 @@
+//Responsive framework
+//author: Developed by Stas Melnikov. http://stas-melnikov.ru
+
+//mixins
+
+=transition($property, $x, $effect)
+  transition: $property $x $effect 0s
+  -moz-transition: $property $x $effect 0s
+  -webkit-transition: $property $x $effect 0s
+  -webkit-transition-delay: $x 0s
+
+=translate($x, $y)
+  -webkit-transform: translate($x, $y)
+  -ms-transform: translate($x, $y)
+  transform: translate($x, $y)
+
+=center_full
+  position: absolute
+  top: 50%
+  left: 50%
+  +translate(-50%, -50%)
+
+/**********************************************all*********************************************
+*
+  margin: 0
+  padding: 0
+  border: 0
+  outline: medium none
+  list-style: none
+
+.list
+  text-align: center
+
+.list_item:before
+  content: ""
+  display: block
+
+.list_item
+  position: relative
+  display: inline-block
+  border-radius: 50%
+  width: 15px
+  height: 15px
+  margin: 15px 5px
+  padding: 0
+
+.events_slider_dotted
+  font-size: 0
+  background-color: #333
+  border-radius: 50%
+  cursor: pointer
+  display: block
+  width: 8px
+  height: 8px
+  z-index: 2
+
+.active_item_dotted .events_slider_dotted
+  background-color: #fff
+
+#shadow
+  .list_item
+    width: 15px
+    height: 15px
+  .list_item:before
+    +center_full
+    +translate(-50%, -50%)
+    z-index: 1
+    background: rgba(255, 255, 255, 0.7)
+    border-radius: 50%
+    width: 5px
+    height: 5px
+    transition-property: width, height
+    transition-duration: .4s
+  .active_item_dotted:before
+    background: rgba(0, 0, 0, 0.4)
+  .list_item:hover:before
+    width: 14px
+    height: 14px
+  .events_slider_dotted
+    width: 8px
+    height: 8px
+    position: absolute
+    +center_full
+    +transition(background-color, 0.2s, ease-in)
+
+.background_effect
+  .list_item
+    overflow: hidden
+    background: rgba(0, 0, 0, 1)
+    width: 10px
+    height: 10px
+    z-index: 4
+  .list_item:before
+    background-color: #fff
+    width: 12px
+    height: 12px
+    +translate(0, 20px)
+    +transition(transform, 0.2s, linear)
+  .list_item:hover:before
+    +translate(0, 0px)
+  .events_slider_dotted
+    width: 12px
+    height: 12px
+
+#vertical_background_effect
+  .list_item:before
+    +translate(0, 20px)
+    +transition(transform, 0.4s, linear)
+  .list_item:hover:before, .active_item_dotted:before
+    +translate(0, 0px)
+
+#horizontally_background_effect
+  .list_item:before
+    +translate(-20px, 0)
+    +transition(transform, 0.4s, linear)
+  .list_item:hover:before, .active_item_dotted:before
+    +translate(0, 0px)
+
+#rounded
+  .list_item
+    width: 20px
+    height: 20px
+    +transition(background-color, 0.4s, linear)
+  .list_item:before
+    position: absolute
+    z-index: 1
+    border-radius: 50%
+    width: 15px
+    height: 15px
+    border-width: 2px
+    border-style: solid
+    border-color: rgba(0, 0, 0, 0.7) transparent transparent transparent
+    opacity: 0
+    transition-property: opacity, border-color
+    transition-duration: .4s
+  .list_item:hover .events_slider_dotted
+    background-color: #fff
+  .active_item_dotted:before, .list_item:hover:before
+    border-color: rgba(255, 255, 255, 0.7) transparent transparent transparent
+    opacity: 1
+    animation: rounded 1s linear infinite
+    -webkit-animation: rounded 1s linear  infinite
+  .active_item_dotted:hover:before
+    opacity: 0
+    animation-play-state: paused
+  .active_item_dotted:hover .events_slider_dotted
+    background-color: #000
+  .events_slider_dotted
+    width: 10px
+    height: 10px
+    position: absolute
+    +center_full
+    +transition(background-color, 0.2s, ease-in)
+
+@-webkit-keyframes rounded
+  100%
+    transform: rotate(360deg)
+    -webkit-transform: rotate(360deg)
+
+
+@keyframes rounded
+  100%
+    transform: rotate(360deg)
+    -ms-transform: rotate(360deg)
+
+
+/****************************hover for images**************************************
+
+/****************************circle**************************************
+
+$width_circle: 200px
+$height_circle: 200px
+
+$height_element: 147px
+
+.hover_circle
+  position: relative
+  z-index: 2
+  height: $height_circle - 50
+  width: $width_circle
+  overflow: hidden
+  cursor: pointer
+
+.hover_element
+  position: relative
+  overflow: hidden
+  height: $height_element
+
+.wrapper_circle
+  position: absolute
+  top: -55px
+  width: $width_circle
+  height: $height_circle
+
+#hover_left_circle
+  .wrapper_circle
+    right: 50px
+  .circle_item
+    +translate(-270px, -20px)
+
+#hover_right_circle
+  .wrapper_circle
+    right: -50px
+  .circle_item
+    +translate(55px, -20px)
+
+.circle
+  background-color: rgba(0, 0, 0, 0.8)
+  border-radius: 100%
+  color: #fff
+  padding: 0
+  position: absolute
+  left: 50%
+  top: 50%
+  height: 0
+  width: 0
+
+.circle_item
+  width: $width_circle / 2
+  display: block
+  font-size: 12px
+  +transition(transform, 0.3s, linear)
+
+#hover_right_circle .circle_item
+  font-size: 16px
+
+.hover_circle:hover .circle
+  +transition(all, 0.6s, ease)
+  top: 0
+  left: 0
+  text-indent: 0
+  padding: 50%
+
+#hover_left_circle:hover .circle_item
+  +translate(-30px, -20px)
+
+#hover_right_circle:hover .circle_item
+  +translate(-65px, -20px)
+
+#hover_center_opacity
+  .wrapper_circle
+    height: 147px
+    top: 0
+  .circle
+    +translate(-50%, -150%)
+    +transition(opacity, 0.6s, ease)
+    opacity: 0
+    width: 147px
+    height: $height_element
+  .circle_item
+    +center_full
+    max-height: 100px
+
+#hover_center_opacity:hover .circle
+  +translate(-50%, -50%)
+  opacity: 1
+
+.hover_center_circle
+  .wrapper_circle
+    height: 147px
+    top: 0
+    overflow: hidden
+  .circle
+    +translate(-50%, -150%)
+    transition-property: transform, opacity
+    transition-duration: .7s
+    opacity: 0
+    width: 147px
+    height: 147px
+  .circle_item
+    +center_full
+    max-height: 100px
+
+#hover_top_circle
+  .circle
+    +translate(-50%, -150%)
+
+#hover_top_circle:hover .circle
+  +translate(-50%, -50%)
+  opacity: 1
+
+#hover_bottom_circle
+  .circle
+    +translate(-50%, 150%)
+
+#hover_bottom_circle:hover .circle
+  +translate(-50%, -50%)
+  opacity: 1
+
+/************************full_background*********************************
+
+.hover_full_background
+  position: relative
+  cursor: pointer
+  width: 200px
+  height: $height_element
+  .background
+    background-color: rgba(0, 0, 0, 0.8)
+    opacity: 0
+    overflow: hidden
+    width: 100%
+    height: 100%
+    position: absolute
+    top: 0
+    left: 0
+    +transition(opacity, 0.6s, ease)
+    +translate(0%, -150%)
+  .background_item
+    color: #fff
+    +center_full
+  .background_header
+    color: #fff
+    font-size: 20px
+    display: block
+    position: absolute
+    top: 0
+    width: 98%
+    padding: 1%
+  .background_footer
+    color: #fff
+    font-size: 14px
+    display: block
+    position: absolute
+    bottom: 0
+    width: 98%
+    padding: 1%
+
+.hover_full_background:hover .background
+  opacity: 1
+  +translate(0%, 0%)
+
+/********************header - top, footer - bottom******************************
+
+#top_header_bottom_footer
+  .background_header
+    left: 50%
+    +translate(-50%, -150%)
+  .background_footer
+    left: 50%
+    +translate(-50%, 150%)
+
+#top_header_bottom_footer:hover .background_header
+  animation: top_header_slide .4s linear
+  -webkit-animation: top_header_slide 0.4s linear
+  animation-fill-mode: forwards
+  -webkit-animation-fill-mode: forwards
+
+#top_header_bottom_footer:hover .background_footer
+  animation: bottom_footer_slide .4s linear
+  -webkit-animation: bottom_footer_slide 0.4s linear
+  animation-fill-mode: forwards
+  -webkit-animation-fill-mode: forwards
+
+@-webkit-keyframes top_header_slide
+  100%
+    +translate(-50%, 50%)
+
+
+@keyframes top_header_slide
+  100%
+    +translate(-50%, 50%)
+
+
+@-webkit-keyframes bottom_footer_slide
+  100%
+    +translate(-50%, -50%)
+
+
+@keyframes bottom_footer_slide
+  100%
+    +translate(-50%, -50%)
+
+
+/********************header - right, footer - left******************************
+
+#right_header_left_footer
+  .background_header
+    top: 50%
+    +translate(150%, -50%)
+  .background_footer
+    +translate(-150%, -50%)
+
+#right_header_left_footer:hover .background_header
+  animation: right_header_slide .4s linear
+  -webkit-animation: right_header_slide 0.4s linear
+  animation-fill-mode: forwards
+  -webkit-animation-fill-mode: forwards
+
+#right_header_left_footer:hover .background_footer
+  animation: left_footer_slide .4s linear
+  -webkit-animation: left_footer_slide 0.4s linear
+  animation-fill-mode: forwards
+  -webkit-animation-fill-mode: forwards
+
+@-webkit-keyframes right_header_slide
+  100%
+    +translate(0%, -50%)
+
+
+@keyframes right_header_slide
+  100%
+    +translate(0%, -50%)
+
+
+@-webkit-keyframes left_footer_slide
+  100%
+    +translate(0%, -50%)
+
+
+@keyframes left_footer_slide
+  100%
+    +translate(0%, -50%)
+
+
+/************************svg effects******************
+
+.wrapper_svg
+  overflow: hidden
+  position: relative
+  height: 225px
+  width: 300px
+
+svg
+  position: absolute
+  top: 0
+  opacity: 0
+  transition: opacity .4s ease-in
+  -webkit-transform: translateY(-250%) translateZ(0px)
+  -ms-transform: translateY(-250%) translateZ(0px)
+  transform: translateY(-250%) translateZ(0px)
+
+.wrapper_svg:hover svg
+  opacity: 1
+  -webkit-transform: translateY(0) translateZ(0px)
+  -ms-transform: translateY(0) translateZ(0px)
+  transform: translateY(0) translateZ(0px)

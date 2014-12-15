@@ -11,26 +11,19 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 	display: block;
 }
  
-.transition(@property, @x, @effect){
-
-	transition: @property @x @effect 0s;
-	-moz-transition: @property @x @effect 0s;
-	-webkit-transition: @property @x @effect 0s;
-	-webkit-transition-delay:  @x 0s;
+.transition(@property, @time, @effect){
+	transition: @property @time @effect 0s;
+	-moz-transition: @property @time @effect 0s;
+	-webkit-transition: @property @time @effect 0s;
+	-webkit-transition-delay:  @time 0s;
 }
 
-.translate(@x; @y) {
+.translate(@x, @y) {
 
 	-webkit-transform: translate(@x, @y);
 	-ms-transform: translate(@x, @y); 
 	-o-transform: translate(@x, @y);
 	transform: translate(@x, @y);
-}
-
-.center-full() {
-  position: absolute;
-  top: 50%; left: 50%;
-  .translate(-50%, -50%);
 }
 
 .animation(@name, @time){
@@ -341,7 +334,140 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 		display: none;
 	}
 }
+/*********************Range******************/
 
+.range{
+
+	-webkit-appearance: none;
+	margin: 10px 0 30px;
+	width: 100%;
+}
+
+.range:focus {
+  outline: none;
+}
+
+.range::-webkit-slider-runnable-track {
+
+	width: 100%;
+	height: 5px;
+	
+	cursor: pointer;
+	animate: 0.2s;
+	
+	box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+	background-color: #eee;
+	border-radius: 25px;
+	border: 0px solid #000101;
+	
+	.transition(background-color, .4s, ease-out)
+}
+
+.range::-webkit-slider-thumb {
+
+  
+	width: 29px;
+	height: 29px;
+	
+	margin-top: -15px;
+	
+	background-color: #fff;
+	border-radius: 100%;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	-webkit-appearance: none;
+	
+}
+
+.range:focus::-webkit-slider-runnable-track {
+	background-color: #36BAE2;
+}
+
+.range::-moz-range-track {
+
+	width: 100%;
+	height: 5px;
+	
+	cursor: pointer;
+	animate: 0.2s;
+	
+	box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+	background-color: #eee;
+	border-radius: 25px;
+	border: 0px solid #000101;
+	
+	.transition(background-color, .4s, ease-out)
+}
+
+.range:focus::-moz-range-track {
+	background-color: #36BAE2;
+}
+
+.range::-moz-range-thumb {
+  
+	width: 29px;
+	height: 29px;
+	
+	margin-top: -15px;
+	cursor: pointer;
+	background-color: #fff;
+	border-radius: 100%;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.range::-ms-track {
+
+	width: 100%;
+	height: 5px;
+	
+	cursor: pointer;
+	animate: 0.2s;
+	
+	background: transparent;
+	border-color: transparent;
+	border-width: 39px 0;
+	color: transparent;
+	
+	.transition(background-color, .4s, ease-out)
+}
+
+.range::-ms-fill-lower {
+
+	background: #eee;
+	border: 0px solid #000101;
+	border-radius: 50px;
+	box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+	
+	.transition(background-color, .4s, ease-out)
+}
+
+.range::-ms-fill-upper {
+
+	background: #eee;
+	border: 0px solid #000101;
+	border-radius: 50px;
+	box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+	
+	.transition(background-color, .4s, ease-out)
+}
+
+.range::-ms-thumb {
+
+	width: 29px;
+	height: 29px;
+	
+	cursor: pointer;
+	background-color: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	border-radius: 100%;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.range:focus::-ms-fill-lower {
+	background: #36BAE2;
+}
+.range:focus::-ms-fill-upper {
+	background: #36BAE2;
+}
 
 /*************switch*************/
 
@@ -406,20 +532,61 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 	.translate(50px,0);
 }
 
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/fonts_forms/icomoon.eot?-xpswms');
+	src:url('../fonts/fonts_forms/icomoon.eot?#iefix-xpswms') format('embedded-opentype'),
+		url('../fonts/fonts_forms/icomoon.woff?-xpswms') format('woff'),
+		url('../fonts/fonts_forms/icomoon.ttf?-xpswms') format('truetype'),
+		url('../fonts/fonts_forms/icomoon.svg?-xpswms#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-star:before {
+	content: "\e600";
+	.transition(color, .5s, ease-out);
+	cursor: pointer;
+}
+
+.icon-star:hover:before, .active_star:before, .hover_star:before{
+	color: #36BAE2;
+}
+
+.no_active_star:before{
+	color: #000;
+}
+
 /*********************basic style*******************************/
 
 #wrapper_response{
 
 	display: none;
-	
-	.center-full;
+
 	position: fixed;
+	top: 50%;
+	left: 50%;
+	.translate(-50%, -50%);
 	z-index: 9999;
-	
+
 	background-color: #fff;
 	border-radius: 5px;
 	border: 1px solid #eee;
-	
+
 	font-size: 18px;
 	padding: 20px 35px;
 }

@@ -3,6 +3,11 @@ Responsive framework
 author: Developed by Stas Melnikov. http://stas-melnikov.ru
 */ 
 
+/*
+Responsive framework
+author: Developed by Stas Melnikov. http://stas-melnikov.ru
+*/
+
 /*********************************************mixins*********************************/
 
 .m_translate(@x, @y) {
@@ -308,6 +313,308 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
   }
 }
 
+/****************rounds****************/
+
+.wrapper_rounds{
+	margin: 0 auto;
+	position: relative;
+	width: 30px;
+}
+
+.round{
+	width: 15px;
+	height: 15px;
+	
+	border-radius: 50%;
+	position: absolute;
+}
+
+.left_round{
+	background-color: #6cc88a;
+	.m_translate(-50%, 0%);
+	
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	
+	-webkit-animation: left_round 1.8s infinite ease-in-out;
+	animation: left_round 1.8s infinite ease-in-out;
+}
+
+.right_round{
+	background-color: #4fc3f7;
+	.m_translate(150%, 0%);
+	
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	
+	-webkit-animation: right_round 1.8s infinite ease-in-out;
+	animation: right_round 1.8s infinite ease-in-out;
+}
+
+@-webkit-keyframes left_round {
+	50% {
+		.m_translate(150%, 0%);
+	}
+
+	100% {
+		.m_translate(-50%, 0%);
+	}
+}
+
+@keyframes left_round {
+	50% {
+		.m_translate(150%, 0%);
+	}
+
+	100% {
+		.m_translate(-50%, 0%);
+	}
+}
+
+@-webkit-keyframes right_round {
+	50% {
+		.m_translate(-50%, 0%);
+	}
+
+	100% {
+		.m_translate(150%, 0%);
+	}
+}
+
+@keyframes right_round {
+	50% {
+		.m_translate(-50%, 0%);
+	}
+
+	100% {
+		.m_translate(150%, 0%);
+	}
+}
+
+/**************************clock*********************/
+
+#clock{
+	width: 270px;
+	height: 270px;
+	
+	position: relative;
+	
+	border-radius: 50%;
+	border: 8px solid #000;
+	background-color: #fff;
+	
+}
+
+.clock_item{
+	position: absolute;
+	
+    font-family: tahoma;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.point{
+	width: 5px;
+	height: 5px;
+	
+	background-color: #000;
+	border-radius: 50%;
+	position: absolute;
+}
+
+.one {
+	left: 180px;
+	top: 30px;
+}
+
+.point_one {
+	left: 195px;
+	top: 30px;
+}
+
+.two {
+	left: 220px;
+	top: 70px;
+}
+
+.point_two {
+	left: 240px;
+	top: 75px;
+}
+
+.three{
+    top: 50%;
+	right: 20px;
+    .m_translate(0%, -50%);
+}             
+
+.point_three{
+    top: 50%;
+	right: 10px;
+	.m_translate(0%, -50%);
+}
+
+.four {
+	left: 220px;
+	top: 170px;
+}
+
+.point_four{
+	top: 195px;
+	left: 235px;
+}
+
+.five {
+	left: 180px;
+	top: 215px;
+}
+
+.point_five{
+	top: 240px;
+	left: 190px;
+}
+
+.six{
+    left: 51%;
+	bottom: 15px;
+	.m_translate(-50%, 0);
+}
+
+.point_six{
+    left: 51%;
+	bottom: 5px;
+	.m_translate(-50%, 0);
+}
+
+.seven {
+	left: 75px;
+	top: 210px;
+}
+
+.point_seven {
+	left: 70px;
+	top: 240px;
+}
+
+.eight {
+	left: 35px;
+	top: 170px;
+}
+
+.point_eight {
+	left: 25px;
+	top: 195px;
+}
+
+.nine{
+    top: 50%;
+	left: 20px;
+    .m_translate(0%, -50%);
+}
+
+.point_nine{
+    top: 50%;
+	left: 10px;
+    .m_translate(0%, -50%);
+}
+
+.ten{
+	left: 35px;
+    top: 65px;
+}
+
+.point_ten{
+    left: 25px;
+    top: 75px;
+}
+
+.eleven {
+	left: 75px;
+	top: 25px;
+}
+
+.point_eleven{
+	left: 65px;
+	top: 30px;
+}
+
+.twelve{
+    left: 50%;
+    top: 15px;
+	.m_translate(-50%, 0);
+}
+
+.point_twelve{
+    left: 50%;
+    top: 5px;
+	.m_translate(-50%, 0);
+}
+
+.arrow{
+    height: 240px;
+    width: 10px;
+	
+    position: absolute;
+    overflow: hidden;
+}
+
+.arrow:after{
+    content: "";
+    display: inline-block;
+	
+    height: 120px;
+    width: 5px;
+	
+    background-color: #000;
+	
+    transform-origin: 30% 50%;
+    -webkit-transform-origin: 30% 50%;
+    -ms-transform-origin: 30% 50%;
+}
+
+#arrow_second{
+	animation: rotate 60s infinite steps(60);
+	-webkit-animation: rotate 60s infinite steps(60);
+	
+	margin: 17px 0 0 130px;
+}
+
+#arrow_second:after{
+	background-color: red;
+}
+
+#arrow_minute{
+	animation: rotate 3601s infinite steps(60);
+	-webkit-animation: rotate 3601s infinite steps(60);
+	
+	margin: 17px 0 0 130px;
+	.m_rotate(54deg);
+}
+
+#big_point{
+    height: 15px;
+    width: 15px;
+
+	position: absolute;
+	top: 50%;
+	left: 51%;
+	z-index: 2;
+
+    .m_translate(-50%, -50%);
+}
+
+@keyframes rotate {
+	100%{
+		.m_rotate(360deg);
+	}
+}
+
+@-webkit-keyframes rotate {
+	100%{
+		.m_rotate(360deg);
+	}
+}
+
 /*****************cogwheel************************/
 
 .icon-cog:before {
@@ -335,6 +642,191 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 	}
 }
 
+/*****************airplane************************/
+
+.icon-airplane:before {
+	content: "\e601";
+	font-size: 50px;
+	
+    position: absolute;
+    left: 50%;
+    margin-left: -25px;
+	
+	animation: airplane 0.5s infinite alternate;
+	-webkit-animation: airplane 1s infinite alternate;
+}
+
+.smoke{
+	width: 25px;
+	height: 2px;
+	
+	opacity: 1;
+	background-color: #000;
+	
+	position: absolute;
+    left: 0;
+    top: 0;
+	
+	.m_translate(80px, 25px);
+	
+	animation: smoke 1s infinite;
+	-webkit-animation: smoke 1s infinite;
+}
+
+.smoke2{
+	
+	.m_translate(100px, 30px);
+}
+
+@keyframes airplane {
+    0% { 
+       .m_translate(0px, 0px);
+    }
+	
+	100% { 
+        .m_translate(0px, 5px);
+    }
+}
+
+@-webkit-keyframes airplane {
+    0% { 
+       .m_translate(0, 0);
+    }
+	
+	100% { 
+        .m_translate(0px, 5px);
+    }
+}
+
+@keyframes smoke {
+	100% { 
+		opacity: 0;
+        .m_translate(0px, 30px);
+    }
+}
+
+@-webkit-keyframes smoke {
+	100% { 
+       .m_translate(0px, 30px);
+		opacity: 0;
+    }
+}
+
+@keyframes smoke_2 {
+	50%{
+		opacity: 0;
+	}
+	
+	100% { 
+		height: 15px;
+		width: 15px;
+		
+       .m_translate(80px, 25px);
+		opacity: 0;
+    }
+}
+
+@-webkit-keyframes smoke_2 {
+	50%{
+		opacity: 0;
+	}
+	
+	100% { 
+		height: 15px;
+		width: 15px;
+		
+       .m_translate(80px, 25px);
+		opacity: 0;
+    }
+}
+
+/*********************************Tennis*****************/
+
+#tennis{
+	height: 200px;
+	position: relative;
+}
+
+.mini_ball{
+    height: 15px;
+    width: 15px;
+	
+	border-radius: 50%;
+	background-color: #000;
+	
+	position: absolute;
+	top: 0;
+	left: 0;
+	
+	animation: movement_ball 1s linear 0.3s alternate infinite;
+	-webkit-animation:  movement_ball 1s linear 0.3s alternate infinite;;
+}
+
+.racket{
+    height: 45px;
+    width: 5px;
+	
+	background-color: #000;
+	
+	position: absolute;
+	left:0;
+	top: 0;
+}
+
+.racket2{
+    height: 45px;
+    width: 5px;
+	
+	background-color: #000;
+	
+	position: absolute;
+	top: 0;
+	right:0;
+	
+	animation: punch 1s linear 1s alternate infinite;
+	-webkit-animation:  punch 1s linear 1s alternate infinite;
+}
+
+
+@keyframes movement_ball {
+	0%{
+        .m_translate(0, 0);
+	}
+	
+	50%{
+       .m_translate(140px, 30px);
+	}
+	
+	100%{
+        .m_translate(281px, 60px);
+	}
+}
+
+@-webkit-keyframes movement_ball {
+	0%{
+       .m_translate(0, 0);
+	}
+	
+	50%{
+       .m_translate(140px, 30px);
+	}
+	
+	100%{
+        .m_translate(281px, 60px);
+	}
+}
+
+@keyframes punch {
+	100%{
+        .m_translate(0, 60px);
+	}
+ }
+
+@-webkit-keyframes punch {
+	100%{
+       .m_translate(0, 60px);
+	}
+}
 
 /*********************square*******************/
 
@@ -406,6 +898,47 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 		opacity: 1;
 		color: #000;
 	}
+}
+
+/*********************rocket*******************/
+
+.icon-rocket{
+	.m_rotate(45deg);
+}
+
+.icon-rocket:before {
+	content: "\e605";
+	font-size: 50px;
+	
+    position: absolute;
+    left: 50%;
+    margin-left: -25px;
+}
+
+.smoke_2{
+    height: 1px;
+    width: 1px;
+	
+	border-radius: 50%;
+	background-color: #000;
+	opacity: 1;
+	
+	position: absolute;
+    left: 0;
+    top: 0;
+	
+	.m_translate(145px, 25px);
+	
+	animation: smoke_2 1s linear 1s infinite;
+	-webkit-animation: smoke_2 1s linear 1s infinite;
+}
+
+.smoke_22{
+	.m_translate(145px, 30px);
+}
+
+.smoke_23{
+	.m_translate(145px, 20px);
 }
 
 /**************************heart*****************/
@@ -591,6 +1124,154 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
     }
 }
 
+/***************************smile********************/
+
+.smileyface {
+	width: 300px;
+	height: 300px;
+	
+	position: relative;
+	border-radius: 150px;
+	display: block;
+	
+	background: #ffe632;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fffe8d), to(#f6d23e));
+	background: -moz-linear-gradient(top,  #fffe8d,  #f6d23e);	
+	
+	box-shadow: inset 0px -14px 14px rgba(0, 0, 0, .3), 0px 2px 20px rgba(0, 0, 0, .6);
+	-webkit-box-shadow: inset 0px -14px 14px rgba(0, 0, 0, .3), 0px 2px 20px rgba(0, 0, 0, .6);
+}
+	
+.eyes {
+    position: absolute;
+    top: 40px;
+	
+    background: none repeat scroll 0 0 #fff;
+    border: 8px solid #000;
+    border-radius: 100px 100px 0 0;
+	
+    height: 60px;
+    width: 59px;
+}	
+
+.eyes:after{
+	content: "";
+	display: block;
+	
+	position: absolute;
+	right:0;
+	top: 0;
+	.m_translate(0,0);
+	
+	height: 25px;
+	width: 25px;
+	
+	background-color: #000;
+	border-radius: 50%;
+	
+	animation: movement_eyes 2s ease infinite alternate;
+	-webkit-animation: movement_eyes 2s ease infinite alternate;
+}
+
+.eyes:before {
+    background-color: #000;
+    border-radius: 100% 100% 0 0;
+	
+    content: "";
+    display: block;
+    height: 8px;
+	width: 40px;
+	
+    position: absolute;
+    right: 10px;
+    top: -20px;
+}
+
+		
+.lefteye {
+	left: 60px;
+}
+		
+.righteye {
+	right: 60px;
+}
+
+.smile {
+	width: 200px;
+	height: 75px;
+	
+	border: 10px solid #222;
+	background-color: #881846 ;
+	border-radius: 0 0 120px 120px ;
+	
+	position: absolute;
+	bottom: 50px;
+	left: 38px;
+	z-index: 2;
+	
+	overflow: hidden;
+	
+	animation: smile2 2s ease infinite alternate;
+	-webkit-animation: smile2 2s ease infinite alternate;
+}
+
+.language{
+	background-color: #fcc1df;
+    border-radius: 100%;
+	
+    content: "";
+    display: block;
+	
+    height: 63px;
+    width: 91px;
+	
+    position: absolute;
+    right: 36px;
+    bottom: -25px;
+	z-index: 1;
+	
+    .m_rotate(-15deg);
+}
+
+@keyframes movement_eyes {
+	0%{
+		.m_translate(0,0);
+	}
+	
+	100%{
+		.m_translate(-30px,0);
+	}
+}	
+
+@-webkit-keyframes movement_eyes {
+	0%{
+		.m_translate(0,0);
+	}
+	
+	100%{
+		.m_translate(-30px,0);
+	}
+}	
+
+@keyframes smile2 {
+	0%{
+		height: 55px;
+	}
+
+	100%{
+		height: 65px;
+	}
+}
+
+@-webkit-keyframes smile2 {
+	0%{
+		height: 55px;
+	}
+
+	100%{
+		height: 65px;
+	}
+}
 
 /**********************battery*****************/
 
@@ -855,6 +1536,98 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 	100% { 
          opacity: 1;
     }
+}
+
+/***************logo preloader******************/
+
+.logo_preloader {
+	font-family: verdana;
+    font-size: 17px;
+	color: #fff;
+
+	line-height: 42px;
+	display: inline-block;  
+}
+
+.logo_preloader_background{
+  	background: url('../images/icon_logo.png') no-repeat center 10px #1493c8;
+	
+	display: inline-block; 
+	vertical-align: middle;
+	
+	height: 45px;
+    width: 45px;
+	
+	animation: timing_background 20s infinite 1000ms;
+	-webkit-animation: timing_background 20s infinite 1000ms;
+}
+  
+ @-webkit-keyframes timing_background {
+	10%{
+		background-color:  #18cc20;
+	}
+	20%{
+		background-color: #737f09;
+	}
+	30%{
+		background-color: #760b61;
+	}
+	40%{
+		background-color: #d397c7;
+	}
+	50%{
+		background-color: #37b6df;
+	}
+	60%{
+		background-color: #b52248;
+	}
+	70%{
+		background-color: #272526;
+	}
+	80%{
+		background-color: #46549c;
+	}
+	90%{
+		background-color: #049a12;
+	}
+
+	100%{
+		background-color: #1493c8;
+	}
+}
+ 
+@keyframes timing_background {
+	10%{
+		background-color: #18cc20;
+	}
+	20%{
+		background-color: #737f09;
+	}
+	30%{
+		background-color: #760b61;
+	}
+	40%{
+		background-color: #d397c7;
+	}
+	50%{
+		background-color: #37b6df;
+	}
+	60%{
+		background-color: #b52248;
+	}
+	70%{
+		background-color: #272526;
+	}
+	80%{
+		background-color: #46549c;
+	}
+	90%{
+		background-color: #049a12;
+	}
+
+	100%{
+		background-color: #1493c8;
+	}
 }
 
 /**********************pendulum*****************/
