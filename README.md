@@ -13,20 +13,10 @@ Web-site created with using Responsive Framework
 =========================
 http://stas-melnikov.ru/themes/responsive_ux_template/
 
-Free version:
+Articles
 =========================
-- only LESS;
-- only Jquery components;
-- minimum set of animations;
-- limited set of components;
-
-Full version:
-=========================
-- support LESS, SASS/SCSS, Stylus;
-- support pure JS and Jquery components;
-- all componrnts;
-- all animations;
-- round-the-clock consultation and help;
+http://www.script-tutorials.com/responsive-web-site-using-responsive-framework/
+http://coliss.com/articles/build-websites/operation/work/free-responsive-framework.html
 
 Video:
 =========================
@@ -36,9 +26,6 @@ Friends, please put a star if you it liked
 
 Please, help me (donate):
 =========================
-I suggest to get to you the full version at free price. Translate how many you can and you receive all functionality of a framework.
-http://stas-melnikov.ru/responsive_elements/donate.html
-Please specify the email. It is necessary for feedback and transfer of framework to you.
 [![PayPayl donate button](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MHS8KZ4U44Z7J "Donate once-off to this project using Paypal")
 Contacts
 =========================
