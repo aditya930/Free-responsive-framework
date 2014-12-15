@@ -22,7 +22,7 @@ Video:
 =========================
 https://www.youtube.com/playlist?list=PLLu-WYoyebB0NmckvY8HbJil-F8UTzkyq
 
-Friends, please put a star if you it liked
+Friends, please put a star if you it liked. If you buy a framework on Codecanyon or donate money , then you get the round-the-clock support from me!
 
 Please, help me (donate):
 =========================
