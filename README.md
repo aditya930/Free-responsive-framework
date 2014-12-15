@@ -12,12 +12,7 @@ http://stas-melnikov.ru/responsive_elements
 Web-site created with using Responsive Framework
 =========================
 http://stas-melnikov.ru/themes/responsive_ux_template/
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="MHS8KZ4U44Z7J">
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/ru_RU/i/scr/pixel.gif" width="1" height="1">
-</form>
+
 Free version:
 =========================
 - only LESS;
@@ -44,7 +39,7 @@ Please, help me (donate):
 I suggest to get to you the full version at free price. Translate how many you can and you receive all functionality of a framework.
 http://stas-melnikov.ru/responsive_elements/donate.html
 Please specify the email. It is necessary for feedback and transfer of framework to you.
-
+[![PayPayl donate button](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MHS8KZ4U44Z7J "Donate once-off to this project using Paypal")
 Contacts
 =========================
 Leave your questions on use or on donations. I will answer you!
