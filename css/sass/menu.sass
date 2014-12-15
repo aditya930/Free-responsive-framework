@@ -1,0 +1,542 @@
+/*
+ *Responsive framework
+ *author: Developed by Stas Melnikov. http://stas-melnikov.ru
+
+$drop_down_block_background: #88abc9
+
+/*********************************************mixins********************************
+=transition($property, $x, $effect)
+  transition: $property $x $effect 0s
+  -moz-transition: $property $x $effect 0s
+  -webkit-transition: $property $x $effect 0s
+  -webkit-transition-delay: $x 0s
+
+=translate($x, $y)
+  -webkit-transform: translate($x, $y)
+  -ms-transform: translate($x, $y)
+  transform: translate($x, $y)
+
+=complex_transition($property, $property2, $time, $effect)
+  -moz-transition-property: $property, $property2
+  -webkit-transition-property: $property, $property2
+  transition-property: $property, $property2
+  -webkit-transition-duration: $time
+  -moz-transition-duration: $time
+  transition-duration: $time
+  -webkit-transition-timing-function: $effect
+  -moz-transition-timing-function: $effect
+  transition-timing-function: $effect
+
+=box_shadow($x, $y, $color)
+  -webkit-box-shadow: $x $y $color, $x $y * 2 $color
+  -moz-box-shadow: $x $y $color, $x $y * 2 $color
+  box-shadow: $x $y $color, $x $y * 2 $color
+
+=transform_scale($value)
+  -ms-transform: scale($value)
+  -moz-transform: scale($value)
+  -webkit-transform: scale($value)
+  transform: scale($value)
+
+=m_collapse($value)
+  -ms-transform: translateZ(0px) translate(-50%, -50%) scale($value)
+  -moz-transform: translateZ(0px) translate(-50%, -50%) scale($value)
+  -webkit-transform: translateZ(0px) translate(-50%, -50%) scale($value)
+  transform: translateZ(0px) translate(-50%, -50%) scale($value)
+
+=m_diagonal_collapse($x, $y, $value)
+  -webkit-transform: translateZ(0px) translate($x, $y) rotate($value)
+  -ms-transform: translateZ(0px) translate($x, $y) rotate($value)
+  transform: translateZ(0px) translate($x, $y) rotate($value)
+
+=m_rotate($value)
+  -webkit-transform: rotate($value)
+  -moz-transform: rotate($value)
+  -ms-transform: rotate($value)
+  transform: rotate($value)
+
+=m_animation($name, $duration, $delay)
+  -webkit-animation-name: $name
+  animation-name: $name
+  -webkit-animation-duration: $duration
+  animation-duration: $duration
+  -webkit-animation-delay: $delay
+  animation-delay: $delay
+
+=transform_rotateY($value)
+  -webkit-transform: rotateY($value)
+  -moz-transform: rotateY($value)
+  -ms-transform: rotateY($value)
+  transform: rotateY($value)
+
+/***********************all***********************
+
+.menu
+  position: relative
+
+.menu_item
+  display: inline-block
+  vertical-align: top
+
+.menu_link
+  text-decoration: none
+  color: #000
+  display: inline-block
+  padding: 5px 10px
+  +transition(color, 0.4s, ease-in)
+
+#icon_menu
+  width: 50px
+  height: 40px
+  display: none
+  cursor: pointer
+
+#icon_menu:before
+  content: ''
+  display: block
+  height: 6px
+  width: 40px
+  position: absolute
+  top: 5px
+  right: 10px
+  background: #1493C8
+  +box_shadow(0, 12px, #1496cb)
+  +transition(all, 0.4s, ease-in)
+
+#icon_menu:hover:before, .active_icon #icon_menu:before
+  +box_shadow(0, 12px, #1477a0)
+  background: #1477a0
+
+/******************side menu *************************
+
+.side_menu
+  .menu
+    position: fixed
+    left: 0
+    top: 50%
+    +translate(0, -50%)
+  .menu_item
+    display: block
+  .menu_link
+    color: #fff
+    display: block
+    height: 50px
+    background-color: #4380ad
+    line-height: 40px
+    text-align: left
+    padding: 15px 95px 15px 15px
+    +translate(-55%, 0)
+    +transition(transform, 0.3s, ease-out)
+  .menu_link:hover
+    +translate(0, 0)
+    color: white
+  .menu_link:before
+    position: absolute
+    right: 20px
+    font-size: 40px
+
+/******************icon position(left top, right top)***********************
+
+.position_left
+  position: absolute
+  top: 5px
+  left: 5px
+
+.position_right
+  position: absolute
+  top: 5px
+  right: 5px
+
+#background_additional_menu
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background-color: rgba(0, 0, 0, 0.7)
+  display: none
+
+.additional_menu
+  background-color: #1496CB
+  width: 96%
+  padding: 15px 2%
+  text-align: center
+  position: fixed
+  z-index: 999
+  +transition(transform, 0.4s, linear)
+  .menu
+    display: block
+
+.active_menu #background_additional_menu
+  display: block
+
+/***********************effects***************************
+
+#top_menu
+  top: 0
+  +translate(0, -100%)
+
+#bottom_menu
+  bottom: 0
+  +translate(-100%, 0%)
+
+#left_menu
+  bottom: 0
+  top: 0
+  +translate(-100%, 0%)
+  width: 250px
+  #close_menu
+    right: -35px
+
+#right_menu
+  bottom: 0
+  top: 0
+  right: 0
+  +translate(0%, -150%)
+  width: 250px
+  #close_menu
+    right: 250px
+
+#scale_container
+  +transition(transform, 0.5s, ease-out)
+
+.active_menu
+  #top_menu
+    display: block
+    +translate(0, 0%)
+  #bottom_menu
+    display: block
+    +translate(0, 0%)
+  #left_menu, #right_menu
+    +translate(0%, 0%)
+  #scale_container
+    +transform_scale(0.8)
+
+/*****************full menu*********
+
+.full_menu
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: rgba(20, 147, 200, 1)
+  #close_menu
+    display: block
+
+#close_menu
+  position: absolute
+  right: 10px
+  top: -10px
+  z-index: 9998
+  display: none
+  cursor: pointer
+  font-family: 'Times New Roman'
+  font-size: 90px
+  color: #fff
+  +m_rotate(-45deg)
+
+#top_full_menu
+  opacity: 0
+  +translate(0, -200%)
+  +complex_transition(opacity, transform, 0.7s, ease-out)
+
+#left_full_menu
+  opacity: 0
+  +translate(-200%, 0)
+  +complex_transition(opacity, transform, 0.7s, ease-out)
+
+#zoom_full_menu
+  display: none
+
+#flipX_full_menu
+  opacity: 0
+  +transform_rotateY(90deg)
+  +complex_transition(opacity, transform, 0.7s, ease-out)
+
+#collapse
+  +translate(-250%, 0)
+  background: none
+  .menu
+    z-index: 9997
+
+#collapse:before, #collapse:after
+  content: ""
+  display: block
+  position: absolute
+  height: 100%
+  width: 50%
+  background-color: rgba(20, 147, 200, 1)
+  opacity: 0
+  +complex_transition(opacity, transform, 0.7s, ease-out)
+
+#collapse:before
+  left: 0
+  +translate(-200%, 0)
+
+#collapse:after
+  right: 0
+  +translate(200%, 0)
+
+#diagonal_collapse
+  +translate(-250%, 0)
+  background: none
+  .menu
+    z-index: 9997
+
+#diagonal_collapse:before, #diagonal_collapse:after
+  content: ""
+  display: block
+  position: absolute
+  height: 200%
+  width: 200%
+  background-color: rgba(20, 147, 200, 1)
+  opacity: 0
+
+#diagonal_collapse:before
+  left: 0
+  +m_diagonal_collapse(-200%, 0, 45deg)
+
+#diagonal_collapse:after
+  right: 0
+  +m_diagonal_collapse(300%, -50%, 45deg)
+
+.active_full_menu
+  #top_full_menu
+    opacity: 1
+    +translate(0, 0%)
+  #left_full_menu
+    opacity: 1
+    +translate(0, 0%)
+  #left_container_full_menu
+    opacity: 1
+    +translate(0, 0%)
+  #zoom_full_menu
+    +m_animation(zoom_full_menu, 0.7s, 0)
+    -webkit-animation-fill-mode: both
+    animation-fill-mode: both
+    display: block
+  #flipX_full_menu
+    opacity: 1
+    +transform_rotateY(0deg)
+  #collapse, #diagonal_collapse
+    +translate(0, 0%)
+    .menu
+      +m_animation(fade, 0.7s, 1s)
+      -webkit-animation-fill-mode: both
+      animation-fill-mode: both
+  #collapse:before, #collapse:after
+    opacity: 1
+    +translate(0, 0%)
+  #diagonal_collapse:before
+    opacity: 1
+    +m_diagonal_collapse(-50%, 0, 45deg)
+    +complex_transition(opacity, transform, 0.7s, ease-out)
+  #diagonal_collapse:after
+    opacity: 1
+    +m_diagonal_collapse(50%, -50%, 45deg)
+    +complex_transition(opacity, transform, 0.7s, ease-out)
+  .menu
+    display: block
+    width: 100%
+    position: absolute
+    top: 50%
+    left: 50%
+    +translate(-50%, -50%)
+    line-height: 65px
+    text-align: center
+  .menu_item
+    display: block
+  .menu_link
+    font-size: 30px
+    text-transform: uppercase
+
+@-webkit-keyframes zoom_full_menu
+  0%
+    +transform_scale(0.3)
+    opacity: 0
+  100%
+    +transform_scale(1)
+    opacity: 1
+
+
+@keyframes zoom_full_menu
+  0%
+    +transform_scale(0.3)
+    opacity: 0
+  100%
+    +transform_scale(1)
+    opacity: 1
+
+
+@-webkit-keyframes fade
+  0%
+    +m_collapse(0.8)
+    opacity: 0
+  100%
+    +m_collapse(1)
+    opacity: 1
+
+
+@keyframes fade
+  0%
+    +m_collapse(0.8)
+    opacity: 0
+  100%
+    +m_collapse(1)
+    opacity: 1
+
+
+/***********************line bottom***********************
+
+.line_bottom
+  display: block
+  height: 2px
+  width: 0
+  margin-top: 5px
+  background-color: $drop_down_block_background
+  +transition(width, 0.7s, ease-in)
+
+.menu_link:hover .line_bottom
+  width: 100%
+
+/*******************************drop_down_block**********************
+
+.drop_down_block
+  width: 900px
+  height: 0
+  position: absolute
+  left: 0
+  z-index: 2
+  overflow: hidden
+  background-color: $drop_down_block_background
+  opacity: 0
+  +transition(opacity, 0.5s, ease-in)
+
+.drop_down_menu
+  background: $drop_down_block_background
+  width: 300px
+
+.drop_down_menu_link
+  text-decoration: none
+  display: block
+  +complex_transition(background-color, color, 0.5s, ease-out)
+
+.drop_down_menu_link:hover
+  background-color: #1493c8
+  color: #fefefe
+
+.menu_link:hover
+  color: $drop_down_block_background
+
+.wrapper_drop_down_block:hover
+  background-color: $drop_down_block_background
+  .drop_down_block
+    opacity: 1
+    height: auto
+  .content_block
+    padding: 25px 35px
+  .menu_link, .menu_link:hover
+    color: #fff
+
+.slide_bottom_block
+  overflow: hidden
+  .drop_down_block
+    top: 30px
+    +translate(0, -10%)
+    +complex_transition(transform, opacity, 0.5s, ease-out)
+
+.slide_bottom_block:hover
+  .drop_down_block
+    +translate(0, 0%)
+
+.wrapper_drop_down_menu
+  overflow: visible
+  position: relative
+
+/*****************1280*************
+
+@media screen and (max-width: 1280px)
+  #icon_menu
+    display: block
+  .menu
+    display: none
+  .side_menu
+    .menu
+      display: block
+  .menu_link
+    color: #fefefe
+    .line_bottom
+      background-color: #000
+  .active_menu .additional_menu
+    padding: 15px 0
+    width: 100%
+  #left_menu, #right_menu
+    .menu_item
+      display: block
+      position: relative
+      width: 100%
+      padding: 5px 0
+      +transition(background-color, 0.6s, ease-out)
+    .menu_item:hover
+      background-color: #fefefe
+      .menu_link
+        color: #000
+
+/*****************640*************
+
+@media screen and (max-width: 640px)
+  .menu_item
+    display: block
+    position: relative
+    width: 100%
+    padding: 5px 0
+    +transition(background-color, 0.6s, ease-out)
+  .menu_item:hover
+    background-color: #fefefe
+    .menu_link
+      color: #000
+  .side_menu
+    .menu_item:hover .menu_link
+      color: #fff
+    .menu_link
+      height: 30px
+      line-height: 30px
+    .menu_link:before
+      font-size: 30px
+  .active_full_menu
+    .menu_item
+      padding: 0
+    #close_menu
+      font-size: 60px
+
+/*****************480*************
+
+@media screen and (max-width: 480px)
+  .menu_item
+    padding: 2px 0
+  .side_menu
+    .menu_item
+      padding: 0
+  .active_full_menu
+    .menu_item
+      padding: 0
+  .active_full_menu
+    #diagonal_collapse:before
+      left: 0
+      +m_diagonal_collapse(-50%, 0, -45deg)
+    #diagonal_collapse:after
+      right: 0
+      +m_diagonal_collapse(50%, -50%, -45deg)
+
+@media screen and (max-height: 600px)
+  .active_full_menu
+    .menu
+      line-height: 35px
+    .menu_item
+      padding: 0
+    .menu_link
+      font-size: 18px
+  .active_menu #close_menu
+    display: block
+    font-size: 60px

@@ -4,158 +4,12 @@
 <title>Responsive framework - it's HTML, CSS and JS framework for fast and easy development.</title>
 <meta charset="utf-8" />
 <meta name="description" content="Responsive framework - it's HTML, CSS and JS framework for fast and easy development." />
-<meta name="keywords" content="responsive framework, responsive design, responsive tabs, pure js tabs, pure js accordion, responsive accordion, responsive components, pure javascript slider, responsive slider, responsive preloaders, responsive tooltips" />
+<meta name="keywords" content="responsive framework,responsive UX framework, responsive design framework, responsive tabs, pure js tabs, pure js accordion, responsive accordion, responsive components, pure javascript slider, responsive slider, responsive preloaders, responsive tooltips" />
 <meta name="author" content="Stas Melnikov" />
 <meta name="google-site-verification" content="-ZHI-_3YQSfXYHeB5tzmTypafoIQlflF_xJJRdu926w" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
-<link rel="stylesheet" href="css/grid.css" type="text/css" media="screen"/>
-<link rel="stylesheet" href="css/tabs.css" type="text/css" media="screen"/>
-<link rel="stylesheet" href="css/table.css" type="text/css" media="screen"/>
-<link rel="stylesheet" href="css/accordion.css" type="text/css" media="screen"/>
-<link rel="stylesheet" href="css/fontello.css" type="text/css" media="screen"/>
-<style>
-
-body{
-	line-height: 30px;
-}
-
-.title{
-	line-height: 40px;
-}
-
-.box, .accordion_list_item{
-	text-align: left;
-	font-size: 14px;
-}
-
-.box .list_item, .accordion_list_item .list_item{
-	display: block;
-}
-
-.box .list_item:before, .accordion_list_item .list_item:before{
-	content: "";
-	
-	display: inline-block;
-	vertical-align: middle;
-	margin: 0 15px;
-	
-	background-color: #36BAE2;
-	
-	width: 15px;
-	height: 2px;
-}
-
-.main_container_item .title{
-	text-align: left;
-}
-
-.list_item{
-	display: inline-block;
-}
-
-.date, .improvement, .user{
-	font-size: 12px;
-	color: #36bae2;
-}
-
-.improvement{
-	font-size: 16px;
-}
-
-.title_column{ 
-
-	position: absolute;
-	top: 6px;
-	left: 6px;
-	
-	width: 45%; 
-	display: block;
-	padding-right: 10px; 
-	white-space: nowrap;
-}
-
-.container{
-	text-align: center;
-	min-width: 100px;
-}
-
-.content_item{
-
-	display: inline-block;
-	vertical-align: top;
-	text-align: center;
-	
-	font-size: 14px;
-	text-decoration: none;
-	
-	width: 260px;
-	margin: 10px;
-}	
-
-.content_item .title{
-	font-size: 18px;
-	margin: 15px 0;
-	
-	
-	transition: color .4s ease-out 0s;
-	-webkit-transition: color .4s ease-out 0s;
-	-webkit-transition-delay:  .4s ease-out;
-}
-
-.testimonials .content_item {
-
-	width: 45%;
-	text-align: right;
-	line-height: 24px;
-	padding-bottom: 25px;
-}
-
-.content_item .testimonial{
-
-	background-color: #f2f2f2;
-	margin-bottom: 15px;
-	
-	padding: 10px 15px;
-	text-align: left;
-	
-	font-size: 12px;
-	font-style: italic;
-}
-
-.mail{
-	color: #36bae2;
-	font-size: 14px;
-}
-
-.icon{
-    color: #000;
-    display: block;
-    font-size: 35px;
-	
-	transition: color .4s ease-out 0s;
-	-webkit-transition: color .4s ease-out 0s;
-	-webkit-transition-delay:  .4s ease-out;
-}
-
-.content_item:hover .title, .content_item:hover .icon{
-	color: #36BAE2;
-}
-
-@media screen and (max-width: 700px){
-	.testimonials .content_item {
-		width: 98%;
-	}
-}
-
-@media screen and (max-width: 640px){
-	.title{
-		line-height: 30px;
-		font-size: 20px;
-	}
-}
-</style>
-
+<style>*{margin:0;padding:0;border:0;outline:medium none;list-style:none}body{background:#fff;font-family:arial;font-size:18px;padding-bottom:40px}.container{min-width:100px;max-width:1000px;padding:0 20px;margin:0 auto}.title{font-size:24px;color:#000;font-family:verdana;font-weight:normal;margin:3% 0;text-align:center}.title2{font-size:20px;color:#000;font-family:verdana;font-weight:normal;margin:20px 0;text-align:left}.link{color:#36bae2;transition:color .8s ease-out 0s;-moz-transition:color .8s ease-out 0s;-webkit-transition:color .8s ease-out 0s;-webkit-transition-delay:.8s 0s}.link:hover{text-decoration:none;color:#000}.paragraph{margin-bottom:20px;text-align:left;font-family:tahoma;font-size:16px}.copyright a{transition:color .8s ease-out 0s;-moz-transition:color .8s ease-out 0s;-webkit-transition:color .8s ease-out 0s;-webkit-transition-delay:.8s 0s}.copyright a:hover{text-decoration:none;color:#000}.control,#control_color{text-align:center}.content{margin:30px 0;text-align:center}.content_item{display:inline-block;vertical-align:top;text-align:center;font-size:14px;text-decoration:none;width:140px;margin:10px}.content_item .title{font-size:14px;transition:color .4s ease-out 0s;-moz-transition:color .4s ease-out 0s;-webkit-transition:color .4s ease-out 0s;-webkit-transition-delay:.4s 0s}.icon{color:#000;display:block;font-size:35px;transition:color .4s ease-out 0s;-moz-transition:color .4s ease-out 0s;-webkit-transition:color .4s ease-out 0s;-webkit-transition-delay:.4s 0s}.content_item:hover .title,.content_item:hover .icon{color:#36BAE2}.browser{margin:0 2% 3%}.copyright{color:#000;font-size:14px;display:block;text-align:center;margin:10px 0}#buy{color:#fff;font-size:16px;text-decoration:none;display:block;position:relative;margin:0 auto;background-color:#36bae2;border-radius:5px;cursor:pointer;width:200px;padding:15px 25px;text-align:center;transition:color .8s ease-out 0s;-moz-transition:color .8s ease-out 0s;-webkit-transition:color .8s ease-out 0s;-webkit-transition-delay:.8s 0s}#buy:hover{color:#000;background:rgba(20,147,200,0.8)}#buy:active{top:1px;box-shadow:1px 3px 4px #19566f inset}#control_color{padding-left:15px;margin-bottom:20px}.color_item{display:inline-block;margin:5px 5px 5px 0;vertical-align:top;width:20px;height:20px;cursor:pointer}.control{margin:25px 0;text-align:center}.select_effect_item{cursor:pointer;border-bottom:1px dashed #36bae2;font-size:16px;margin:5px 10px;display:inline-block}#purple{background-color:#3c3760}#green{background-color:#58c255}#yellow{background-color:#ded82f}#pink{background-color:#d364a8}#black{background-color:#000}#gray{background-color:#a9a8a8}.purple .tab,.purple .active_info_block .title_info_block,.purple .input_text,.purple th,.purple tr:hover,.purple .line_bottom,.purple .wrapper_drop_down_block:hover,.purple .drop_down_menu,.purple .drop_down_block,.purple .drop_down_block:hover,.purple .additional_menu{background-color:#3c3760 !important}.purple .menu_link:hover{color:#3c3760}.purple .input_text{color:#fff!important}.purple .wrapper_drop_down_block .description,.purple .additional_menu{color:#fff}.purple .drop_down_menu_link{color:#fff}.purple #icon_menu:before{background:#3c3760;-webkit-box-shadow:0 12px #3c3760,0 24px #3c3760;-moz-box-shadow:0 12px #3c3760,0 24px #3c3760;box-shadow:0 12px #3c3760,0 24px #3c3760}.purple #icon_menu:hover:before,.purple .active_icon #icon_menu:before{-webkit-box-shadow:0 12px #282442,0 24px #282442;-moz-box-shadow:0 12px #282442,0 24px #282442;box-shadow:0 12px #282442,0 24px #282442;background:#282442}.green .tab,.green .active_info_block .title_info_block,.green .button,.green th,.green tr:hover,.green .line_bottom,.green .wrapper_drop_down_block:hover,.green .drop_down_menu,.green .drop_down_block,.green .drop_down_block:hover,.green .additional_menu{background-color:#58c255 !important}.green .menu_link:hover{color:#58c255}.green .wrapper_drop_down_block .menu_link:hover{color:#fff}.green #icon_menu:before{background:#58c255;-webkit-box-shadow:0 12px #58c255,0 24px #58c255;-moz-box-shadow:0 12px #58c255,0 24px #58c255;box-shadow:0 12px #58c255,0 24px #58c255}.green #icon_menu:hover:before,.green .active_icon #icon_menu:before{-webkit-box-shadow:0 12px #449a42,0 24px #449a42;-moz-box-shadow:0 12px #449a42,0 24px #449a42;box-shadow:0 12px #449a42,0 24px #449a42;background:#449a42}.yellow .tab,.yellow .active_info_block .title_info_block,.yellow .button,.yellow th,.yellow tr:hover,.yellow .line_bottom,.yellow .wrapper_drop_down_block:hover,.yellow .drop_down_menu,.yellow .drop_down_block,.yellow .drop_down_block:hover,.yellow .additional_menu{background-color:#ded82f !important}.yellow .wrapper_drop_down_block .description{color:#000}.yellow .menu_link:hover{color:#ded82f}.yellow .wrapper_drop_down_block .menu_link:hover{color:#000}.yellow #icon_menu:before{background:#ded82f;-webkit-box-shadow:0 12px #ded82f,0 24px #ded82f;-moz-box-shadow:0 12px #ded82f,0 24px #ded82f;box-shadow:0 12px #ded82f,0 24px #ded82f}.yellow #icon_menu:hover:before,.yellow .active_icon #icon_menu:before{-webkit-box-shadow:0 12px #b2ad25,0 24px #b2ad25;-moz-box-shadow:0 12px #b2ad25,0 24px #b2ad25;box-shadow:0 12px #b2ad25,0 24px #b2ad25;background:#b2ad25}.pink .tab,.pink .active_info_block .title_info_block,.pink .button,.pink th,.pink tr:hover,.pink .line_bottom,.pink .wrapper_drop_down_block:hover,.pink .drop_down_menu,.pink .drop_down_block,.pink .drop_down_block:hover,.pink .additional_menu{background-color:#d364a8 !important}.pink .menu_link:hover{color:#d364a8}.pink .wrapper_drop_down_block .menu_link:hover{color:#fff}.pink #icon_menu:before{background:#d364a8;-webkit-box-shadow:0 12px #d364a8,0 24px #d364a8;-moz-box-shadow:0 12px #d364a8,0 24px #d364a8;box-shadow:0 12px #d364a8,0 24px #d364a8}.pink #icon_menu:hover:before,.pink .active_icon #icon_menu:before{-webkit-box-shadow:0 12px #ac5088,0 24px #ac5088;-moz-box-shadow:0 12px #ac5088,0 24px #ac5088;box-shadow:0 12px #ac5088,0 24px #ac5088;background:#ac5088}.black .tab,.black .active_info_block .title_info_block,.black .button,.black th,.black tr:hover,.black .line_bottom,.black .drop_down_block,.black .additional_menu{background-color:#000 !important}.black .wrapper_drop_down_block:hover{background-color:#000 !important;color:#fff}.black .wrapper_drop_down_block:hover .menu_link{color:#fff}.black .drop_down_menu_link{color:#fff}.black #top_menu .menu_link:hover,.black #bottom_menu .menu_link:hover{color:#1493c8}.black #icon_menu:before{background:#000;-webkit-box-shadow:0 12px #000,0 24px #000;-moz-box-shadow:0 12px #000,0 24px #000;box-shadow:0 12px #000,0 24px #000}.black #icon_menu:hover:before,.black .active_icon #icon_menu:before{-webkit-box-shadow:0 12px #000,0 24px #000;-moz-box-shadow:0 12px #000,0 24px #000;box-shadow:0 12px #000,0 24px #000;background:#000}.gray .tab,.gray .active_info_block .title_info_block,.gray .button,.gray th,.gray tr:hover,.gray .line_bottom,.gray .wrapper_drop_down_block:hover,.gray .drop_down_block,.gray .additional_menu{background-color:#a9a8a8 !important}.gray .wrapper_drop_down_block .menu_link:hover{color:#fff}.gray .menu_link:hover{color:#a9a8a8}.gray #icon_menu:before{background:#a9a8a8;-webkit-box-shadow:0 12px #a9a8a8,0 24px #a9a8a8;-moz-box-shadow:0 12px #a9a8a8,0 24px #a9a8a8;box-shadow:0 12px #a9a8a8,0 24px #a9a8a8}.gray #icon_menu:hover:before,.gray .active_icon #icon_menu:before{-webkit-box-shadow:0 12px #686262,0 24px #686262;-moz-box-shadow:0 12px #686262,0 24px #686262;box-shadow:0 12px #686262,0 24px #686262;background:#686262}#top_menu .menu_link:hover,#bottom_menu .menu_link:hover{color:#000}.main_container{padding-left:20px;padding-right:20px;min-width:100px;max-width:940px;margin:0 auto;position:relative;text-align:center;margin-bottom:35px}.main_container .title_post{font-size:22px}.main_container_item{display:inline-block;padding:1%;text-align:center;line-height:25px;vertical-align:top}.columns2 .main_container_item{width:46%}.columns3 .main_container_item{width:30%}.columns4 .main_container_item{width:22%}.small_column{width:35%}.small_column .title_post{text-align:left}.big_column{width:60%}.big_column .title_post{text-align:left}.img_post{margin-bottom:25px}.title_post{font-size:20px;margin-bottom:15px}.readmore{font-size:12px;text-decoration:none;color:#7aa7ea;transition:color .4s ease 0s;-moz-transition:color .4s ease 0s;-webkit-transition:color .4s ease 0s;-webkit-transition-delay:.4s 0s}.readmore:hover{color:#000}@media screen and (max-width:900px){.columns4 .main_container_item{width:46%}}@media screen and (max-width:800px){.combined .columns2 .main_container_item{width:100%}}@media screen and (max-width:700px){.columns2 .main_container_item{width:100%}.columns3 .main_container_item{width:100%}.big_column,.small_column{width:100%}.combined .columns2 .main_container_item{width:100%}}@media screen and (max-width:640px){.small_column,.big_column{width:100%}}@media screen and (max-width:480px){.columns4 .main_container_item{width:100%}}@media screen and (max-width:360px){.main_container{padding:0 5px;width:94%}}.tabs_container .current{background:#F7F7F7 !important;color:#4F5559}.tabs_container:after{clear:both;content:" ";display:block}.tabs{float:left}.tab{background:#36BAE2;text-align:center;float:left;padding:16px 20px;cursor:pointer;font-family:arial;font-weight:300;font-size:14px;color:#FFFFFF;transition:all .2s linear 0s;-moz-transition:all .2s linear 0s;-webkit-transition:all .2s linear 0s;-webkit-transition-delay:.2s 0s}.box{background:none repeat scroll 0 0 #F7F7F7;display:none;width:96%;padding:25px 2% 10px;float:left;overflow:hidden}.box_item{margin-bottom:15px}.visible,.show_tab{display:block}.horizontal .tabs{float:left;width:20%}.horizontal .box{float:left;width:75%;min-height:111px;border-bottom:1px solid #eee}.horizontal .tab{display:block;float:none;border-bottom:1px solid #eee}.horizontal:after{clear:both;content:" ";display:block}#fade_left_tabs .show_tab .box_item{-webkit-animation-name:fade_left_tabs;animation-name:fade_left_tabs;position:relative;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}#fade_right_tabs .show_tab .box_item{-webkit-animation-name:fade_right_tabs;animation-name:fade_right_tabs;position:relative;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}#bounce_taps .show_tab .box_item{-moz-transform-origin:center bottom;-ms-transform-origin:center bottom;-webkit-transform-origin:center bottom;transform-origin:center bottom;position:relative;-webkit-animation-name:bounce_tabs;animation-name:bounce_tabs;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}#pulse_tab .show_tab .box_item{position:relative;-webkit-animation-name:pulse_tabs;animation-name:pulse_tabs;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}#swing_tab .show_tab .box_item{position:relative;-webkit-animation-name:swing_tabs;animation-name:swing_tabs;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-moz-transform-origin:top center;-ms-transform-origin:top center;-webkit-transform-origin:top center;transform-origin:top center}#zoom_tab .show_tab .box_item{position:relative;-webkit-animation-name:zoom_tab;animation-name:zoom_tab;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes fade_left_tabs{0%{opacity:0;-webkit-transform:translate3d(-100%, 0, 0);-ms-transform:translate3d(-100%, 0, 0);transform:translate3d(-100%, 0, 0)}100%{opacity:1;-webkit-transform:none;-ms-transform:none;transform:none}}@keyframes fade_left_tabs{0%{opacity:0;-webkit-transform:translate3d(-100%, 0, 0);-ms-transform:translate3d(-100%, 0, 0);transform:translate3d(-100%, 0, 0)}100%{opacity:1;-webkit-transform:none;-ms-transform:none;transform:none}}@-webkit-keyframes fade_right_tabs{0%{opacity:0;-webkit-transform:translate3d(100%, 0, 0);-ms-transform:translate3d(100%, 0, 0);transform:translate3d(100%, 0, 0)}100%{opacity:1;-webkit-transform:none;-ms-transform:none;transform:none}}@keyframes fade_right_tabs{0%{opacity:0;-webkit-transform:translate3d(100%, 0, 0);-ms-transform:translate3d(100%, 0, 0);transform:translate3d(100%, 0, 0)}100%{opacity:1;-webkit-transform:none;-ms-transform:none;transform:none}}@-webkit-keyframes bounce_tabs{0%,20%,53%,80%,100%{-webkit-transition-timing-function:cubic-bezier(.215, .61, .355, 1);transition-timing-function:ccubic-bezier(.215, .61, .355, 1);-webkit-transform:translate3d(0, 0, 0);-ms-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0)}40%,43%{-webkit-transition-timing-function:cubic-bezier(.755, .05, .855, .06);transition-timing-function:ccubic-bezier(.755, .05, .855, .06);-webkit-transform:translate3d(0, -30px, 0);-ms-transform:translate3d(0, -30px, 0);transform:translate3d(0, -30px, 0)}70%{-webkit-transition-timing-function:cubic-bezier(.755, .05, .855, .06);transition-timing-function:ccubic-bezier(.755, .05, .855, .06);-webkit-transform:translate3d(0, -15px, 0);-ms-transform:translate3d(0, -15px, 0);transform:translate3d(0, -15px, 0)}90%{-webkit-transform:translate3d(0, -4px, 0);-ms-transform:translate3d(0, -4px, 0);transform:translate3d(0, -4px, 0)}}@keyframes bounce_tabs{0%,20%,53%,80%,100%{-webkit-transition-timing-function:cubic-bezier(.215, .61, .355, 1);transition-timing-function:ccubic-bezier(.215, .61, .355, 1);-webkit-transform:translate3d(0, 0, 0);-ms-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0)}40%,43%{-webkit-transition-timing-function:cubic-bezier(.755, .05, .855, .06);transition-timing-function:ccubic-bezier(.755, .05, .855, .06);-webkit-transform:translate3d(0, -30px, 0);-ms-transform:translate3d(0, -30px, 0);transform:translate3d(0, -30px, 0)}70%{-webkit-transition-timing-function:cubic-bezier(.755, .05, .855, .06);transition-timing-function:ccubic-bezier(.755, .05, .855, .06);-webkit-transform:translate3d(0, -15px, 0);-ms-transform:translate3d(0, -15px, 0);transform:translate3d(0, -15px, 0)}90%{-webkit-transform:translate3d(0, -4px, 0);-ms-transform:translate3d(0, -4px, 0);transform:translate3d(0, -4px, 0)}}@-webkit-keyframes pulse_tabs{0%{-webkit-transform:scale3d(1, 1, 1);-ms-transform:scale3d(1, 1, 1);transform:scale3d(1, 1, 1)}50%{-webkit-transform:scale3d(1.05, 1.05, 1.05);-ms-transform:scale3d(1.05, 1.05, 1.05);transform:scale3d(1.05, 1.05, 1.05)}100%{-webkit-transform:scale3d(1, 1, 1);-ms-transform:scale3d(1, 1, 1);transform:scale3d(1, 1, 1)}}@keyframes pulse_tabs{0%{-webkit-transform:scale3d(1, 1, 1);-ms-transform:scale3d(1, 1, 1);transform:scale3d(1, 1, 1)}50%{-webkit-transform:scale3d(1.05, 1.05, 1.05);-ms-transform:scale3d(1.05, 1.05, 1.05);transform:scale3d(1.05, 1.05, 1.05)}100%{-webkit-transform:scale3d(1, 1, 1);-ms-transform:scale3d(1, 1, 1);transform:scale3d(1, 1, 1)}}@-webkit-keyframes swing_tabs{20%{-webkit-transform:rotate3d(0, 0, 1, 15deg);-ms-transform:rotate3d(0, 0, 1, 15deg);transform:rotate3d(0, 0, 1, 15deg)}40%{-webkit-transform:rotate3d(0, 0, 1, -10deg);-ms-transform:rotate3d(0, 0, 1, -10deg);transform:rotate3d(0, 0, 1, -10deg)}60%{-webkit-transform:rotate3d(0, 0, 1, 5deg);-ms-transform:rotate3d(0, 0, 1, 5deg);transform:rotate3d(0, 0, 1, 5deg)}80%{-webkit-transform:rotate3d(0, 0, 1, -5deg);-ms-transform:rotate3d(0, 0, 1, -5deg);transform:rotate3d(0, 0, 1, -5deg)}100%{-webkit-transform:rotate3d(0, 0, 1, 0deg);-ms-transform:rotate3d(0, 0, 1, 0deg);transform:rotate3d(0, 0, 1, 0deg)}}@keyframes swing_tabs{20%{-webkit-transform:rotate3d(0, 0, 1, 15deg);-ms-transform:rotate3d(0, 0, 1, 15deg);transform:rotate3d(0, 0, 1, 15deg)}40%{-webkit-transform:rotate3d(0, 0, 1, -10deg);-ms-transform:rotate3d(0, 0, 1, -10deg);transform:rotate3d(0, 0, 1, -10deg)}60%{-webkit-transform:rotate3d(0, 0, 1, 5deg);-ms-transform:rotate3d(0, 0, 1, 5deg);transform:rotate3d(0, 0, 1, 5deg)}80%{-webkit-transform:rotate3d(0, 0, 1, -5deg);-ms-transform:rotate3d(0, 0, 1, -5deg);transform:rotate3d(0, 0, 1, -5deg)}100%{-webkit-transform:rotate3d(0, 0, 1, 0deg);-ms-transform:rotate3d(0, 0, 1, 0deg);transform:rotate3d(0, 0, 1, 0deg)}}@-webkit-keyframes zoom_tab{0%{opacity:0;-webkit-transform:scale3d(.3, .3, .3);-ms-transform:scale3d(.3, .3, .3);transform:scale3d(.3, .3, .3)}50%{opacity:1}}@keyframes zoom_tab{0%{opacity:0;-webkit-transform:scale3d(.3, .3, .3);-ms-transform:scale3d(.3, .3, .3);transform:scale3d(.3, .3, .3)}50%{opacity:1}}@media screen and (max-width:800px){.horizontal .tabs{float:none;width:100%}.horizontal .tabs .tab{width:100%;padding:15px 0;float:none;border-bottom:1px solid #ddd}.horizontal .box{width:90%;padding:25px 5% 10px}}@media screen and (max-width:600px){.tabs{float:none}.tabs .tab{width:100%;padding:15px 0;float:none;border-bottom:1px solid #ddd}.box{width:90%;padding:25px 5% 10px}}.accordion_list{margin-bottom:50px}.accordion_list .accordion_list_item{margin-bottom:3px;position:relative}.accordion_list .title_info_block{font-weight:normal;font-size:20px;color:#4e5762;cursor:pointer;background:#f7f7f7;padding:10px 55px 10px 15px;transition:all .2s linear 0s;-moz-transition:all .2s linear 0s;-webkit-transition:all .2s linear 0s;-webkit-transition-delay:.2s 0s}.accordion_list .arrow:before{content:'';height:8px;width:8px;display:block;border:2px solid #939da9;border-right-width:0;border-top-width:0;-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg);position:absolute;right:20px;top:12px}.accordion_list .icon:before{content:'+';height:8px;width:8px;display:block;position:absolute;right:35px;top:10px}.accordion_list .active_info_block .title_info_block{background:#36BAE2;color:#fefefe}.accordion_list .active_info_block .arrow:before{border:2px solid #fefefe;border-left-width:0;border-bottom-width:0;top:15px}.accordion_list .active_info_block .icon:before{content:'—'}.accordion_list .info{height:0;transition:height .5s linear 0s;-moz-transition:height .5s linear 0s;-webkit-transition:height .5s linear 0s;-webkit-transition-delay:.5s 0s;background:#f7f7f7;overflow:hidden;padding:0 15px}.accordion_list .info_item{margin-bottom:15px}.active_info_block .info{padding:10px 15px;height:auto}.active_info_block .show{transition:height .3s linear 0s;-moz-transition:height .3s linear 0s;-webkit-transition:height .3s linear 0s;-webkit-transition-delay:.3s 0s}body{line-height:30px}.title{line-height:40px}.box,.accordion_list_item{text-align:left;font-size:14px}.box .list_item,.accordion_list_item .list_item{display:block}.box .list_item:before,.accordion_list_item .list_item:before{content:"";display:inline-block;vertical-align:middle;margin:0 15px;background-color:#36bae2;width:15px;height:2px}.box .title{margin:0 0 15px}.main_container_item .title{text-align:left}.list_item{display:inline-block}.date,.improvement,.user{font-size:12px;color:#36bae2}.improvement{font-size:16px}.title_column{position:absolute;top:6px;left:6px;width:45%;display:block;padding-right:10px;white-space:nowrap}.container{text-align:center;min-width:100px}.content_item{display:inline-block;vertical-align:top;text-align:center;font-size:14px;text-decoration:none;width:260px;margin:10px}.content_item .title{font-size:18px;margin:15px 0;transition:color .4s ease-out 0s;-webkit-transition:color .4s ease-out 0s;-webkit-transition-delay:.4s ease-out}.testimonials .content_item{width:45%;text-align:right;line-height:24px;padding-bottom:25px}.content_item .testimonial{background-color:#f2f2f2;margin-bottom:15px;padding:10px 15px;text-align:left;font-size:12px;font-style:italic}.mail{color:#36bae2;font-size:14px}.icon{color:#000;display:block;font-size:35px;transition:color .4s ease-out 0s;-webkit-transition:color .4s ease-out 0s;-webkit-transition-delay:.4s ease-out}.content_item:hover .title,.content_item:hover .icon{color:#36bae2}@media screen and (max-width:700px){.testimonials .content_item{width:98%}}@media screen and (max-width:640px){.title{line-height:30px;font-size:20px}}</style>
+<style>@font-face{font-family:fontello;src:url(fontello/font/fontello.eot?30913365);src:url(fontello/font/fontello.eot?30913365#iefix) format("embedded-opentype"),url(fontello/font/fontello.woff?30913365) format("woff"),url(fontello/font/fontello.ttf?30913365) format("truetype"),url(fontello/font/fontello.svg?30913365#fontello) format("svg");font-weight:400;font-style:normal}.content [class^="icon-"]:before,.content [class*=" icon-"]:before{font-family:fontello;font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:.2em;text-align:center; font-variant:normal;text-transform:none;line-height:1em; margin-left:.2em; }.icon-th:before{content:"\e800"}.icon-folder:before{content:"\e801"}.icon-picture:before{content:"\e802"}.icon-th-list:before{content:"\e803"}.icon-home:before{content:"\e804"}.icon-edit:before{content:"\e805"}.icon-table:before{content:"\e806"}.icon-filter:before{content:"\e807"}.icon-up-hand:before{content:"\e808"}.icon-spinner:before{content:"\e809"}.icon-basket:before{content:"\e80a"}.icon-menu:before{content:"\e80b"}.icon-comment:before{content:"\e80c"}</style>
 </head>
 <body>
 	<div class="container">
@@ -186,6 +40,14 @@ body{
 				<i class="icon icon-filter"></i>
 				<h3 class="title">Responsive filter</h3>
 			</a>
+			<a href="tooltip.html" class="content_item">
+				<i class="icon icon-comment"></i>
+				<h3 class="title">Responsive tooltip</h3>
+			</a>
+			<a href="fullslider.html" class="content_item">
+				<i class="icon icon-picture"></i>
+				<h3 class="title">Responsive slider</h3>
+			</a>
 			<a href="grid.html" class="content_item">
 				<i class="icon icon-th"></i>
 				<h3 class="title">Responsive grid</h3>
@@ -197,6 +59,10 @@ body{
 			<a href="preloaders.html" class="content_item">
 				<i class="icon icon-spinner"></i>
 				<h3 class="title">Responsive preloaders</h3>
+			</a>
+			<a href="cart.html" class="content_item">
+				<i class="icon icon-basket"></i>
+				<h3 class="title">Responsive cart</h3>
 			</a>
 			<a href="menu.html" class="content_item">
 				<i class="icon icon-menu"></i>
@@ -211,6 +77,29 @@ body{
 		<h3 class="title">Support mobile browsers</h3>
 		<img class="browser" src="images/safari.png" alt="safari" />
 		<img class="browser" src="images/android.png" alt="android" />
+		<h3 class="title">Support css preprocessors</h3>
+		<div class="content">
+			<div class="content_item">
+				<img src="images/less.png" alt="LESS" />
+			</div>
+			<div class="content_item">
+				<img src="images/sass.png" alt="Sass" />
+			</div>
+			<div class="content_item">
+				<img src="images/stylus.png" alt="stylus" />
+			</div>
+		</div>
+		<h3 class="title">Support</h3>
+		<div class="content">
+			<div class="content_item">
+				<img src="images/js.svg" alt="js" />
+				<p>Pure JS components</p>
+			</div>
+			<div class="content_item">
+				<img src="images/jquery.svg" alt="jquery" />
+				<p>Jquery components</p>
+			</div>
+		</div>
 		<h3 class="title">Features</h3>
 		<div class="main_container columns2">
 			<div class="main_container_item">
@@ -260,9 +149,10 @@ body{
 				<div class="tabs_container" id="fade_left_tabs">
 					<ul class="tabs">
 						<li data-id="tab1" class="tab current">Advantages</li>
-						<li data-id="tab2" class="tab">Support</li>
+						<li data-id="tab2" class="tab">Versions</li>
+						<li data-id="tab3" class="tab">Support</li>
 					</ul>
-					<div class="box visible">
+					<div id="tab1_box" class="box visible">
 						<ul class="list box_item">
 							<li class="list_item">easy connection and use</li>
 							<li class="list_item">conformity to the W3C standard</li>
@@ -280,19 +170,270 @@ body{
 						</ul>
 					</div>
 					<div id="tab2_box" class="box">
+						<h3 class="title box_item">Free version:</h3>
+						<ul class="list box_item">
+							<li class="list_item">only LESS</li>
+							<li class="list_item">only Jquery components</li>
+							<li class="list_item">minimum set of animations</li>
+							<li class="list_item">limited set of components</li>
+						</ul>
+						<h3 class="title box_item">Full version:</h3>
+						<ul class="list box_item">
+							<li class="list_item">support LESS, SASS/SCSS, Stylus</li>
+							<li class="list_item">support pure JS and Jquery components</li>
+							<li class="list_item">all componrnts</li>
+							<li class="list_item">all  animations</li>
+							<li class="list_item">round-the-clock consultation and help</li>
+						</ul>
+					</div>
+					<div id="tab3_box" class="box">
 						<p class="box_item">E-mail: <a class="mail link" href="mailto:melnik909@ya.ru">melnik909@ya.ru</a></p> 
 						<p  class="box_item">Video lessons: <a href="https://www.youtube.com/playlist?list=PLLu-WYoyebB0NmckvY8HbJil-F8UTzkyq" class="link">www.youtube.com</a></p>
 					</div>
 				</div>
 			</div>
 		</div>
-
-		<h3 class="title">Buy this framework at Code Canyon!</h3>
-		<a href="http://codecanyon.net/item/responsive-framework/8818382" id="buy">Buy full version for 9$</a>
+		<h3 class="title">Testimonials:</h3>
+		<div class="content testimonials">
+			<div class="content_item">
+				<div class="testimonial">
+					This framework looks very nice and has user-friendly UX. It also has a surprisingly big variety of different visual effects for each component. It works very fast, responsive and smooth. Still as a developer I'd prefer not to depend on jquery when using something like this framework, but apart from that all is good. 
+				</div>
+				<p class="user">Alina Basova</p>
+				<p class="user">Front-end Developer</p>
+			</div>
+			<div class="content_item">
+				<div class="testimonial">
+					Very impressive! The loading-animations look very nice, but they're not really responsive. If you resize the page, they stay the same. Still, very nice! 
+				</div>
+				<p class="user">Jan Borchers</p>
+				<p class="user">Software Engineer</p>
+			</div>
+			<div class="content_item">
+				<div class="testimonial">
+					Good job...
+				</div>
+				<p class="user">Katheer Mizal</p>
+				<p class="user">Software Engineer</p>
+			</div>
+			<div class="content_item">
+				<div class="testimonial">
+					Really good staff pal, gonna buy it, will be really handy for several projects!
+				</div>
+				<p class="user">Daniele Manca</p>
+				<p class="user">Junior Web Developer</p>
+			</div>
+			<div class="content_item">
+				<div class="testimonial">
+					Gorgeous!
+				</div>
+				<p class="user">Martin Rinehart</p>
+				<p class="user">Author: Pro HTML, Pro CSS, JavaScript Inheritance and Object Programming</p>
+			</div>
+			<div class="content_item">
+				<div class="testimonial">
+					amazing!!
+				</div>
+				<p class="user">Eric Bris</p>
+				<p class="user">Software Engineer</p>
+			</div>
+			<div class="content_item">
+				<div class="testimonial">
+					Nice - thanks for the post
+				</div>
+				<p class="user">Pete Rossetti</p>
+			</div>
+			<div class="content_item">
+				<div class="testimonial">
+					This is brilliant! Thanks
+				</div>
+				<p class="user">Adam V</p>
+				<p class="user">Web Designer</p>
+			</div>
+			<div class="content_item">
+				<div class="testimonial">
+					nice
+				</div>
+				<p class="user">Asaf Shay</p>
+			</div>
+			<div class="content_item">
+				<div class="testimonial">
+					These are lovely; great work.
+				</div>
+				<p class="user">Martin Dimmock</p>
+				<p class="user">Owner of webdesign and website management company HarryAdney Internet Services</p>
+			</div>
+			<div class="content_item">
+				<div class="testimonial">
+					Some nice stuff ! 
+				</div>
+				<p class="user">Simon Antoine</p>
+				<p class="user">Webdesigner, intégrateur chez Procom</p>
+			</div>
+			<div class="content_item">
+				<div class="testimonial">
+					Really cool will definitely look into using something like this on my next project
+				</div>
+				<p class="user">Muneeb Rabaney</p>
+				<p class="user">Front-end and Back-end Web Developer</p>
+			</div>
+			<div class="content_item">
+				<div class="testimonial">
+					This is a really cool responsive slider, If I need it I'll definitely buy it!
+				</div>
+				<p class="user">Erica Rodriguez</p>
+				<p class="user">cashier at clearview</p>
+			</div>
+			<div class="content_item">
+				<div class="testimonial">
+					Really awesome...
+				</div>
+				<p class="user">Bhaskar Ravva</p>
+				<p class="user">UI and Web Application Development at IBM</p>
+			</div>
+			<div class="content_item">
+				<div class="testimonial">
+					looks very professional, smooth and clean, great techniques. very useful for every front end developer. highly recommended!!
+				</div>
+				<p class="user">Royee Shemesh</p>
+				<p class="user">Senior Front-End / RIA Developer</p>
+			</div>
+			<div class="content_item">
+				<div class="testimonial">
+					It seems nice mate (: You can just change its name to "Responsive UX Framework" so people can understand what frame work this is. My testimonial is: "It seems big effort on this framework, good job and hope to continue."
+				</div>
+				<p class="user">Barlas Apaydın</p>
+				<p class="user">Senior Consultant Front End Developer </p>
+			</div>
+			<div class="content_item">
+				<div class="testimonial">
+					Great job! Elegant and simple, keep the updates coming :) 
+				</div>
+				<p class="user">Xavi Esteve</p>
+				<p class="user">Front End Developer at Softonic</p>
+			</div>
+			<div class="content_item">
+				<div class="testimonial">
+					it's a very good work. Congratulations. 
+				</div>
+				<p class="user">Alain Jean Deligne</p>
+				<p class="user">Conseil création web : LigneWeb</p>
+			</div>
+			<div class="content_item">
+				<div class="testimonial">
+					I think this framework is great ! :) Thank you for share 
+				</div>
+				<p class="user">Tatiana Jacques</p>
+			</div>
+			<div class="content_item">
+				<div class="testimonial">
+					Although I have only just begun to go into this framework in detail, it certainly is slick, and robust enough that I can start building projects in it from today
+				</div>
+				<p class="user">Dale Bulbrook</p>
+				<p class="user">Web Designer and Web Developer</p>
+			</div>
+			<div class="content_item">
+				<div class="testimonial">
+					Nice work, this is the framework, HTML, CSS and JS is very simple and modern. If these continue to be developed then it would be a great framework. 
+				</div>
+				<p class="user">Edi Santoso</p>
+				<p class="user">Lead Developer di Self Employed</p>
+			</div>
+			<div class="content_item">
+				<div class="testimonial">
+					Very impressive, congratulations.
+				</div>
+				<p class="user">Domenico Venturin</p>
+				<p class="user">Termotecnico / Aspiring Web designer/developer</p>
+			</div>
+			<div class="content_item">
+				<div class="testimonial">
+					Very nicely decorated and finished thing together is beautiful and very useful 
+				</div>
+				<p class="user">zalman levinsky</p>
+			</div>
+		</div>
+		<h3 class="title">Сhangelog:</h3>
+		<div class="content">
+			<div class="content_item">
+				<span class="date">16.11.14</span> - added  pure js tabs
+			</div>
+			<div class="content_item">
+				<span class="date">16.11.14</span> - added  pure range
+			</div>
+			<div class="content_item">
+				<span class="date">7.11.14</span> - added new menu
+			</div>
+			<div class="content_item">
+				<span class="date">2.11.14</span> - added new form elements
+			</div>
+			<div class="content_item">
+				<span class="date">1.11.14</span> - added SCSS/SASS and Stylus
+			</div>
+			<div class="content_item">
+				<span class="date">25.10.14</span> - fixed bugs with animation in IE
+			</div>
+			<div class="content_item">
+				<span class="date">25.10.14</span> - added accordion on native JS
+			</div>
+			<div class="content_item">
+				<span class="date">25.10.14</span> - added layerslider
+			</div>
+			<div class="content_item">
+				<span class="date">20.10.14</span> - added form elements
+			</div>
+			<div class="content_item">
+				<span class="date">18.10.14</span> - added responsive menu
+			</div>
+			<div class="content_item">
+				<span class="date">12.10.14</span> - optimization preloaders
+			</div>
+			<div class="content_item">
+				<span class="date">12.10.14</span> - added new preloader
+			</div>
+			<div class="content_item">
+				<span class="date">5.10.14</span> - added new preloaders
+			</div>
+			<div class="content_item">
+				<span class="date">3.10.14</span> - added responsive cart
+			</div>
+			<div class="content_item">
+				<span class="date">2.10.14</span> - added responsive preloaders
+			</div>
+			<div class="content_item">
+				<span class="date">27.09.14</span> - added responsive hovers
+			</div>
+			<div class="content_item">
+				<span class="date">22.09.14</span> - update documentation
+			</div>
+			<div class="content_item">
+				<span class="date">22.09.14</span> - created framework
+			</div>
+		</div>
+		<h3 class="title">Future improvements:</h3>
+		<div class="content">
+			<div class="content_item">
+				<h3 class="title improvement">Responsive modal window</h3>
+			</div>
+			<div class="content_item">
+				<h3 class="title improvement">Animation for logos company</h3>
+			</div>
+			<div class="content_item">
+				<h3 class="title improvement">New effects for filter</h3>
+			</div>
+			<div class="content_item">
+				<h3 class="title improvement">Scrolling with animation</h3>
+			</div>
+			<div class="content_item">
+				<h3 class="title improvement">Responsive notice</h3>
+			</div>
+		</div>
+		<h3 class="title"><a href="https://github.com/melnik909/Free-responsive-framework.git" class="link">Free version on Github</a></h3>
+		<a href="http://stas-melnikov.ru/responsive_elements/donate.html" id="buy">Please, help me. Donate for full version</a>
 	</div>
 	<div class="copyright">Developed by Stas Melnikov. </div>
-<script  src="js/jquery.js"></script>	
-<script async src="js/accordion.js"></script>
-<script async src="js/tabs.js"></script>
+<script async src="js/demo/min/accordion_native_js.min.js"></script>
+<script async src="js/demo/min/tabs_native_js.min.js"></script>
+<script>window.addEventListener('load', init_ga);function init_ga(){var script = document.createElement("script");script.src = "ga.js";script.async = true;document.body.appendChild(script);}</script>
 </body>
 </html>
