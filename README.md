@@ -1,3 +1,5 @@
+[![Analytics](https://ga-beacon.appspot.com/UA-57151587-1/free-responsive-framework/readme?pixel)](https://github.com/melnik909/free-responsive-framework)
+
 Free-responsive-framework
 =========================
 
@@ -7,20 +9,30 @@ Demo
 =========================
 http://stas-melnikov.ru/responsive_elements
 
-Free version:
+Web-site created with using Responsive Framework
 =========================
-- only LESS;
-- only Jquery components;
-- minimum set of animations;
-- limited set of components;
+http://stas-melnikov.ru/themes/responsive_ux_template/
 
-Full version:
+Articles
 =========================
-- support LESS, SASS/SCSS, Stylus;
-- support pure JS and Jquery components;
-- all componrnts;
-- all animations;
-- round-the-clock consultation and help;
+1) http://www.script-tutorials.com/responsive-web-site-using-responsive-framework/
+2) http://coliss.com/articles/build-websites/operation/work/free-responsive-framework.html
+
+Video:
+=========================
+https://www.youtube.com/playlist?list=PLLu-WYoyebB0NmckvY8HbJil-F8UTzkyq
+
+Friends, please put a star if you it liked
+
+Please, help me (donate):
+=========================
+[![PayPayl donate button](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MHS8KZ4U44Z7J "Donate once-off to this project using Paypal")
+Contacts
+=========================
+Leave your questions on use or on donations. I will answer you!
+1) e-mail: melnik909@ya.ru
+2) linkedin: http://www.linkedin.com/in/melnik909
+3) facebook: https://www.facebook.com/melnik909
 
 License
 =========================
