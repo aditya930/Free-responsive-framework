@@ -26,7 +26,7 @@ Friends, please put a star if you it liked. If you buy a framework on Codecanyon
 
 Please, help me (donate):
 =========================
-I very need your help [![PayPayl donate button](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MHS8KZ4U44Z7J "Donate once-off to this project using Paypal")
+In connection with the situation in my country , I must to ask you for help. Please help me. [![PayPayl donate button](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MHS8KZ4U44Z7J "Donate once-off to this project using Paypal")
 Contacts
 =========================
 Leave your questions on use or on donations. I will answer you!
