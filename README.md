@@ -15,9 +15,8 @@ http://stas-melnikov.ru/themes/responsive_ux_template/
 
 Articles
 =========================
-*[Article on www.script-tutorials.com](http://www.script-tutorials.com/responsive-web-site-using-responsive-framework/)
-*[Article on coliss.com](http://coliss.com/articles/build-websites/operation/work/free-responsive-framework.html)
-
+1) http://www.script-tutorials.com/responsive-web-site-using-responsive-framework/
+2) http://coliss.com/articles/build-websites/operation/work/free-responsive-framework.html
 
 Video:
 =========================
@@ -32,8 +31,9 @@ Contacts
 =========================
 Leave your questions on use or on donations. I will answer you!
 1) e-mail: melnik909@ya.ru
-*[2) linkedin](http://www.linkedin.com/in/melnik909)
-*[3) facebook](https://www.facebook.com/melnik909)
+2) linkedin: http://www.linkedin.com/in/melnik909
+3) facebook: https://www.facebook.com/melnik909
+
 License
 =========================
 MIT
