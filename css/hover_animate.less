@@ -685,7 +685,7 @@ svg{
 	transform: translateY(0) translateZ(0px);
 }
 
-/******************icons************/
+/******************hover icons************/
 
 @width_gallery_item: 300px;
 @height_gallery_item: 225px;
@@ -728,64 +728,7 @@ svg{
 	width: @width_gallery_item;
 	height: @height_gallery_item;
 	
-	.image_wrapper{
-		
-		width: @width_gallery_item;
-		height: @height_gallery_item;
-		
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: 3;
-		.translate(0,0);
-		
-		.transition(transform, .1s, linear);
-	}
-	
-	.image_wrapper:before{
-	
-		content: ''; 
-		display: block;
-		opacity: 0;
-		
-		height: 0;
-		width: 0;
-
-		border: 10px transparent solid;
-		border-right-width: 0; 
-		border-left-color: #fff;
-
-		position:absolute;
-		bottom: 4px;
-		left: 50%;
-		margin-left: -5px;
-		z-index: 2;
-		
-		.transform_rotate(270deg);
-	}
-	
-	
-	.description{
-	
-		position: absolute;
-		bottom: 0;
-		
-		width: @width_gallery_item;
-		background-color: #fff;
-	}
-	
-	.title{
-	
-		font-size: 14px;
-		font-weight: normal;
-		color: #000;
-		
-		margin: 0;
-		height: 45px;
-		padding: 10px 0;
-	}
-	
-	.zoom{
+	.icon_effect{
 
 		width: @width_gallery_item - 16;
 		height: @height_gallery_item - 16;
@@ -805,7 +748,7 @@ svg{
 		.transition(opacity, .4s, ease-out)
 	}
 	
-	.zoom:before{
+	.icon_effect:before{
 	
 		display: block;
 		color: #fff;
@@ -819,7 +762,9 @@ svg{
 		background-color: rgba(0, 0, 0, .8);
 		border-radius: 50%;
 		padding: 15px;
-		
+	}
+	
+	.zoom:before{
 		.transform_scale(-50%, -50%, 0);
 		.transition(transform, .2s, ease-out) 
 	} 
@@ -829,20 +774,6 @@ svg{
 	}
 	
 	.zoom:hover:before{
-		.transform_scale(-50%, -50%, 1)
-	}
-}
-
-.hover_icons:hover{
-	.image_wrapper{
-		.translate(0,-25%);
-	}
-	
-	.image_wrapper:before{
-		opacity: 1
-	}
-	
-	.description{
-		z-index: 4;
+		.transform_scale(-50%, -50%, 1) 
 	}
 }
