@@ -31,15 +31,15 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
   }
   40%,
   43% {
-    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
     -webkit-transform: translate3d(0, -30px, 0);
     -ms-transform: translate3d(0, -30px, 0);
     transform: translate3d(0, -30px, 0);
   }
   70% {
-    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
     -webkit-transform: translate3d(0, -15px, 0);
     -ms-transform: translate3d(0, -15px, 0);
     transform: translate3d(0, -15px, 0);
@@ -64,15 +64,15 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
   }
   40%,
   43% {
-    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
     -webkit-transform: translate3d(0, -30px, 0);
     -ms-transform: translate3d(0, -30px, 0);
     transform: translate3d(0, -30px, 0);
   }
   70% {
-    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
     -webkit-transform: translate3d(0, -15px, 0);
     -ms-transform: translate3d(0, -15px, 0);
     transform: translate3d(0, -15px, 0);
@@ -119,14 +119,17 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 @-webkit-keyframes impulse {
   0% {
     -webkit-transform: scale3d(1, 1, 1);
+    -ms-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
   50% {
     -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    -ms-transform: scale3d(1.05, 1.05, 1.05);
     transform: scale3d(1.05, 1.05, 1.05);
   }
   100% {
     -webkit-transform: scale3d(1, 1, 1);
+    -ms-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
 }
@@ -154,30 +157,37 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 @-webkit-keyframes elastic {
   0% {
     -webkit-transform: scale3d(1, 1, 1);
+    -ms-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
   30% {
     -webkit-transform: scale3d(1.25, 0.75, 1);
+    -ms-transform: scale3d(1.25, 0.75, 1);
     transform: scale3d(1.25, 0.75, 1);
   }
   40% {
     -webkit-transform: scale3d(0.75, 1.25, 1);
+    -ms-transform: scale3d(0.75, 1.25, 1);
     transform: scale3d(0.75, 1.25, 1);
   }
   50% {
     -webkit-transform: scale3d(1.15, 0.85, 1);
+    -ms-transform: scale3d(1.15, 0.85, 1);
     transform: scale3d(1.15, 0.85, 1);
   }
   65% {
     -webkit-transform: scale3d(0.95, 1.05, 1);
+    -ms-transform: scale3d(0.95, 1.05, 1);
     transform: scale3d(0.95, 1.05, 1);
   }
   75% {
     -webkit-transform: scale3d(1.05, 0.95, 1);
+    -ms-transform: scale3d(1.05, 0.95, 1);
     transform: scale3d(1.05, 0.95, 1);
   }
   100% {
     -webkit-transform: scale3d(1, 1, 1);
+    -ms-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
 }
@@ -226,6 +236,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
   0%,
   100% {
     -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
   10%,
@@ -234,6 +245,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
   70%,
   90% {
     -webkit-transform: translate3d(-10px, 0, 0);
+    -ms-transform: translate3d(-10px, 0, 0);
     transform: translate3d(-10px, 0, 0);
   }
   20%,
@@ -241,6 +253,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
   60%,
   80% {
     -webkit-transform: translate3d(10px, 0, 0);
+    -ms-transform: translate3d(10px, 0, 0);
     transform: translate3d(10px, 0, 0);
   }
 }
@@ -276,22 +289,27 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 @-webkit-keyframes seesaw {
   20% {
     -webkit-transform: rotate3d(0, 0, 1, 15deg);
+    -ms-transform: rotate3d(0, 0, 1, 15deg);
     transform: rotate3d(0, 0, 1, 15deg);
   }
   40% {
     -webkit-transform: rotate3d(0, 0, 1, -10deg);
+    -ms-transform: rotate3d(0, 0, 1, -10deg);
     transform: rotate3d(0, 0, 1, -10deg);
   }
   60% {
     -webkit-transform: rotate3d(0, 0, 1, 5deg);
+    -ms-transform: rotate3d(0, 0, 1, 5deg);
     transform: rotate3d(0, 0, 1, 5deg);
   }
   80% {
     -webkit-transform: rotate3d(0, 0, 1, -5deg);
+    -ms-transform: rotate3d(0, 0, 1, -5deg);
     transform: rotate3d(0, 0, 1, -5deg);
   }
   100% {
     -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    -ms-transform: rotate3d(0, 0, 1, 0deg);
     transform: rotate3d(0, 0, 1, 0deg);
   }
 }
@@ -323,39 +341,46 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
   }
 }
 .seesaw {
+  -webkit-animation-name: seesaw;
+  animation-name: seesaw;
   -webkit-transform-origin: top center;
   -ms-transform-origin: top center;
   transform-origin: top center;
-  -webkit-animation-name: seesaw;
-  animation-name: seesaw;
 }
 @-webkit-keyframes wave {
   0% {
     -webkit-transform: none;
+    -ms-transform: none;
     transform: none;
   }
   15% {
     -webkit-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+    -ms-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
     transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
   }
   30% {
     -webkit-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+    -ms-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
     transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
   }
   45% {
     -webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+    -ms-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
     transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
   }
   60% {
     -webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+    -ms-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
     transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
   }
   75% {
     -webkit-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+    -ms-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
     transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
   }
   100% {
     -webkit-transform: none;
+    -ms-transform: none;
     transform: none;
   }
 }
@@ -413,28 +438,34 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
   0% {
     opacity: 0;
     -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    -ms-transform: scale3d(0.3, 0.3, 0.3);
     transform: scale3d(0.3, 0.3, 0.3);
   }
   20% {
     -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    -ms-transform: scale3d(1.1, 1.1, 1.1);
     transform: scale3d(1.1, 1.1, 1.1);
   }
   40% {
     -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    -ms-transform: scale3d(0.9, 0.9, 0.9);
     transform: scale3d(0.9, 0.9, 0.9);
   }
   60% {
     opacity: 1;
     -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    -ms-transform: scale3d(1.03, 1.03, 1.03);
     transform: scale3d(1.03, 1.03, 1.03);
   }
   80% {
     -webkit-transform: scale3d(0.97, 0.97, 0.97);
+    -ms-transform: scale3d(0.97, 0.97, 0.97);
     transform: scale3d(0.97, 0.97, 0.97);
   }
   100% {
     opacity: 1;
     -webkit-transform: scale3d(1, 1, 1);
+    -ms-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
 }
@@ -483,10 +514,10 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
   }
 }
 .jumpIn {
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s;
   -webkit-animation-name: jumpIn;
   animation-name: jumpIn;
-  -webkit-animation-duration: .75s;
-  animation-duration: .75s;
 }
 @-webkit-keyframes jumpInDown {
   0%,
@@ -500,23 +531,28 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
   0% {
     opacity: 0;
     -webkit-transform: translate3d(0, -3000px, 0);
+    -ms-transform: translate3d(0, -3000px, 0);
     transform: translate3d(0, -3000px, 0);
   }
   60% {
     opacity: 1;
     -webkit-transform: translate3d(0, 25px, 0);
+    -ms-transform: translate3d(0, 25px, 0);
     transform: translate3d(0, 25px, 0);
   }
   75% {
     -webkit-transform: translate3d(0, -10px, 0);
+    -ms-transform: translate3d(0, -10px, 0);
     transform: translate3d(0, -10px, 0);
   }
   90% {
     -webkit-transform: translate3d(0, 5px, 0);
+    -ms-transform: translate3d(0, 5px, 0);
     transform: translate3d(0, 5px, 0);
   }
   100% {
     -webkit-transform: none;
+    -ms-transform: none;
     transform: none;
   }
 }
