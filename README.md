@@ -5,6 +5,8 @@ Free-responsive-framework
 
 I developed most often meeting elements of design and I adapted them under mobile devices. All components of library conform to the W3C standard. Components don't depend from each other. All animations of components are made by means of CSS 3 that removes dependence on js-library. One of advantages of a framework is a minimalist in a code. The second advantage is a fast start and convenience of use.
 
+Friends, please add to favorites if you liked it. Buying the framework from Codecanyon or donating money is helping me to get inspiration and improve Responsive Framework. Also you'll get the round-the-clock support from me and emails about all new versions of framework.[![PayPayl donate button](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MHS8KZ4U44Z7J "Donate once-off to this project using Paypal")
+
 Demo
 =========================
 http://stas-melnikov.ru/responsive_elements
@@ -22,11 +24,6 @@ Video:
 =========================
 https://www.youtube.com/playlist?list=PLLu-WYoyebB0NmckvY8HbJil-F8UTzkyq
 
-Friends, please put a star if you it liked. If you buy a framework on Codecanyon or donate money , then you get the round-the-clock support from me!
-
-Please, help me (donate):
-=========================
-In connection with the situation in my country , I must to ask you for help. Please help me. [![PayPayl donate button](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MHS8KZ4U44Z7J "Donate once-off to this project using Paypal")
 Contacts
 =========================
 Leave your questions on use or on donations. I will answer you!
