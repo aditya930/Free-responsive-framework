@@ -6,6 +6,7 @@ Free-responsive-framework
 I developed most often meeting elements of design and I adapted them under mobile devices. All components of library conform to the W3C standard. Components don't depend from each other. All animations of components are made by means of CSS 3 that removes dependence on js-library. One of advantages of a framework is a minimalist in a code. The second advantage is a fast start and convenience of use.
 
 Friends, please add to favorites if you liked it. Buying the framework from Codecanyon or donating money is helping me to get inspiration and improve Responsive Framework. Also you'll get the round-the-clock support from me and emails about all new versions of framework. Also you receive a demo of Responsive UX template as an example of use a framework. [![PayPayl donate button](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MHS8KZ4U44Z7J "Donate once-off to this project using Paypal")
+Yandex.Money: <a href="https://money.yandex.ru/direct-payment.xml?receiver=41001718047017">41001718047017</a>
 
 Demo
 =========================
