@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Responsive accordion on pure JS</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Responsive accordion - it's HTML, CSS and JS component for content." />
+<meta name="keywords" content="responsive accordion,responsive accordion for wordpress, pure accordion, accordion native js, accordion js, accordion css" />
+<meta name="author" content="Stas Melnikov" />
+<style>*{margin:0;padding:0;border:0;outline:medium none;list-style:none}body{background:#fff;font-family:arial;font-size:18px;padding-bottom:40px}.container{min-width:100px;max-width:1000px;padding:0 20px;margin:0 auto}.title{font-size:24px;color:#000;font-family:verdana;font-weight:normal;margin:3% 0;text-align:center}.title2{font-size:20px;color:#000;font-family:verdana;font-weight:normal;margin:20px 0;text-align:left}.link{color:#36bae2;transition:color .8s ease-out 0s;-moz-transition:color .8s ease-out 0s;-webkit-transition:color .8s ease-out 0s;-webkit-transition-delay:.8s 0s}.link:hover{text-decoration:none;color:#000}.paragraph{margin-bottom:20px;text-align:left;font-family:tahoma;font-size:16px}.copyright a{transition:color .8s ease-out 0s;-moz-transition:color .8s ease-out 0s;-webkit-transition:color .8s ease-out 0s;-webkit-transition-delay:.8s 0s}.copyright a:hover{text-decoration:none;color:#000}.control,#control_color{text-align:center}.content{margin:30px 0;text-align:center}.content_item{display:inline-block;vertical-align:top;text-align:center;font-size:14px;text-decoration:none;width:140px;margin:10px}.content_item .title{font-size:14px;transition:color .4s ease-out 0s;-moz-transition:color .4s ease-out 0s;-webkit-transition:color .4s ease-out 0s;-webkit-transition-delay:.4s 0s}.icon{color:#000;display:block;font-size:35px;transition:color .4s ease-out 0s;-moz-transition:color .4s ease-out 0s;-webkit-transition:color .4s ease-out 0s;-webkit-transition-delay:.4s 0s}.content_item:hover .title,.content_item:hover .icon{color:#36BAE2}.browser{margin:0 2% 3%}.copyright{color:#000;font-size:14px;display:block;text-align:center;margin:10px 0}#buy{color:#fff;font-size:16px;text-decoration:none;display:block;position:relative;margin:0 auto;background-color:#36bae2;border-radius:5px;cursor:pointer;width:200px;padding:15px 25px;text-align:center;transition:color .8s ease-out 0s;-moz-transition:color .8s ease-out 0s;-webkit-transition:color .8s ease-out 0s;-webkit-transition-delay:.8s 0s}#buy:hover{color:#000;background:rgba(20,147,200,0.8)}#buy:active{top:1px;box-shadow:1px 3px 4px #19566f inset}#control_color{padding-left:15px;margin-bottom:20px}.color_item{display:inline-block;margin:5px 5px 5px 0;vertical-align:top;width:20px;height:20px;cursor:pointer}.control{margin:25px 0;text-align:center}.select_effect_item{cursor:pointer;border-bottom:1px dashed #36bae2;font-size:16px;margin:5px 10px;display:inline-block}#purple{background-color:#3c3760}#green{background-color:#58c255}#yellow{background-color:#ded82f}#pink{background-color:#d364a8}#black{background-color:#000}#gray{background-color:#a9a8a8}.purple .tab,.purple .active_info_block .title_info_block,.purple .input_text,.purple th,.purple tr:hover,.purple .line_bottom,.purple .wrapper_drop_down_block:hover,.purple .drop_down_menu,.purple .drop_down_block,.purple .drop_down_block:hover,.purple .additional_menu{background-color:#3c3760 !important}.purple .menu_link:hover{color:#3c3760}.purple .input_text{color:#fff!important}.purple .wrapper_drop_down_block .description,.purple .additional_menu{color:#fff}.purple .drop_down_menu_link{color:#fff}.purple #icon_menu:before{background:#3c3760;-webkit-box-shadow:0 12px #3c3760,0 24px #3c3760;-moz-box-shadow:0 12px #3c3760,0 24px #3c3760;box-shadow:0 12px #3c3760,0 24px #3c3760}.purple #icon_menu:hover:before,.purple .active_icon #icon_menu:before{-webkit-box-shadow:0 12px #282442,0 24px #282442;-moz-box-shadow:0 12px #282442,0 24px #282442;box-shadow:0 12px #282442,0 24px #282442;background:#282442}.green .tab,.green .active_info_block .title_info_block,.green .button,.green th,.green tr:hover,.green .line_bottom,.green .wrapper_drop_down_block:hover,.green .drop_down_menu,.green .drop_down_block,.green .drop_down_block:hover,.green .additional_menu{background-color:#58c255 !important}.green .menu_link:hover{color:#58c255}.green .wrapper_drop_down_block .menu_link:hover{color:#fff}.green #icon_menu:before{background:#58c255;-webkit-box-shadow:0 12px #58c255,0 24px #58c255;-moz-box-shadow:0 12px #58c255,0 24px #58c255;box-shadow:0 12px #58c255,0 24px #58c255}.green #icon_menu:hover:before,.green .active_icon #icon_menu:before{-webkit-box-shadow:0 12px #449a42,0 24px #449a42;-moz-box-shadow:0 12px #449a42,0 24px #449a42;box-shadow:0 12px #449a42,0 24px #449a42;background:#449a42}.yellow .tab,.yellow .active_info_block .title_info_block,.yellow .button,.yellow th,.yellow tr:hover,.yellow .line_bottom,.yellow .wrapper_drop_down_block:hover,.yellow .drop_down_menu,.yellow .drop_down_block,.yellow .drop_down_block:hover,.yellow .additional_menu{background-color:#ded82f !important}.yellow .wrapper_drop_down_block .description{color:#000}.yellow .menu_link:hover{color:#ded82f}.yellow .wrapper_drop_down_block .menu_link:hover{color:#000}.yellow #icon_menu:before{background:#ded82f;-webkit-box-shadow:0 12px #ded82f,0 24px #ded82f;-moz-box-shadow:0 12px #ded82f,0 24px #ded82f;box-shadow:0 12px #ded82f,0 24px #ded82f}.yellow #icon_menu:hover:before,.yellow .active_icon #icon_menu:before{-webkit-box-shadow:0 12px #b2ad25,0 24px #b2ad25;-moz-box-shadow:0 12px #b2ad25,0 24px #b2ad25;box-shadow:0 12px #b2ad25,0 24px #b2ad25;background:#b2ad25}.pink .tab,.pink .active_info_block .title_info_block,.pink .button,.pink th,.pink tr:hover,.pink .line_bottom,.pink .wrapper_drop_down_block:hover,.pink .drop_down_menu,.pink .drop_down_block,.pink .drop_down_block:hover,.pink .additional_menu{background-color:#d364a8 !important}.pink .menu_link:hover{color:#d364a8}.pink .wrapper_drop_down_block .menu_link:hover{color:#fff}.pink #icon_menu:before{background:#d364a8;-webkit-box-shadow:0 12px #d364a8,0 24px #d364a8;-moz-box-shadow:0 12px #d364a8,0 24px #d364a8;box-shadow:0 12px #d364a8,0 24px #d364a8}.pink #icon_menu:hover:before,.pink .active_icon #icon_menu:before{-webkit-box-shadow:0 12px #ac5088,0 24px #ac5088;-moz-box-shadow:0 12px #ac5088,0 24px #ac5088;box-shadow:0 12px #ac5088,0 24px #ac5088;background:#ac5088}.black .tab,.black .active_info_block .title_info_block,.black .button,.black th,.black tr:hover,.black .line_bottom,.black .drop_down_block,.black .additional_menu{background-color:#000 !important}.black .wrapper_drop_down_block:hover{background-color:#000 !important;color:#fff}.black .wrapper_drop_down_block:hover .menu_link{color:#fff}.black .drop_down_menu_link{color:#fff}.black #top_menu .menu_link:hover,.black #bottom_menu .menu_link:hover{color:#1493c8}.black #icon_menu:before{background:#000;-webkit-box-shadow:0 12px #000,0 24px #000;-moz-box-shadow:0 12px #000,0 24px #000;box-shadow:0 12px #000,0 24px #000}.black #icon_menu:hover:before,.black .active_icon #icon_menu:before{-webkit-box-shadow:0 12px #000,0 24px #000;-moz-box-shadow:0 12px #000,0 24px #000;box-shadow:0 12px #000,0 24px #000;background:#000}.gray .tab,.gray .active_info_block .title_info_block,.gray .button,.gray th,.gray tr:hover,.gray .line_bottom,.gray .wrapper_drop_down_block:hover,.gray .drop_down_block,.gray .additional_menu{background-color:#a9a8a8 !important}.gray .wrapper_drop_down_block .menu_link:hover{color:#fff}.gray .menu_link:hover{color:#a9a8a8}.gray #icon_menu:before{background:#a9a8a8;-webkit-box-shadow:0 12px #a9a8a8,0 24px #a9a8a8;-moz-box-shadow:0 12px #a9a8a8,0 24px #a9a8a8;box-shadow:0 12px #a9a8a8,0 24px #a9a8a8}.gray #icon_menu:hover:before,.gray .active_icon #icon_menu:before{-webkit-box-shadow:0 12px #686262,0 24px #686262;-moz-box-shadow:0 12px #686262,0 24px #686262;box-shadow:0 12px #686262,0 24px #686262;background:#686262}#top_menu .menu_link:hover,#bottom_menu .menu_link:hover{color:#000}.accordion_list{margin-bottom:50px}.accordion_list .accordion_list_item{margin-bottom:3px;position:relative}.accordion_list .title_info_block{font-weight:normal;font-size:20px;color:#4e5762;cursor:pointer;background:#f7f7f7;padding:10px 55px 10px 15px;transition:all .2s linear 0s;-moz-transition:all .2s linear 0s;-webkit-transition:all .2s linear 0s;-webkit-transition-delay:.2s 0s}.accordion_list .arrow:before{content:'';height:8px;width:8px;display:block;border:2px solid #939da9;border-right-width:0;border-top-width:0;-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg);position:absolute;right:20px;top:12px}.accordion_list .icon:before{content:'+';height:8px;width:8px;display:block;position:absolute;right:35px;top:10px}.accordion_list .active_info_block .title_info_block{background:#36BAE2;color:#fefefe}.accordion_list .active_info_block .arrow:before{border:2px solid #fefefe;border-left-width:0;border-bottom-width:0;top:15px}.accordion_list .active_info_block .icon:before{content:'—'}.accordion_list .info{height:0;transition:height .5s linear 0s;-moz-transition:height .5s linear 0s;-webkit-transition:height .5s linear 0s;-webkit-transition-delay:.5s 0s;background:#f7f7f7;overflow:hidden;padding:0 15px}.accordion_list .info_item{margin-bottom:15px}.active_info_block .info{padding:10px 15px;height:auto}.active_info_block .show{transition:height .3s linear 0s;-moz-transition:height .3s linear 0s;-webkit-transition:height .3s linear 0s;-webkit-transition-delay:.3s 0s}</style>
+<style>@font-face{font-family:fontello;src:url(fontello/font/fontello.eot?30913365);src:url(fontello/font/fontello.eot?30913365#iefix) format("embedded-opentype"),url(fontello/font/fontello.woff?30913365) format("woff"),url(fontello/font/fontello.ttf?30913365) format("truetype"),url(fontello/font/fontello.svg?30913365#fontello) format("svg");font-weight:400;font-style:normal}.content [class^="icon-"]:before,.content [class*=" icon-"]:before{font-family:fontello;font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:.2em;text-align:center; font-variant:normal;text-transform:none;line-height:1em; margin-left:.2em; }.icon-th:before{content:"\e800"}.icon-folder:before{content:"\e801"}.icon-picture:before{content:"\e802"}.icon-th-list:before{content:"\e803"}.icon-home:before{content:"\e804"}.icon-edit:before{content:"\e805"}.icon-table:before{content:"\e806"}.icon-filter:before{content:"\e807"}.icon-up-hand:before{content:"\e808"}.icon-spinner:before{content:"\e809"}.icon-basket:before{content:"\e80a"}.icon-menu:before{content:"\e80b"}.icon-comment:before{content:"\e80c"}</style>
+</head>
+<body class="default_color">
+	<div class="container">
+		<h1 class="title">Responsive accordion on pure JS</h1>
+		<div class="accordion_list">
+			<section class="accordion_list_item">
+				<h3 class="title_info_block arrow">Information title</h3>
+				<div class="info">
+					<p class="info_item">Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. </p>
+					<p class="info_item">Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>
+				</div>
+			</section>
+			<section class="accordion_list_item">
+				<h3 class="title_info_block arrow">Information title</h3>
+				<div class="info">
+					<p class="info_item">Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. </p>
+					<p class="info_item">Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>
+				</div>
+			</section>
+			<section class="accordion_list_item">
+				<h3 class="title_info_block arrow">Information title</h3>
+				<div class="info">
+					<p class="info_item">Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. </p>
+					<p class="info_item">Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>
+				</div>
+			</section>
+		</div>
+		<div class="content">
+			<a href="index.html" class="content_item">
+				<i class="icon icon-home"></i>
+				<h3 class="title">Home</h3>
+			</a>
+						<a href="accordion.html" class="content_item">
+				<i class="icon icon-th-list"></i>
+				<h3 class="title">Responsive accordion</h3>
+			</a>
+			<a href="tabs.html" class="content_item">
+				<i class="icon icon-folder"></i>
+				<h3 class="title">Responsive tabs</h3>
+			</a>
+			<a href="forms.html" class="content_item">
+				<i class="icon icon-edit"></i>
+				<h3 class="title">Responsive forms</h3>
+			</a>
+			<a href="table.html" class="content_item">
+				<i class="icon icon-table"></i>
+				<h3 class="title">Responsive table</h3>
+			</a>
+			<a href="filter.html" class="content_item">
+				<i class="icon icon-filter"></i>
+				<h3 class="title">Responsive filter</h3>
+			</a>
+			<a href="tooltip.html" class="content_item">
+				<i class="icon icon-comment"></i>
+				<h3 class="title">Responsive tooltip</h3>
+			</a>
+			<a href="fullslider.html" class="content_item">
+				<i class="icon icon-picture"></i>
+				<h3 class="title">Responsive slider</h3>
+			</a>
+			<a href="grid.html" class="content_item">
+				<i class="icon icon-th"></i>
+				<h3 class="title">Responsive grid</h3>
+			</a>
+			<a href="hover_animate.html" class="content_item">
+				<i class="icon icon-up-hand"></i>
+				<h3 class="title">Responsive hover</h3>
+			</a>
+			<a href="preloaders.html" class="content_item">
+				<i class="icon icon-spinner"></i>
+				<h3 class="title">Responsive preloaders</h3>
+			</a>
+			<a href="cart.html" class="content_item">
+				<i class="icon icon-basket"></i>
+				<h3 class="title">Responsive cart</h3>
+			</a>
+			<a href="menu.html" class="content_item">
+				<i class="icon icon-menu"></i>
+				<h3 class="title">Responsive menu</h3>
+			</a>
+		</div>
+		<h3 class="title"><a href="https://github.com/melnik909/Free-responsive-framework.git" class="link">Responsive framework on Github</a></h3>
+		<form action="https://www.paypal.com/cgi-bin/webscr" style="text-align: center;" method="post" target="_top"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="MHS8KZ4U44Z7J"><input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"  name="submit" alt="PayPal - The safer, easier way to pay online!"><img alt=""  src="https://www.paypalobjects.com/ru_RU/i/scr/pixel.gif" width="1" height="1"></form>
+		<div class="copyright">Developed by Stas Melnikov. </div>
+	</div>
+<script async type="text/javascript" src="js/min/accordion_native_js.min.js"></script>
+<script>window.addEventListener('load', init_ga);function init_ga(){var script = document.createElement("script");script.src = "ga.js";script.async = true;document.body.appendChild(script);}</script>
+</body>
+</html>

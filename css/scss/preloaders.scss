@@ -6,41 +6,41 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 /*********************************************mixins*********************************/
 
-.m_translate(@x, @y) {
+@mixin m_translate($x, $y) {
 
-	-webkit-transform: translateZ(0px) translate(@x, @y);
-	-ms-transform: translateZ(0px) translate(@x, @y); 
-	transform: translateZ(0px) translate(@x, @y);
+	-webkit-transform: translateZ(0px) translate($x, $y);
+	-ms-transform: translateZ(0px) translate($x, $y); 
+	transform: translateZ(0px) translate($x, $y);
 }
 
-.m_rotate(@value){
+@mixin m_rotate($value){
 	
-	-webkit-transform: rotate(@value);
-	-ms-transform: rotate(@value);
-	transform: rotate(@value);
+	-webkit-transform: rotate($value);
+	-ms-transform: rotate($value);
+	transform: rotate($value);
 }
 
-.m_cogwheel(@x, @y, @value){
-	-webkit-transform: translateZ(0px) translate(@x, @y) rotate(@value);
-	-ms-transform: translateZ(0px) translate(@x, @y) rotate(@value); 
-	transform: translateZ(0px) translate(@x, @y) rotate(@value);
+@mixin m_cogwheel($x, $y, $value){
+	-webkit-transform: translateZ(0px) translate($x, $y) rotate($value);
+	-ms-transform: translateZ(0px) translate($x, $y) rotate($value); 
+	transform: translateZ(0px) translate($x, $y) rotate($value);
 }
 
-.transform_scale(@value){ 
-	-ms-transform: scale(@value);
-	-webkit-transform: scale(@value);
-	transform: scale(@value);
+@mixin transform_scale($value){ 
+	-ms-transform: scale($value);
+	-webkit-transform: scale($value);
+	transform: scale($value);
 }
 
 /*********************************************all*********************************/
 
 @font-face {
 	font-family: 'icomoon';
-	src:url('../fonts/fonts_preloaders/icomoon.eot?dbml13');
-	src:url('../fonts/fonts_preloaders/icomoon.eot?#iefixdbml13') format('embedded-opentype'),
-		url('../fonts/fonts_preloaders/icomoon.woff?dbml13') format('woff'),
-		url('../fonts/fonts_preloaders/icomoon.ttf?dbml13') format('truetype'),
-		url('../fonts/fonts_preloaders/icomoon.svg?dbml13#icomoon') format('svg');
+	src:url('../../fonts/fonts_preloaders/icomoon.eot?dbml13');
+	src:url('../../fonts/fonts_preloaders/icomoon.eot?#iefixdbml13') format('embedded-opentype'),
+		url('../../fonts/fonts_preloaders/icomoon.woff?dbml13') format('woff'),
+		url('../../fonts/fonts_preloaders/icomoon.ttf?dbml13') format('truetype'),
+		url('../../fonts/fonts_preloaders/icomoon.svg?dbml13#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -98,7 +98,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 	width: 100%;
 	height: 20px;
 	
-	.m_translate(-100%, 0);
+	@include m_translate(-100%, 0);
 	
 	animation: indicator_load 5s linear infinite;
 	-webkit-animation: indicator_load 5s linear infinite;
@@ -117,7 +117,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 	width: 20px;
 	height: 100%;
 	
-	.m_translate(0%, 100%);
+	@include m_translate(0%, 100%);
 	
 	animation: indicator_load 2s linear infinite;
 	-webkit-animation: indicator_load 2s linear infinite;
@@ -125,13 +125,13 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 @keyframes indicator_load {
 	100% { 
-         .m_translate(0, 0);
+         @include m_translate(0, 0);
     }
 }
 
 @-webkit-keyframes indicator_load {
 	100% { 
-         .m_translate(0, 0);
+         @include m_translate(0, 0);
     }
 }
 
@@ -333,7 +333,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 .left_round{
 	background-color: #6cc88a;
-	.m_translate(-50%, 0%);
+	@include m_translate(-50%, 0%);
 	
 	-webkit-animation-fill-mode: both;
 	animation-fill-mode: both;
@@ -344,7 +344,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 .right_round{
 	background-color: #4fc3f7;
-	.m_translate(150%, 0%);
+	@include m_translate(150%, 0%);
 	
 	-webkit-animation-fill-mode: both;
 	animation-fill-mode: both;
@@ -355,41 +355,41 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 @-webkit-keyframes left_round {
 	50% {
-		.m_translate(150%, 0%);
+		@include m_translate(150%, 0%);
 	}
 
 	100% {
-		.m_translate(-50%, 0%);
+		@include m_translate(-50%, 0%);
 	}
 }
 
 @keyframes left_round {
 	50% {
-		.m_translate(150%, 0%);
+		@include m_translate(150%, 0%);
 	}
 
 	100% {
-		.m_translate(-50%, 0%);
+		@include m_translate(-50%, 0%);
 	}
 }
 
 @-webkit-keyframes right_round {
 	50% {
-		.m_translate(-50%, 0%);
+		@include m_translate(-50%, 0%);
 	}
 
 	100% {
-		.m_translate(150%, 0%);
+		@include m_translate(150%, 0%);
 	}
 }
 
 @keyframes right_round {
 	50% {
-		.m_translate(-50%, 0%);
+		@include m_translate(-50%, 0%);
 	}
 
 	100% {
-		.m_translate(150%, 0%);
+		@include m_translate(150%, 0%);
 	}
 }
 
@@ -446,29 +446,29 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 @-webkit-keyframes basic_loading {
 	0% {
-		.m_translate(-100%, 0%);
+		@include m_translate(-100%, 0%);
 	}
 
 	45% {
-		.m_translate(100%, 0%);
+		@include m_translate(100%, 0%);
 	}
 	
 	75% {
-		.m_translate(100%, 0%);
+		@include m_translate(100%, 0%);
 	}
 }
 
 @keyframes basic_loading {
 	0% {
-		.m_translate(-100%, 0%);
+		@include m_translate(-100%, 0%);
 	}
 
 	45% {
-		.m_translate(100%, 0%);
+		@include m_translate(100%, 0%);
 	}
 	
 	75% {
-		.m_translate(100%, 0%);
+		@include m_translate(100%, 0%);
 	}
 }
 
@@ -487,25 +487,25 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 @-webkit-keyframes zoom_loading {
 	0% {
-		.transform_scale(1);
+		@include transform_scale(1);
 		color: #000;
 	}
 	
 	100% {
 		color: #fff;
-		.transform_scale(1.2);
+		@include transform_scale(1.2);
 	}
 }
 
 @keyframes zoom_loading {
 	0% {
-		.transform_scale(1);
+		@include transform_scale(1);
 		color: #000;
 	}
 	
 	100% {
 		color: #fff;
-		.transform_scale(1.2);
+		@include transform_scale(1.2);
 	}
 }
 /**************************clock*********************/
@@ -562,13 +562,13 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 .three{
     top: 50%;
 	right: 20px;
-    .m_translate(0%, -50%);
+    @include m_translate(0%, -50%);
 }             
 
 .point_three{
     top: 50%;
 	right: 10px;
-	.m_translate(0%, -50%);
+	@include m_translate(0%, -50%);
 }
 
 .four {
@@ -594,13 +594,13 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 .six{
     left: 51%;
 	bottom: 15px;
-	.m_translate(-50%, 0);
+	@include m_translate(-50%, 0);
 }
 
 .point_six{
     left: 51%;
 	bottom: 5px;
-	.m_translate(-50%, 0);
+	@include m_translate(-50%, 0);
 }
 
 .seven {
@@ -626,13 +626,13 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 .nine{
     top: 50%;
 	left: 20px;
-    .m_translate(0%, -50%);
+    @include m_translate(0%, -50%);
 }
 
 .point_nine{
     top: 50%;
 	left: 10px;
-    .m_translate(0%, -50%);
+    @include m_translate(0%, -50%);
 }
 
 .ten{
@@ -658,13 +658,13 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 .twelve{
     left: 50%;
     top: 15px;
-	.m_translate(-50%, 0);
+	@include m_translate(-50%, 0);
 }
 
 .point_twelve{
     left: 50%;
     top: 5px;
-	.m_translate(-50%, 0);
+	@include m_translate(-50%, 0);
 }
 
 .arrow{
@@ -705,7 +705,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 	-webkit-animation: rotate 3601s infinite steps(60);
 	
 	margin: 17px 0 0 130px;
-	.m_rotate(54deg);
+	@include m_rotate(54deg);
 }
 
 #big_point{
@@ -717,18 +717,18 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 	left: 51%;
 	z-index: 2;
 
-    .m_translate(-50%, -50%);
+    @include m_translate(-50%, -50%);
 }
 
 @keyframes rotate {
 	100%{
-		.m_rotate(360deg);
+		@include m_rotate(360deg);
 	}
 }
 
 @-webkit-keyframes rotate {
 	100%{
-		.m_rotate(360deg);
+		@include m_rotate(360deg);
 	}
 }
 
@@ -749,13 +749,13 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 @keyframes cogwheel {
 	100%{
-		.m_cogwheel(400%, 0, 360deg)
+		@include m_cogwheel(400%, 0, 360deg)
 	}
 }
 
 @-webkit-keyframes cogwheel {
 	100%{
-		.m_cogwheel(400%, 0, 360deg)
+		@include m_cogwheel(400%, 0, 360deg)
 	}
 }
 
@@ -784,7 +784,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
     left: 0;
     top: 0;
 	
-	.m_translate(80px, 25px);
+	@include m_translate(80px, 25px);
 	
 	animation: smoke 1s infinite;
 	-webkit-animation: smoke 1s infinite;
@@ -792,39 +792,39 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 .smoke2{
 	
-	.m_translate(100px, 30px);
+	@include m_translate(100px, 30px);
 }
 
 @keyframes airplane {
     0% { 
-       .m_translate(0px, 0px);
+       @include m_translate(0px, 0px);
     }
 	
 	100% { 
-        .m_translate(0px, 5px);
+        @include m_translate(0px, 5px);
     }
 }
 
 @-webkit-keyframes airplane {
     0% { 
-       .m_translate(0, 0);
+       @include m_translate(0, 0);
     }
 	
 	100% { 
-        .m_translate(0px, 5px);
+        @include m_translate(0px, 5px);
     }
 }
 
 @keyframes smoke {
 	100% { 
 		opacity: 0;
-        .m_translate(0px, 30px);
+        @include m_translate(0px, 30px);
     }
 }
 
 @-webkit-keyframes smoke {
 	100% { 
-       .m_translate(0px, 30px);
+       @include m_translate(0px, 30px);
 		opacity: 0;
     }
 }
@@ -838,7 +838,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 		height: 15px;
 		width: 15px;
 		
-       .m_translate(80px, 25px);
+       @include m_translate(80px, 25px);
 		opacity: 0;
     }
 }
@@ -852,7 +852,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 		height: 15px;
 		width: 15px;
 		
-       .m_translate(80px, 25px);
+       @include m_translate(80px, 25px);
 		opacity: 0;
     }
 }
@@ -907,41 +907,41 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 @keyframes movement_ball {
 	0%{
-        .m_translate(0, 0);
+        @include m_translate(0, 0);
 	}
 	
 	50%{
-       .m_translate(140px, 30px);
+       @include m_translate(140px, 30px);
 	}
 	
 	100%{
-        .m_translate(281px, 60px);
+        @include m_translate(281px, 60px);
 	}
 }
 
 @-webkit-keyframes movement_ball {
 	0%{
-       .m_translate(0, 0);
+       @include m_translate(0, 0);
 	}
 	
 	50%{
-       .m_translate(140px, 30px);
+       @include m_translate(140px, 30px);
 	}
 	
 	100%{
-        .m_translate(281px, 60px);
+        @include m_translate(281px, 60px);
 	}
 }
 
 @keyframes punch {
 	100%{
-        .m_translate(0, 60px);
+        @include m_translate(0, 60px);
 	}
  }
 
 @-webkit-keyframes punch {
 	100%{
-       .m_translate(0, 60px);
+       @include m_translate(0, 60px);
 	}
 }
 
@@ -979,7 +979,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 @keyframes square {
 	100%{
-        .m_rotate(360deg);
+        @include m_rotate(360deg);
 		border-radius: 50%;
 		background-color: #fff;
 	}
@@ -987,7 +987,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 @-webkit-keyframes square {
 	100%{
-       .m_rotate(360deg);
+       @include m_rotate(360deg);
 		border-radius: 50%;
 		background-color: #fff;
 	}
@@ -1020,7 +1020,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 /*********************rocket*******************/
 
 .icon-rocket{
-	.m_rotate(45deg);
+	@include m_rotate(45deg);
 }
 
 .icon-rocket:before {
@@ -1044,18 +1044,18 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
     left: 0;
     top: 0;
 	
-	.m_translate(145px, 25px);
+	@include m_translate(145px, 25px);
 	
 	animation: smoke_2 1s linear 1s infinite;
 	-webkit-animation: smoke_2 1s linear 1s infinite;
 }
 
 .smoke_22{
-	.m_translate(145px, 30px);
+	@include m_translate(145px, 30px);
 }
 
 .smoke_23{
-	.m_translate(145px, 20px);
+	@include m_translate(145px, 20px);
 }
 
 /**************************heart*****************/
@@ -1278,7 +1278,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 	position: absolute;
 	right:0;
 	top: 0;
-	.m_translate(0,0);
+	@include m_translate(0,0);
 	
 	height: 25px;
 	width: 25px;
@@ -1347,26 +1347,26 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
     bottom: -25px;
 	z-index: 1;
 	
-    .m_rotate(-15deg);
+    @include m_rotate(-15deg);
 }
 
 @keyframes movement_eyes {
 	0%{
-		.m_translate(0,0);
+		@include m_translate(0,0);
 	}
 	
 	100%{
-		.m_translate(-30px,0);
+		@include m_translate(-30px,0);
 	}
 }	
 
 @-webkit-keyframes movement_eyes {
 	0%{
-		.m_translate(0,0);
+		@include m_translate(0,0);
 	}
 	
 	100%{
-		.m_translate(-30px,0);
+		@include m_translate(-30px,0);
 	}
 }	
 
@@ -1781,7 +1781,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 	animation: pendulum 2s linear infinite;
 	-webkit-animation: pendulum 2s linear infinite;
 	
-	.m_rotate(-180deg);
+	@include m_rotate(-180deg);
 }
 
 .line:after{
@@ -1828,7 +1828,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 .tile {
 	top: 215px;
-	.m_translate(65px,0);
+	@include m_translate(65px,0);
 	
 	animation: tile 2s ease-in infinite;
 	-webkit-animation: tile 2s ease-in infinite;
@@ -1836,169 +1836,169 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 @keyframes pendulum {
 	0%, 20%{
-		.m_rotate(-180deg);
+		@include m_rotate(-180deg);
 	}
 	
 	30%{
-		.m_rotate(-160deg);
+		@include m_rotate(-160deg);
 	}
 	
 	40%{
-		.m_rotate(-155deg);
+		@include m_rotate(-155deg);
 	}
 	
 	50%{
-		.m_rotate(-205deg);
+		@include m_rotate(-205deg);
 	}
 	
 	60%{
-		.m_rotate(-160deg);
+		@include m_rotate(-160deg);
 	}
 	
 	70%{
-		.m_rotate(-200deg);
+		@include m_rotate(-200deg);
 	}
 	
 	80%{
-		.m_rotate(-170deg);
+		@include m_rotate(-170deg);
 	}
 	
 	90%{
-		.m_rotate(-190deg);
+		@include m_rotate(-190deg);
 	}
 	
 	100%{
-		.m_rotate(-180deg);
+		@include m_rotate(-180deg);
 	}
 }
 
 @-webkit-keyframes pendulum {
 	0%, 20%{
-		.m_rotate(-180deg);
+		@include m_rotate(-180deg);
 	}
 	
 	30%{
-		.m_rotate(-160deg);
+		@include m_rotate(-160deg);
 	}
 	
 	40%{
-		.m_rotate(-155deg);
+		@include m_rotate(-155deg);
 	}
 	
 	50%{
-		.m_rotate(-205deg);
+		@include m_rotate(-205deg);
 	}
 	
 	60%{
-		.m_rotate(-160deg);
+		@include m_rotate(-160deg);
 	}
 	
 	70%{
-		.m_rotate(-200deg);
+		@include m_rotate(-200deg);
 	}
 	
 	80%{
-		.m_rotate(-170deg);
+		@include m_rotate(-170deg);
 	}
 	
 	90%{
-		.m_rotate(-190deg);
+		@include m_rotate(-190deg);
 	}
 	
 	100%{
-		.m_rotate(-180deg);
+		@include m_rotate(-180deg);
 	}
 }
 
 @keyframes pendulum2 {
 	25%{
-		.m_rotate(-180deg);
+		@include m_rotate(-180deg);
 	}
 	
 	30%{
-		.m_rotate(-175deg);
+		@include m_rotate(-175deg);
 	}
 	
 	40%{
-		.m_rotate(-155deg);
+		@include m_rotate(-155deg);
 	}
 	
 	50%{
-		.m_rotate(-205deg);
+		@include m_rotate(-205deg);
 	}
 	
 	60%{
-		.m_rotate(-160deg);
+		@include m_rotate(-160deg);
 	}
 	
 	70%{
-		.m_rotate(-200deg);
+		@include m_rotate(-200deg);
 	}
 	
 	80%{
-		.m_rotate(-170deg);
+		@include m_rotate(-170deg);
 	}
 	
 	90%{
-		.m_rotate(-190deg);
+		@include m_rotate(-190deg);
 	}
 	
 	100%{
-		.m_rotate(-180deg);
+		@include m_rotate(-180deg);
 	}
 }
 
 @-webkit-keyframes pendulum2 {
 	25%{
-		.m_rotate(-180deg);
+		@include m_rotate(-180deg);
 	}
 	
 	30%{
-		.m_rotate(-175deg);
+		@include m_rotate(-175deg);
 	}
 	
 	40%{
-		.m_rotate(-155deg);
+		@include m_rotate(-155deg);
 	}
 	
 	50%{
-		.m_rotate(-205deg);
+		@include m_rotate(-205deg);
 	}
 	
 	60%{
-		.m_rotate(-160deg);
+		@include m_rotate(-160deg);
 	}
 	
 	70%{
-		.m_rotate(-200deg);
+		@include m_rotate(-200deg);
 	}
 	
 	80%{
-		.m_rotate(-170deg);
+		@include m_rotate(-170deg);
 	}
 	
 	90%{
-		.m_rotate(-190deg);
+		@include m_rotate(-190deg);
 	}
 	
 	100%{
-		.m_rotate(-180deg);
+		@include m_rotate(-180deg);
 	}
 }
 
 @keyframes tile {
 	20%{
 		opacity: 0.5;
-		.m_translate(10px,0);
+		@include m_translate(10px,0);
 	}
 	
 	50%{
-		.m_translate(70px,0);
+		@include m_translate(70px,0);
 		opacity: 0;
 	}
 	
 	75%{
-		.m_translate(65px,0);
+		@include m_translate(65px,0);
 		opacity: 0;
 	}
 }
@@ -2006,16 +2006,16 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 @-webkit-keyframes tile {
 	20%{
 		opacity: 0.5;
-		.m_translate(10px,0);
+		@include m_translate(10px,0);
 	}
 	
 	50%{
-		.m_translate(70px,0);
+		@include m_translate(70px,0);
 		opacity: 0;
 	}
 	
 	75%{
-		.m_translate(65px,0);
+		@include m_translate(65px,0);
 		opacity: 0;
 	}
 }

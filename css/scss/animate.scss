@@ -5,65 +5,65 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 /******************mixins************/
 
-.cubic_bezier(@value1, @value2, @value3, @value4){
-	-webkit-transition-timing-function: cubic-bezier(@value1, @value2, @value3, @value4);
-	transition-timing-function: cubic-bezier(@value1, @value2, @value3, @value4);
+@mixin cubic_bezier($value1, $value2, $value3, $value4){
+	-webkit-transition-timing-function: cubic-bezier($value1, $value2, $value3, $value4);
+	transition-timing-function: cubic-bezier($value1, $value2, $value3, $value4);
 }
 
-.translate3d(@value1, @value2, @value3){
-    -webkit-transform: translate3d(@value1, @value2, @value3);
-	-ms-transform: translate3d(@value1, @value2, @value3);
-    transform: translate3d(@value1, @value2, @value3);
+@mixin translate3d($value1, $value2, $value3){
+    -webkit-transform: translate3d($value1, $value2, $value3);
+	-ms-transform: translate3d($value1, $value2, $value3);
+    transform: translate3d($value1, $value2, $value3);
 }
 
-.transform_origin(@value1, @value2){
-	-webkit-transform-origin: @value1 @value2;
-	-ms-transform-origin: @value1 @value2;
-	transform-origin: @value1 @value2;
+@mixin transform_origin($value1, $value2){
+	-webkit-transform-origin: $value1 $value2;
+	-ms-transform-origin: $value1 $value2;
+	transform-origin: $value1 $value2;
 }
 
-.animation_name(@name){
-	-webkit-animation-name: @name;
-	animation-name: @name;
+@mixin animation_name($name){
+	-webkit-animation-name: $name;
+	animation-name: $name;
 }
-.animation_duration(@duration){
-	-webkit-animation-duration: @duration;
-	animation-duration: @duration;
+@mixin animation_duration($duration){
+	-webkit-animation-duration: $duration;
+	animation-duration: $duration;
 }
-.scale3d(@value1, @value2, @value3){
-	-webkit-transform: scale3d(@value1, @value2, @value3);
-	-ms-transform: scale3d(@value1, @value2, @value3);
-	transform: scale3d(@value1, @value2, @value3);
-}
-
-.rotate(@value1, @value2, @value3, @value4){
-    -webkit-transform: rotate(@value1, @value2, @value3, @value4);
-    -ms-transform: rotate(@value1, @value2, @value3, @value4);
-    transform: rotate(@value1, @value2, @value3, @value4);
+@mixin scale3d($value1, $value2, $value3){
+	-webkit-transform: scale3d($value1, $value2, $value3);
+	-ms-transform: scale3d($value1, $value2, $value3);
+	transform: scale3d($value1, $value2, $value3);
 }
 
-.rotate3d(@value1, @value2, @value3, @value4){
-    -webkit-transform: rotate3d(@value1, @value2, @value3, @value4);
-    -ms-transform: rotate3d(@value1, @value2, @value3, @value4);
-    transform: rotate3d(@value1, @value2, @value3, @value4);
+@mixin rotate($value1, $value2, $value3, $value4){
+    -webkit-transform: rotate($value1, $value2, $value3, $value4);
+    -ms-transform: rotate($value1, $value2, $value3, $value4);
+    transform: rotate($value1, $value2, $value3, $value4);
 }
 
-.transform_none(){
+@mixin rotate3d($value1, $value2, $value3, $value4){
+    -webkit-transform: rotate3d($value1, $value2, $value3, $value4);
+    -ms-transform: rotate3d($value1, $value2, $value3, $value4);
+    transform: rotate3d($value1, $value2, $value3, $value4);
+}
+
+@mixin transform_none(){
     -webkit-transform: none;
     -ms-transform: none;
     transform: none;
 }
 
-.translate3d_rotate3d(@value1, @value2, @value3, @value4, @value5, @value6, @value7){
-    -webkit-transform: translate3d(@value1, @value2, @value3) rotate3d(@value4, @value5, @value6, @value7);
-    -ms-transform: translate3d(@value1, @value2, @value3) rotate3d(@value4, @value5, @value6, @value7);
-    transform: translate3d(@value1, @value2, @value3) rotate3d(@value4, @value5, @value6, @value7);
+@mixin translate3d_rotate3d($value1, $value2, $value3, $value4, $value5, $value6, $value7){
+    -webkit-transform: translate3d($value1, $value2, $value3) rotate3d($value4, $value5, $value6, $value7);
+    -ms-transform: translate3d($value1, $value2, $value3) rotate3d($value4, $value5, $value6, $value7);
+    transform: translate3d($value1, $value2, $value3) rotate3d($value4, $value5, $value6, $value7);
 }
 
-.transform_skewX(@value1){
-    -webkit-transform: skewX(@value1);
-    -ms-transform: skewX(@value1);
-    transform: skewX(@value1);
+@mixin transform_skewX($value1){
+    -webkit-transform: skewX($value1);
+    -ms-transform: skewX($value1);
+    transform: skewX($value1);
 }
 
 .animated {
@@ -86,50 +86,50 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 @-webkit-keyframes jump {
 
 	0%, 20%, 53%, 80%, 100% {
-		.cubic_bezier(0.215, 0.610, 0.355, 1.000);
-		.translate3d(0,0,0);
+		@include cubic_bezier(0.215, 0.610, 0.355, 1.000);
+		@include translate3d(0,0,0);
 	}
 
 	40%, 43% {
-		.cubic_bezier(0.755, 0.050, 0.855, 0.060);
-		.translate3d(0, -30px, 0);
+		@include cubic_bezier(0.755, 0.050, 0.855, 0.060);
+		@include translate3d(0, -30px, 0);
 	}
 
 	70% {
-		.cubic_bezier(0.755, 0.050, 0.855, 0.060);
-		.translate3d(0, -15px, 0);
+		@include cubic_bezier(0.755, 0.050, 0.855, 0.060);
+		@include translate3d(0, -15px, 0);
 	}
 
 	90% {
-		.translate3d(0,-4px,0);
+		@include translate3d(0,-4px,0);
 	}
 }
 
 @keyframes jump {
 
 	0%, 20%, 53%, 80%, 100% {
-		.cubic_bezier(0.215, 0.610, 0.355, 1.000);
-		.translate3d(0,0,0);
+		@include cubic_bezier(0.215, 0.610, 0.355, 1.000);
+		@include translate3d(0,0,0);
 	}
 
 	40%, 43% {
-		.cubic_bezier(0.755, 0.050, 0.855, 0.060);
-		.translate3d(0, -30px, 0);
+		@include cubic_bezier(0.755, 0.050, 0.855, 0.060);
+		@include translate3d(0, -30px, 0);
 	}
 
 	70% {
-		.cubic_bezier(0.755, 0.050, 0.855, 0.060);
-		.translate3d(0, -15px, 0);
+		@include cubic_bezier(0.755, 0.050, 0.855, 0.060);
+		@include translate3d(0, -15px, 0);
 	}
 
 	90% {
-		.translate3d(0,-4px,0);
+		@include translate3d(0,-4px,0);
 	}
 }
 
 .jump {
-	.animation_name(jump);
-	.transform_origin(center, bottom);
+	@include animation_name(jump);
+	@include transform_origin(center, bottom);
 }
 
 @-webkit-keyframes shine {
@@ -153,679 +153,679 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 }
 
 .shine {
-	.animation_name(shine);
+	@include animation_name(shine);
 }
 
 
 @-webkit-keyframes impulse {
 	0% {
-		.scale3d(1, 1, 1);
+		@include scale3d(1, 1, 1);
 	}
 
 	50% {
-		.scale3d(1.05, 1.05, 1.05);
+		@include scale3d(1.05, 1.05, 1.05);
 	}
 
 	100% {
-		.scale3d(1, 1, 1);
+		@include scale3d(1, 1, 1);
 	}
 }
 
 @keyframes impulse {
 	0% {
-		.scale3d(1, 1, 1);
+		@include scale3d(1, 1, 1);
 	}
 
 	50% {
-		.scale3d(1.05, 1.05, 1.05);
+		@include scale3d(1.05, 1.05, 1.05);
 	}
 
 	100% {
-		.scale3d(1, 1, 1);
+		@include scale3d(1, 1, 1);
 	}
 }
 
 .impulse {
-	.animation_name(impulse);
+	@include animation_name(impulse);
 }
 
 @-webkit-keyframes elastic {
 	0% {
-		.scale3d(1, 1, 1);
+		@include scale3d(1, 1, 1);
 	}
 
 	30% {
-		.scale3d(1.25, 0.75, 1);
+		@include scale3d(1.25, 0.75, 1);
 	}
 
 	40% {
-		.scale3d(0.75, 1.25, 1);
+		@include scale3d(0.75, 1.25, 1);
 	}
 
 	50% {
-		.scale3d(1.15, 0.85, 1);
+		@include scale3d(1.15, 0.85, 1);
 	}
 
 	65% {
-		.scale3d(.95, 1.05, 1);
+		@include scale3d(.95, 1.05, 1);
 	}
 
 	75% {
-		.scale3d(1.05, .95, 1);
+		@include scale3d(1.05, .95, 1);
 	}
 
 	100% {
-		.scale3d(1, 1, 1);
+		@include scale3d(1, 1, 1);
 	}
 }
 
 @keyframes elastic {
 	0% {
-		.scale3d(1, 1, 1);
+		@include scale3d(1, 1, 1);
 	}
 
 	30% {
-		.scale3d(1.25, 0.75, 1);
+		@include scale3d(1.25, 0.75, 1);
 	}
 
 	40% {
-		.scale3d(0.75, 1.25, 1);
+		@include scale3d(0.75, 1.25, 1);
 	}
 
 	50% {
-		.scale3d(1.15, 0.85, 1);
+		@include scale3d(1.15, 0.85, 1);
 	}
 
 	65% {
-		.scale3d(.95, 1.05, 1);
+		@include scale3d(.95, 1.05, 1);
 	}
 
 	75% {
-		.scale3d(1.05, .95, 1);
+		@include scale3d(1.05, .95, 1);
 	}
 
 	100% {
-		.scale3d(1, 1, 1);
+		@include scale3d(1, 1, 1);
 	}
 }
 
 .elastic {
-	.animation_name(elastic);
+	@include animation_name(elastic);
 }
 
 @-webkit-keyframes jitter {
 	0%, 100% {
-		.translate3d(0, 0, 0);
+		@include translate3d(0, 0, 0);
 	}
 
 	10%, 30%, 50%, 70%, 90% {
-		.translate3d(-10px, 0, 0);
+		@include translate3d(-10px, 0, 0);
 	}
 
 	20%, 40%, 60%, 80% {
-		.translate3d(10px, 0, 0);
+		@include translate3d(10px, 0, 0);
 	}
 }
 
 @keyframes jitter {
 	0%, 100% {
-		.translate3d(0, 0, 0);
+		@include translate3d(0, 0, 0);
 	}
 
 	10%, 30%, 50%, 70%, 90% {
-		.translate3d(-10px, 0, 0);
+		@include translate3d(-10px, 0, 0);
 	}
 
 	20%, 40%, 60%, 80% {
-		.translate3d(10px, 0, 0);
+		@include translate3d(10px, 0, 0);
 	}
 }
 
 .jitter {
-	.animation_name(jitter);
+	@include animation_name(jitter);
 }
 
 @-webkit-keyframes seesaw {
 	20% {
-		.rotate3d(0, 0, 1, 15deg);
+		@include rotate3d(0, 0, 1, 15deg);
 	}
 
 	40% {
-		.rotate3d(0, 0, 1, -10deg);
+		@include rotate3d(0, 0, 1, -10deg);
 	}
 
 	60% {
-		.rotate3d(0, 0, 1, 5deg);
+		@include rotate3d(0, 0, 1, 5deg);
 	}
 
 	80% {
-		.rotate3d(0, 0, 1, -5deg);
+		@include rotate3d(0, 0, 1, -5deg);
 	}
 
 	100% {
-		.rotate3d(0, 0, 1, 0deg);
+		@include rotate3d(0, 0, 1, 0deg);
 	}
 }
 
 @keyframes seesaw {
 	20% {
-		.rotate3d(0, 0, 1, 15deg);
+		@include rotate3d(0, 0, 1, 15deg);
 	}
 
 	40% {
-		.rotate3d(0, 0, 1, -10deg);
+		@include rotate3d(0, 0, 1, -10deg);
 	}
 
 	60% {
-		.rotate3d(0, 0, 1, 5deg);
+		@include rotate3d(0, 0, 1, 5deg);
 	}
 
 	80% {
-		.rotate3d(0, 0, 1, -5deg);
+		@include rotate3d(0, 0, 1, -5deg);
 	}
 
 	100% {
-		.rotate3d(0, 0, 1, 0deg);
+		@include rotate3d(0, 0, 1, 0deg);
 	}
 }
 
 .seesaw {
-  	.animation_name(seesaw);
-	.transform_origin(top, center);
+  	@include animation_name(seesaw);
+	@include transform_origin(top, center);
 }
 
 @-webkit-keyframes wave {
 	0% {
-		.transform_none();
+		@include transform_none();
 	}
 
 	15% {
-		.translate3d_rotate3d(-25%, 0, 0, 0, 0, 1, -5deg);
+		@include translate3d_rotate3d(-25%, 0, 0, 0, 0, 1, -5deg);
 	}
 
 	30% {
-		.translate3d_rotate3d(20%, 0, 0, 0, 0, 1, 3deg);
+		@include translate3d_rotate3d(20%, 0, 0, 0, 0, 1, 3deg);
 	}
 
 	45% {
-		.translate3d_rotate3d(-15%, 0, 0, 0, 0, 1, -3deg);
+		@include translate3d_rotate3d(-15%, 0, 0, 0, 0, 1, -3deg);
 	}
 
 	60% {
-		.translate3d_rotate3d(10%, 0, 0, 0, 0, 1, 2deg);
+		@include translate3d_rotate3d(10%, 0, 0, 0, 0, 1, 2deg);
 	}
 
 	75% {
-		.translate3d_rotate3d(-5%, 0, 0, 0, 0, 1, -1deg);
+		@include translate3d_rotate3d(-5%, 0, 0, 0, 0, 1, -1deg);
 	}
 
 	100% {
-		.transform_none();
+		@include transform_none();
 	}
 }
 
 @keyframes wave {
 	0% {
-		.transform_none();
+		@include transform_none();
 	}
 
 	15% {
-		.translate3d_rotate3d(-25%, 0, 0, 0, 0, 1, -5deg);
+		@include translate3d_rotate3d(-25%, 0, 0, 0, 0, 1, -5deg);
 	}
 
 	30% {
-		.translate3d_rotate3d(20%, 0, 0, 0, 0, 1, 3deg);
+		@include translate3d_rotate3d(20%, 0, 0, 0, 0, 1, 3deg);
 	}
 
 	45% {
-		.translate3d_rotate3d(-15%, 0, 0, 0, 0, 1, -3deg);
+		@include translate3d_rotate3d(-15%, 0, 0, 0, 0, 1, -3deg);
 	}
 
 	60% {
-		.translate3d_rotate3d(10%, 0, 0, 0, 0, 1, 2deg);
+		@include translate3d_rotate3d(10%, 0, 0, 0, 0, 1, 2deg);
 	}
 
 	75% {
-		.translate3d_rotate3d(-5%, 0, 0, 0, 0, 1, -1deg);
+		@include translate3d_rotate3d(-5%, 0, 0, 0, 0, 1, -1deg);
 	}
 
 	100% {
-		.transform_none();
+		@include transform_none();
 	}
 }
 
 .wave {
-  	.animation_name(wave);
+  	@include animation_name(wave);
 }
 
 @-webkit-keyframes jumpIn {
 	0%, 20%, 40%, 60%, 80%, 100% {
-		.cubic_bezier(0.215, 0.610, 0.355, 1.000);
+		@include cubic_bezier(0.215, 0.610, 0.355, 1.000);
 	}
 
 	0% {
 		opacity: 0;
-		.scale3d(.3, .3, .3);
+		@include scale3d(.3, .3, .3);
 	}
 
 	20% {
-		.scale3d(1.1, 1.1, 1.1);
+		@include scale3d(1.1, 1.1, 1.1);
 	}
 
 	40% {
-		.scale3d(.9, .9, .9);
+		@include scale3d(.9, .9, .9);
 	}
 
 	60% {
 		opacity: 1;
-		.scale3d(1.03, 1.03, 1.03);
+		@include scale3d(1.03, 1.03, 1.03);
 	}
 
 	80% {
-		.scale3d(.97, .97, .97);
+		@include scale3d(.97, .97, .97);
 	}
 
 	100% {
 		opacity: 1;
-		.scale3d(1, 1, 1);
+		@include scale3d(1, 1, 1);
 	}
 }
 
 @keyframes jumpIn {
 	0%, 20%, 40%, 60%, 80%, 100% {
-		.cubic_bezier(0.215, 0.610, 0.355, 1.000);
+		@include cubic_bezier(0.215, 0.610, 0.355, 1.000);
 	}
 
 	0% {
 		opacity: 0;
-		.scale3d(.3, .3, .3);
+		@include scale3d(.3, .3, .3);
 	}
 
 	20% {
-		.scale3d(1.1, 1.1, 1.1);
+		@include scale3d(1.1, 1.1, 1.1);
 	}
 
 	40% {
-		.scale3d(.9, .9, .9);
+		@include scale3d(.9, .9, .9);
 	}
 
 	60% {
 		opacity: 1;
-		.scale3d(1.03, 1.03, 1.03);
+		@include scale3d(1.03, 1.03, 1.03);
 	}
 
 	80% {
-		.scale3d(.97, .97, .97);
+		@include scale3d(.97, .97, .97);
 	}
 
 	100% {
 		opacity: 1;
-		.scale3d(1, 1, 1);
+		@include scale3d(1, 1, 1);
 	}
 }
 
 .jumpIn {
-	.animation_duration(.75s);
-	.animation_name(jumpIn);
+	@include animation_duration(.75s);
+	@include animation_name(jumpIn);
 }
 
 @-webkit-keyframes jumpInDown {
 	0%, 60%, 75%, 90%, 100% {
-		.cubic_bezier(0.215, 0.610, 0.355, 1.000);
+		@include cubic_bezier(0.215, 0.610, 0.355, 1.000);
 	}
 
 	0% {
 		opacity: 0;
-		.translate3d(0, -3000px, 0);
+		@include translate3d(0, -3000px, 0);
 	}
 
 	60% {
 		opacity: 1;
-		.translate3d(0, 25px, 0);
+		@include translate3d(0, 25px, 0);
 	}
 
 	75% {
-		.translate3d(0, -10px, 0);
+		@include translate3d(0, -10px, 0);
 	}
 
 	90% {
-		.translate3d(0, 5px, 0);
+		@include translate3d(0, 5px, 0);
 	}
 
 	100% {
-		.transform_none();
+		@include transform_none();
 	}
 }
 
 @keyframes jumpInDown {
 	0%, 60%, 75%, 90%, 100% {
-		.cubic_bezier(0.215, 0.610, 0.355, 1.000);
+		@include cubic_bezier(0.215, 0.610, 0.355, 1.000);
 	}
 
 	0% {
 		opacity: 0;
-		.translate3d(0, -3000px, 0);
+		@include translate3d(0, -3000px, 0);
 	}
 
 	60% {
 		opacity: 1;
-		.translate3d(0, 25px, 0);
+		@include translate3d(0, 25px, 0);
 	}
 
 	75% {
-		.translate3d(0, -10px, 0);
+		@include translate3d(0, -10px, 0);
 	}
 
 	90% {
-		.translate3d(0, 5px, 0);
+		@include translate3d(0, 5px, 0);
 	}
 
 	100% {
-		.transform_none();
+		@include transform_none();
 	}
 }
 
 .jumpInDown {
-	.animation_name(jumpInDown);
+	@include animation_name(jumpInDown);
 }
 
 @-webkit-keyframes jumpInLeft {
 	0%, 60%, 75%, 90%, 100% {
-		.cubic_bezier(0.215, 0.610, 0.355, 1.000);
+		@include cubic_bezier(0.215, 0.610, 0.355, 1.000);
 	}
 
 	0% {
 		opacity: 0;
-		.translate3d(-3000px, 0, 0);
+		@include translate3d(-3000px, 0, 0);
 	}
 
 	60% {
 		opacity: 1;
-		.translate3d(25px, 0, 0);
+		@include translate3d(25px, 0, 0);
 	}
 
 	75% {
-		.translate3d(-10px, 0, 0);
+		@include translate3d(-10px, 0, 0);
 	}
 
 	90% {
-		.translate3d(5px, 0, 0);
+		@include translate3d(5px, 0, 0);
 	}
 
 	100% {
-		.transform_none();
+		@include transform_none();
 	}
 }
 
 @keyframes jumpInLeft {
 	0%, 60%, 75%, 90%, 100% {
-		.cubic_bezier(0.215, 0.610, 0.355, 1.000);
+		@include cubic_bezier(0.215, 0.610, 0.355, 1.000);
 	}
 
 	0% {
 		opacity: 0;
-		.translate3d(-3000px, 0, 0);
+		@include translate3d(-3000px, 0, 0);
 	}
 
 	60% {
 		opacity: 1;
-		.translate3d(25px, 0, 0);
+		@include translate3d(25px, 0, 0);
 	}
 
 	75% {
-		.translate3d(-10px, 0, 0);
+		@include translate3d(-10px, 0, 0);
 	}
 
 	90% {
-		.translate3d(5px, 0, 0);
+		@include translate3d(5px, 0, 0);
 	}
 
 	100% {
-		.transform_none();
+		@include transform_none();
 	}
 }
 
 .jumpInLeft {
-	.animation_name(jumpInLeft);
+	@include animation_name(jumpInLeft);
 }
 
 @-webkit-keyframes jumpInRight {
 	0%, 60%, 75%, 90%, 100% {
-		.cubic_bezier(0.215, 0.610, 0.355, 1.000);
+		@include cubic_bezier(0.215, 0.610, 0.355, 1.000);
 	}
 
 	0% {
 		opacity: 0;
-		.translate3d(3000px, 0, 0);
+		@include translate3d(3000px, 0, 0);
 	}
 
 	60% {
 		opacity: 1;
-		.translate3d(-25px, 0, 0);
+		@include translate3d(-25px, 0, 0);
 	}
 
 	75% {
-		.translate3d(10px, 0, 0);
+		@include translate3d(10px, 0, 0);
 	}
 
 	90% {
-		.translate3d(-5px, 0, 0);
+		@include translate3d(-5px, 0, 0);
 	}
 
 	100% {
-		.transform_none();
+		@include transform_none();
 	}
 }
 
 @keyframes jumpInRight {
 	0%, 60%, 75%, 90%, 100% {
-		.cubic_bezier(0.215, 0.610, 0.355, 1.000);
+		@include cubic_bezier(0.215, 0.610, 0.355, 1.000);
 	}
 
 	0% {
 		opacity: 0;
-		.translate3d(3000px, 0, 0);
+		@include translate3d(3000px, 0, 0);
 	}
 
 	60% {
 		opacity: 1;
-		.translate3d(-25px, 0, 0);
+		@include translate3d(-25px, 0, 0);
 	}
 
 	75% {
-		.translate3d(10px, 0, 0);
+		@include translate3d(10px, 0, 0);
 	}
 
 	90% {
-		.translate3d(-5px, 0, 0);
+		@include translate3d(-5px, 0, 0);
 	}
 
 	100% {
-		.transform_none();
+		@include transform_none();
 	}
 }
 
 .jumpInRight {
-	.animation_name(jumpInRight);
+	@include animation_name(jumpInRight);
 }
 
 @-webkit-keyframes jumpInUp {
 	0%, 60%, 75%, 90%, 100% {
-		.cubic_bezier(0.215, 0.610, 0.355, 1.000);
+		@include cubic_bezier(0.215, 0.610, 0.355, 1.000);
 	}
 
 	0% {
 		opacity: 0;
-		.translate3d(0, 3000px, 0);
+		@include translate3d(0, 3000px, 0);
 	}
 
 	60% {
 		opacity: 1;
-		.translate3d(0, -20px, 0);
+		@include translate3d(0, -20px, 0);
 	}
 
 	75% {
-		.translate3d(0, 10px, 0);
+		@include translate3d(0, 10px, 0);
 	}
 
 	90% {
-		.translate3d(0, -5px, 0);
+		@include translate3d(0, -5px, 0);
 	}
 
 	100% {
-		.translate3d(0, 0, 0);
+		@include translate3d(0, 0, 0);
 	}
 }
 
 @keyframes jumpInUp {
 	0%, 60%, 75%, 90%, 100% {
-		.cubic_bezier(0.215, 0.610, 0.355, 1.000);
+		@include cubic_bezier(0.215, 0.610, 0.355, 1.000);
 	}
 
 	0% {
 		opacity: 0;
-		.translate3d(0, 3000px, 0);
+		@include translate3d(0, 3000px, 0);
 	}
 
 	60% {
 		opacity: 1;
-		.translate3d(0, -20px, 0);
+		@include translate3d(0, -20px, 0);
 	}
 
 	75% {
-		.translate3d(0, 10px, 0);
+		@include translate3d(0, 10px, 0);
 	}
 
 	90% {
-		.translate3d(0, -5px, 0);
+		@include translate3d(0, -5px, 0);
 	}
 
 	100% {
-		.translate3d(0, 0, 0);
+		@include translate3d(0, 0, 0);
 	}
 }
 
 .jumpInUp {
-	.animation_name(jumpInUp);
+	@include animation_name(jumpInUp);
 }
 
 @-webkit-keyframes jumpOut {
 	20% {
-		.scale3d(.9, .9, .9);
+		@include scale3d(.9, .9, .9);
 	}
 
 	50%, 55% {
 		opacity: 1;
-		.scale3d(1.1, 1.1, 1.1);
+		@include scale3d(1.1, 1.1, 1.1);
 	}
 
 	100% {
 		opacity: 0;
-		.scale3d(.3, .3, .3);
+		@include scale3d(.3, .3, .3);
 	}
 }
 
 @keyframes jumpOut {
 	20% {
-		.scale3d(.9, .9, .9);
+		@include scale3d(.9, .9, .9);
 	}
 
 	50%, 55% {
 		opacity: 1;
-		.scale3d(1.1, 1.1, 1.1);
+		@include scale3d(1.1, 1.1, 1.1);
 	}
 
 	100% {
 		opacity: 0;
-		.scale3d(.3, .3, .3);
+		@include scale3d(.3, .3, .3);
 	}
 }
 
 .jumpOut {
-	.animation_name(jumpOut);
-	.animation_duration(.75s);
+	@include animation_name(jumpOut);
+	@include animation_duration(.75s);
 }
 
 @-webkit-keyframes jumpOutDown {
 	20% {
-		.translate3d(0, 10px, 0);
+		@include translate3d(0, 10px, 0);
 	}
 
 	40%, 45% {
 		opacity: 1;
-		.translate3d(0, -20px, 0);
+		@include translate3d(0, -20px, 0);
 	}
 
 	100% {
 		opacity: 0;
-		.translate3d(0, 2000px, 0);
+		@include translate3d(0, 2000px, 0);
 	}
 }
 
 @keyframes jumpOutDown {
 	20% {
-		.translate3d(0, 10px, 0);
+		@include translate3d(0, 10px, 0);
 	}
 
 	40%, 45% {
 		opacity: 1;
-		.translate3d(0, -20px, 0);
+		@include translate3d(0, -20px, 0);
 	}
 
 	100% {
 		opacity: 0;
-		.translate3d(0, 2000px, 0);
+		@include translate3d(0, 2000px, 0);
 	}
 }
 
 .jumpOutDown {
-	.animation_name(jumpOut);
+	@include animation_name(jumpOut);
 }
 
 @-webkit-keyframes jumpOutLeft {
 	20% {
 		opacity: 1;
-		.translate3d(20px, 0, 0);
+		@include translate3d(20px, 0, 0);
 	}
 
 	100% {
 		opacity: 0;
-		.translate3d(-2000px, 0, 0);
+		@include translate3d(-2000px, 0, 0);
 	}
 }
 
 @keyframes jumpOutLeft {
 	20% {
 		opacity: 1;
-		.translate3d(20px, 0, 0);
+		@include translate3d(20px, 0, 0);
 	}
 
 	100% {
 		opacity: 0;
-		.translate3d(-2000px, 0, 0);
+		@include translate3d(-2000px, 0, 0);
 	}
 }
 
 .jumpOutLeft {
-	.animation_name(jumpOutLeft);
+	@include animation_name(jumpOutLeft);
 }
 
 @-webkit-keyframes jumpOutRight {
 	20% {
 		opacity: 1;
-		.translate3d(-20px, 0, 0);
+		@include translate3d(-20px, 0, 0);
 	}
 
 	100% {
 		opacity: 0;
-		.translate3d(2000px, 0, 0);
+		@include translate3d(2000px, 0, 0);
 	}
 }
 
 @keyframes jumpOutRight {
 	20% {
 		opacity: 1;
-		.translate3d(-20px, 0, 0);
+		@include translate3d(-20px, 0, 0);
 	}
 
 	100% {
@@ -834,43 +834,43 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 }
 	
 .jumpOutRight {
-	.animation_name(jumpOutRight);
+	@include animation_name(jumpOutRight);
 }
 
 @-webkit-keyframes jumpOutUp {
 	20% {
-		.translate3d(0, -10px, 0);
+		@include translate3d(0, -10px, 0);
 	}
 
 	40%, 45% {
 		opacity: 1;
-		.translate3d(0, 20px, 0);
+		@include translate3d(0, 20px, 0);
 	}
 
 	100% {
 		opacity: 0;
-		.translate3d(0, -2000px, 0);
+		@include translate3d(0, -2000px, 0);
 	}
 }
 
 @keyframes jumpOutUp {
 	20% {
-		.translate3d(0, -10px, 0);
+		@include translate3d(0, -10px, 0);
 	}
 
 	40%, 45% {
 		opacity: 1;
-		.translate3d(0, 20px, 0);
+		@include translate3d(0, 20px, 0);
 	}
 
 	100% {
 		opacity: 0;
-		.translate3d(0, -2000px, 0);
+		@include translate3d(0, -2000px, 0);
 	}
 }
 
 .jumpOutUp {
-	.animation_name(jumpOutUp);
+	@include animation_name(jumpOutUp);
 }
 
 @-webkit-keyframes fadeIn {
@@ -894,231 +894,231 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 }
 
 .fadeIn {
-	.animation_name(fadeIn);
+	@include animation_name(fadeIn);
 }
 
 @-webkit-keyframes fadeInDown {
 	0% {
 		opacity: 0;
-		.translate3d(0, -100%, 0);
+		@include translate3d(0, -100%, 0);
 	}
 
 	100% {
 		opacity: 1;
-		.transform_none();
+		@include transform_none();
 	}
 }
 
 @keyframes fadeInDown {
 	0% {
 		opacity: 0;
-		.translate3d(0, -100%, 0);
+		@include translate3d(0, -100%, 0);
 	}
 
 	100% {
 		opacity: 1;
-		.transform_none();
+		@include transform_none();
 	}
 }
 
 .fadeInDown {
-	.animation_name(fadeInDown);
+	@include animation_name(fadeInDown);
 }
 
 @-webkit-keyframes fadeInDownBig {
 	0% {
 		opacity: 0;
-		.translate3d(0, -2000px, 0);
+		@include translate3d(0, -2000px, 0);
 	}
 
 	100% {
 		opacity: 1;
-		.transform_none();
+		@include transform_none();
 	}
 }
 
 @keyframes fadeInDownBig {
 	0% {
 		opacity: 0;
-		.translate3d(0, -2000px, 0);
+		@include translate3d(0, -2000px, 0);
 	}
 
 	100% {
 		opacity: 1;
-		.transform_none();
+		@include transform_none();
 	}
 }
 
 .fadeInDownBig {
-	.animation_name(fadeInDownBig);
+	@include animation_name(fadeInDownBig);
 }
 
 @-webkit-keyframes fadeInLeft {
 	0% {
 		opacity: 0;
-		.translate3d(-100%, 0, 0);
+		@include translate3d(-100%, 0, 0);
 	}
 
 	100% {
 		opacity: 1;
-		.transform_none();
+		@include transform_none();
 	}
 }
 
 @keyframes fadeInLeft {
 	0% {
 		opacity: 0;
-		.translate3d(-100%, 0, 0);
+		@include translate3d(-100%, 0, 0);
 	}
 
 	100% {
 		opacity: 1;
-		.transform_none();
+		@include transform_none();
 	}
 }
 
 .fadeInLeft {
-	.animation_name(fadeInLeft);
+	@include animation_name(fadeInLeft);
 }
 
 @-webkit-keyframes fadeInLeftBig {
 	0% {
 		opacity: 0;
-		.translate3d(-2000px, 0, 0);
+		@include translate3d(-2000px, 0, 0);
 	}
 
 	100% {
 		opacity: 1;
-		.transform_none();
+		@include transform_none();
 	}
 }
 
 @keyframes fadeInLeftBig {
 	0% {
 		opacity: 0;
-		.translate3d(-2000px, 0, 0);
+		@include translate3d(-2000px, 0, 0);
 	}
 
 	100% {
 		opacity: 1;
-		.transform_none();
+		@include transform_none();
 	}
 }
 
 .fadeInLeftBig {
-	.animation_name(fadeInLeftBig);
+	@include animation_name(fadeInLeftBig);
 }
 
 @-webkit-keyframes fadeInRight {
 	0% {
 		opacity: 0;
-		.translate3d(100%, 0, 0);
+		@include translate3d(100%, 0, 0);
 	}
 
 	100% {
 		opacity: 1;
-		.transform_none();
+		@include transform_none();
 	}
 }
 
 @keyframes fadeInRight {
 	0% {
 		opacity: 0;
-		.translate3d(100%, 0, 0);
+		@include translate3d(100%, 0, 0);
 	}
 
 	100% {
 		opacity: 1;
-		.transform_none();
+		@include transform_none();
 	}
 }
 
 .fadeInRight {
-	.animation_name(fadeInRight);
+	@include animation_name(fadeInRight);
 }
 
 @-webkit-keyframes fadeInRightBig {
 	0% {
 		opacity: 0;
-		.translate3d(2000px, 0, 0);
+		@include translate3d(2000px, 0, 0);
 	}
 
 	100% {
 		opacity: 1;
-		.transform_none();
+		@include transform_none();
 	}
 }
 
 @keyframes fadeInRightBig {
 	0% {
 		opacity: 0;
-		.translate3d(2000px, 0, 0);
+		@include translate3d(2000px, 0, 0);
 	}
 
 	100% {
 		opacity: 1;
-		.transform_none();
+		@include transform_none();
 	}
 }
 
 .fadeInRightBig {
-	.animation_name(fadeInRightBig);
+	@include animation_name(fadeInRightBig);
 }
 
 @-webkit-keyframes fadeInUp {
 	0% {
 		opacity: 0;
-		.translate3d(0, 100%, 0);
+		@include translate3d(0, 100%, 0);
 	}
 
 	100% {
 		opacity: 1;
-		.transform_none();
+		@include transform_none();
 	}
 }
 
 @keyframes fadeInUp {
 	0% {
 		opacity: 0;
-		.translate3d(0, 100%, 0);
+		@include translate3d(0, 100%, 0);
 	}
 
 	100% {
 		opacity: 1;
-		.transform_none();
+		@include transform_none();
 	}
 }
 
 .fadeInUp {
-	.animation_name(fadeInUp);
+	@include animation_name(fadeInUp);
 }
 
 @-webkit-keyframes fadeInUpBig {
 	0% {
 		opacity: 0;
-		.translate3d(0, 2000px, 0);
+		@include translate3d(0, 2000px, 0);
 	}
 
 	100% {
 		opacity: 1;
-		.transform_none();
+		@include transform_none();
 	}
 }
 
 @keyframes fadeInUpBig {
 	0% {
 		opacity: 0;
-		.translate3d(0, 2000px, 0);
+		@include translate3d(0, 2000px, 0);
 	}
 
 	100% {
 		opacity: 1;
-		.transform_none();
+		@include transform_none();
 	}
 }
 
 .fadeInUpBig {
-	.animation_name(fadeInUpBig);
+	@include animation_name(fadeInUpBig);
 }
 
 @-webkit-keyframes fadeOut {
@@ -1142,7 +1142,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 }
 
 .fadeOut {
-	.animation_name(fadeOut);
+	@include animation_name(fadeOut);
 }
 
 @-webkit-keyframes fadeOutDown {
@@ -1152,7 +1152,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 	100% {
 		opacity: 0;
-		.translate3d(0, 100%, 0);
+		@include translate3d(0, 100%, 0);
 	}
 }
 
@@ -1163,12 +1163,12 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 	100% {
 		opacity: 0;
-		.translate3d(0, 100%, 0);
+		@include translate3d(0, 100%, 0);
 	}
 }
 
 .fadeOutDown {
-	.animation_name(fadeOutDown);
+	@include animation_name(fadeOutDown);
 }
 
 @-webkit-keyframes fadeOutDownBig {
@@ -1178,7 +1178,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 	100% {
 		opacity: 0;
-		.translate3d(0, 2000px, 0);
+		@include translate3d(0, 2000px, 0);
 	}
 }
 
@@ -1189,12 +1189,12 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 	100% {
 		opacity: 0;
-		.translate3d(0, 2000px, 0);
+		@include translate3d(0, 2000px, 0);
 	}
 }
 
 .fadeOutDownBig {
-	.animation_name(fadeOutDownBig);
+	@include animation_name(fadeOutDownBig);
 }
 
 @-webkit-keyframes fadeOutLeft {
@@ -1204,7 +1204,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 	100% {
 		opacity: 0;
-		.translate3d(-100%, 0, 0);
+		@include translate3d(-100%, 0, 0);
 	}
 }
 
@@ -1215,12 +1215,12 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 	100% {
 		opacity: 0;
-		.translate3d(-100%, 0, 0);
+		@include translate3d(-100%, 0, 0);
 	}
 }
 
 .fadeOutLeft {
-	.animation_name(fadeOutLeft);
+	@include animation_name(fadeOutLeft);
 }
 
 @-webkit-keyframes fadeOutLeftBig {
@@ -1230,7 +1230,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 	100% {
 		opacity: 0;
-		.translate3d(-2000px, 0, 0);
+		@include translate3d(-2000px, 0, 0);
 	}
 }
 
@@ -1241,12 +1241,12 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 	100% {
 		opacity: 0;
-		.translate3d(-2000px, 0, 0);
+		@include translate3d(-2000px, 0, 0);
 	}
 }
 
 .fadeOutLeftBig {
-	.animation_name(fadeOutLeftBig);
+	@include animation_name(fadeOutLeftBig);
 }
 
 @-webkit-keyframes fadeOutRight {
@@ -1256,7 +1256,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 	100% {
 		opacity: 0;
-		.translate3d(100%, 0, 0);
+		@include translate3d(100%, 0, 0);
 	}
 }
 
@@ -1267,12 +1267,12 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 	100% {
 		opacity: 0;
-		.translate3d(100%, 0, 0);
+		@include translate3d(100%, 0, 0);
 	}
 }
 
 .fadeOutRight {
-	.animation_name(fadeOutRight);
+	@include animation_name(fadeOutRight);
 }
 
 @-webkit-keyframes fadeOutRightBig {
@@ -1282,7 +1282,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 	100% {
 		opacity: 0;
-		.translate3d(2000px, 0, 0);
+		@include translate3d(2000px, 0, 0);
 	}
 }
 
@@ -1293,12 +1293,12 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 	100% {
 		opacity: 0;
-		.translate3d(2000px, 0, 0);
+		@include translate3d(2000px, 0, 0);
 	}
 }
 
 .fadeOutRightBig {
-	.animation_name(fadeOutRightBig);
+	@include animation_name(fadeOutRightBig);
 }
 
 @-webkit-keyframes fadeOutUp {
@@ -1308,7 +1308,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 	100% {
 		opacity: 0;
-		.translate3d(0, -100%, 0);
+		@include translate3d(0, -100%, 0);
 	}
 }
 
@@ -1319,12 +1319,12 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 	100% {
 		opacity: 0;
-		.translate3d(0, -100%, 0);
+		@include translate3d(0, -100%, 0);
 	}
 }
 
 .fadeOutUp {
-	.animation_name(fadeOutUp);
+	@include animation_name(fadeOutUp);
 }
 
 @-webkit-keyframes fadeOutUpBig {
@@ -1334,7 +1334,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 	100% {
 		opacity: 0;
-		.translate3d(0, -2000px, 0);
+		@include translate3d(0, -2000px, 0);
 	}
 }
 
@@ -1345,12 +1345,12 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 	100% {
 		opacity: 0;
-		.translate3d(0, -2000px, 0);
+		@include translate3d(0, -2000px, 0);
 	}
 }
 
 .fadeOutUpBig {
-	.animation_name(fadeOutUpBig);
+	@include animation_name(fadeOutUpBig);
 }
 
 @-webkit-keyframes flip {
@@ -1594,7 +1594,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 	-webkit-backface-visibility: visible !important;
 	-ms-backface-visibility: visible !important;
 	backface-visibility: visible !important;
-	.animation_name(flipInY);
+	@include animation_name(flipInY);
 }
 
 @-webkit-keyframes flipOutX {
@@ -1640,7 +1640,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 .flipOutX {
 
-	.animation_name(flipOutX);
+	@include animation_name(flipOutX);
 	-webkit-animation-duration: .75s;
 	animation-duration: .75s;
 	-webkit-backface-visibility: visible !important;
@@ -1707,18 +1707,18 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 	}
 
 	60% {
-		.transform_skewX(20deg);
+		@include transform_skewX(20deg);
 		opacity: 1;
 	}
 
 	80% {
-		.transform_skewX(-5deg);
+		@include transform_skewX(-5deg);
 		opacity: 1;
 	}
 
 	100% {
 
-		.transform_none();
+		@include transform_none();
 		opacity: 1;
 	}
 }
@@ -1733,23 +1733,23 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 
 	60% {
-		.transform_skewX(20deg);
+		@include transform_skewX(20deg);
 		opacity: 1;
 	}
 
 	80% {
-		.transform_skewX(-5deg);
+		@include transform_skewX(-5deg);
 		opacity: 1;
 	}
 
 	100% {
-		.transform_none();
+		@include transform_none();
 		opacity: 1;
 	}
 }
 
 .lightSpeedIn {
-	.animation_name(lightSpeedIn);
+	@include animation_name(lightSpeedIn);
 	-webkit-animation-timing-function: ease-out;
 	animation-timing-function: ease-out;
 }
@@ -1780,7 +1780,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 }
 
 .lightSpeedOut {
-	.animation_name(lightSpeedOut);
+	@include animation_name(lightSpeedOut);
 	-webkit-animation-timing-function: ease-in;
 	animation-timing-function: ease-in;
 }
@@ -1790,7 +1790,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 		-webkit-transform-origin: center;
 		transform-origin: center;
 		
-		.rotate3d(0, 0, 1, -200deg);
+		@include rotate3d(0, 0, 1, -200deg);
 		opacity: 0;
 	}
 
@@ -1798,7 +1798,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 		-webkit-transform-origin: center;
 		transform-origin: center;
 		
-		.transform_none();
+		@include transform_none();
 		opacity: 1;
 	}
 }
@@ -1809,7 +1809,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 		-ms-transform-origin: center;
 		transform-origin: center;
 
-		.rotate3d(0, 0, 1, -200deg);
+		@include rotate3d(0, 0, 1, -200deg);
 		opacity: 0;
 	}
 
@@ -1818,141 +1818,141 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 		-ms-transform-origin: center;
 		transform-origin: center;
 
-		.transform_none();
+		@include transform_none();
 		opacity: 1;
 	}
 }
 
 .rotateIn {
-	.animation_name(rotateIn);
+	@include animation_name(rotateIn);
 }
 
 @-webkit-keyframes rotateInDownLeft {
 	0% {
-		.transform_origin(left, bottom);
-		.rotate3d(0, 0, 1, -45deg);
+		@include transform_origin(left, bottom);
+		@include rotate3d(0, 0, 1, -45deg);
 		opacity: 0;
 	}
 
 	100% {
-		.transform_origin(left, bottom);
-		.transform_none();
+		@include transform_origin(left, bottom);
+		@include transform_none();
 		opacity: 1;
 	}
 }
 
 @keyframes rotateInDownLeft {
 	0% {
-		.transform_origin(left, bottom);
-		.rotate3d(0, 0, 1, -45deg);
+		@include transform_origin(left, bottom);
+		@include rotate3d(0, 0, 1, -45deg);
 		opacity: 0;
 	}
 
 	100% {
-		.transform_origin(left, bottom);
-		.transform_none();
+		@include transform_origin(left, bottom);
+		@include transform_none();
 		opacity: 1;
 	}
 }
 
 .rotateInDownLeft {
-	.animation_name(rotateInDownLeft);
+	@include animation_name(rotateInDownLeft);
 }
 
 @-webkit-keyframes rotateInDownRight {
 	0% {
-		.transform_origin(right, bottom);
-		.rotate3d(0, 0, 1, 45deg);
+		@include transform_origin(right, bottom);
+		@include rotate3d(0, 0, 1, 45deg);
 		opacity: 0;
 	}
 
 	100% {
-		.transform_origin(right, bottom);
-		.transform_none();
+		@include transform_origin(right, bottom);
+		@include transform_none();
 		opacity: 1;
 	}
 }
 
 @keyframes rotateInDownRight {
 	0% {
-		.transform_origin(right, bottom);
-		.rotate3d(0, 0, 1, 45deg);
+		@include transform_origin(right, bottom);
+		@include rotate3d(0, 0, 1, 45deg);
 		opacity: 0;
 	}
 
 	100% {
-		.transform_origin(right, bottom);
-		.transform_none();
+		@include transform_origin(right, bottom);
+		@include transform_none();
 		opacity: 1;
 	}
 }
 
 .rotateInDownRight {
-	.animation_name(rotateInDownRight);
+	@include animation_name(rotateInDownRight);
 }
 
 @-webkit-keyframes rotateInUpLeft {
 	0% {
-		.transform_origin(left, bottom);
-		.rotate3d(0, 0, 1, 45deg);
+		@include transform_origin(left, bottom);
+		@include rotate3d(0, 0, 1, 45deg);
 		opacity: 0;
 	}
 
 	100% {
-		.transform_origin(left, bottom);
-		.transform_none();
+		@include transform_origin(left, bottom);
+		@include transform_none();
 		opacity: 1;
 	}
 }
 
 @keyframes rotateInUpLeft {
 	0% {
-		.transform_origin(left, bottom);
-		.rotate3d(0, 0, 1, 45deg);
+		@include transform_origin(left, bottom);
+		@include rotate3d(0, 0, 1, 45deg);
 		opacity: 0;
 	}
 
 	100% {
-		.transform_origin(left, bottom);
-		.transform_none();
+		@include transform_origin(left, bottom);
+		@include transform_none();
 		opacity: 1;
 	}
 }
 
 .rotateInUpLeft {
-	.animation_name(rotateInUpLeft);
+	@include animation_name(rotateInUpLeft);
 }
 
 @-webkit-keyframes rotateInUpRight {
 	0% {
-		.transform_origin(right, bottom);
-		.rotate3d(0, 0, 1, -90deg);
+		@include transform_origin(right, bottom);
+		@include rotate3d(0, 0, 1, -90deg);
 		opacity: 0;
 	}
 
 	100% {
-		.transform_origin(right, bottom);
-		.transform_none();
+		@include transform_origin(right, bottom);
+		@include transform_none();
 		opacity: 1;
 	}
 }
 
 @keyframes rotateInUpRight {
 	0% {
-		.transform_origin(right, bottom);
-		.rotate3d(0, 0, 1, -90deg);
+		@include transform_origin(right, bottom);
+		@include rotate3d(0, 0, 1, -90deg);
 		opacity: 0;
 	}
 
 	100% {
-		.transform_origin(right, bottom);
-		.transform_none();
+		@include transform_origin(right, bottom);
+		@include transform_none();
 		opacity: 1;
 	}
 }
 
 .rotateInUpRight {
-	.animation_name(rotateInUpRight);
+	@include animation_name(rotateInUpRight);
 }
 
 @-webkit-keyframes rotateOut {
@@ -1965,7 +1965,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 	100% {
 		-webkit-transform-origin: center;
 		transform-origin: center;
-		.rotate3d(0, 0, 1, 200deg);
+		@include rotate3d(0, 0, 1, 200deg);
 		opacity: 0;
 	}
 }
@@ -1983,153 +1983,153 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 		-ms-transform-origin: center;
 		transform-origin: center;
 		
-		.rotate3d(0, 0, 1, 200deg);
+		@include rotate3d(0, 0, 1, 200deg);
 		opacity: 0;
 	}
 }
 
 .rotateOut {
-	.animation_name(rotateOut);
+	@include animation_name(rotateOut);
 }
 
 @-webkit-keyframes rotateOutDownLeft {
 	0% {
-		.transform_origin(left, bottom);
+		@include transform_origin(left, bottom);
 		opacity: 1;
 	}
 
 	100% {
-		.transform_origin(left, bottom);
-		.rotate(0, 0, 1, 45deg);
+		@include transform_origin(left, bottom);
+		@include rotate(0, 0, 1, 45deg);
 		opacity: 0;
 	}
 }
 
 @keyframes rotateOutDownLeft {
 	0% {
-		.transform_origin(left, bottom);
+		@include transform_origin(left, bottom);
 		opacity: 1;
 	}
 
 	100% {
-		.transform_origin(left, bottom);
-		.rotate(0, 0, 1, 45deg);
+		@include transform_origin(left, bottom);
+		@include rotate(0, 0, 1, 45deg);
 		opacity: 0;
 	}
 }
 
 .rotateOutDownLeft {
-	.animation_name(rotateOutDownLeft);
+	@include animation_name(rotateOutDownLeft);
 }
 
 @-webkit-keyframes rotateOutDownRight {
 	0% {
-		.transform_origin(right, bottom);
+		@include transform_origin(right, bottom);
 		opacity: 1;
 	}
 
 	100% {
-		.transform_origin(right, bottom);
-		.rotate3d(0, 0, 1, -45deg);
+		@include transform_origin(right, bottom);
+		@include rotate3d(0, 0, 1, -45deg);
 		opacity: 0;
 	}
 }
 
 @keyframes rotateOutDownRight {
 	0% {
-		.transform_origin(right, bottom);
+		@include transform_origin(right, bottom);
 		opacity: 1;
 	}
 
 	100% {
-		.transform_origin(right, bottom);
-		.rotate3d(0, 0, 1, -45deg);
+		@include transform_origin(right, bottom);
+		@include rotate3d(0, 0, 1, -45deg);
 		opacity: 0;
 	}
 }
 
 .rotateOutDownRight {
-	.animation_name(rotateOutDownRight);
+	@include animation_name(rotateOutDownRight);
 }
 
 @-webkit-keyframes rotateOutUpLeft {
 	0% {
-		.transform_origin(left, bottom);
+		@include transform_origin(left, bottom);
 		opacity: 1;
 	}
 
 	100% {
-		.transform_origin(left, bottom);
-		.rotate3d(0, 0, 1, -45deg);
+		@include transform_origin(left, bottom);
+		@include rotate3d(0, 0, 1, -45deg);
 		opacity: 0;
 	}
 }
 
 @keyframes rotateOutUpLeft {
 	0% {
-		.transform_origin(left, bottom);
+		@include transform_origin(left, bottom);
 		opacity: 1;
 	}
 
 	100% {
-		.transform_origin(left, bottom);
-		.rotate3d(0, 0, 1, -45deg);
+		@include transform_origin(left, bottom);
+		@include rotate3d(0, 0, 1, -45deg);
 		opacity: 0;
 	}
 }
 
 .rotateOutUpLeft {
-	.animation_name(rotateOutUpLeft);
+	@include animation_name(rotateOutUpLeft);
 }
 
 @-webkit-keyframes rotateOutUpRight {
 	0% {
-		.transform_origin(right, bottom);
+		@include transform_origin(right, bottom);
 		opacity: 1;
 	}
 
 	100% {
-		.transform_origin(right, bottom);
-		.rotate3d(0, 0, 1, 90deg);
+		@include transform_origin(right, bottom);
+		@include rotate3d(0, 0, 1, 90deg);
 		opacity: 0;
 	}
 }
 
 @keyframes rotateOutUpRight {
 	0% {
-		.transform_origin(right, bottom);
+		@include transform_origin(right, bottom);
 		opacity: 1;
 	}
 
 	100% {
-		.transform_origin(right, bottom);
-		.rotate3d(0, 0, 1, 90deg);
+		@include transform_origin(right, bottom);
+		@include rotate3d(0, 0, 1, 90deg);
 		opacity: 0;
 	}
 }
 
 .rotateOutUpRight {
-	.animation_name(rotateOutUpRight);
+	@include animation_name(rotateOutUpRight);
 }
 
 @-webkit-keyframes hinge {
 	0% {
-		.transform_origin(top, left);
+		@include transform_origin(top, left);
 		-webkit-animation-timing-function: ease-in-out;
 		animation-timing-function: ease-in-out;
 	}
 
 	20%, 60% {
-		.rotate3d(0, 0, 1, 80deg);
-		.transform_origin(top, left);
+		@include rotate3d(0, 0, 1, 80deg);
+		@include transform_origin(top, left);
 		
 		-webkit-animation-timing-function: ease-in-out;
 		animation-timing-function: ease-in-out;
 	}
 
 	40%, 80% {
-		.rotate3d(0, 0, 1, 60deg);
-		.transform_origin(top, left);
+		@include rotate3d(0, 0, 1, 60deg);
+		@include transform_origin(top, left);
 		
 		-webkit-animation-timing-function: ease-in-out;
 		animation-timing-function: ease-in-out;
@@ -2137,29 +2137,29 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 	}
 
 	100% {
-		.translate3d(0, 700px, 0);
+		@include translate3d(0, 700px, 0);
 		opacity: 0;
 	}
 }
 
 @keyframes hinge {
 	0% {
-		.transform_origin(top, left);
+		@include transform_origin(top, left);
 		-webkit-animation-timing-function: ease-in-out;
 		animation-timing-function: ease-in-out;
 	}
 
 	20%, 60% {
-		.rotate3d(0, 0, 1, 80deg);
-		.transform_origin(top, left);
+		@include rotate3d(0, 0, 1, 80deg);
+		@include transform_origin(top, left);
 		
 		-webkit-animation-timing-function: ease-in-out;
 		animation-timing-function: ease-in-out;
 	}
 
 	40%, 80% {
-		.rotate3d(0, 0, 1, 60deg);
-		.transform_origin(top, left);
+		@include rotate3d(0, 0, 1, 60deg);
+		@include transform_origin(top, left);
 		
 		-webkit-animation-timing-function: ease-in-out;
 		animation-timing-function: ease-in-out;
@@ -2167,13 +2167,13 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 	}
 
 	100% {
-		.translate3d(0, 700px, 0);
+		@include translate3d(0, 700px, 0);
 		opacity: 0;
 	}
 }
 
 .hinge {
-	.animation_name(hinge);
+	@include animation_name(hinge);
 }
 
 
@@ -2181,29 +2181,29 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 @-webkit-keyframes rollIn {
 	0% {
 		opacity: 0;
-		.translate3d_rotate3d(-100%, 0, 0, 0, 0, 1, -120deg);
+		@include translate3d_rotate3d(-100%, 0, 0, 0, 0, 1, -120deg);
 	}
 
 	100% {
 		opacity: 1;
-		.transform_none();
+		@include transform_none();
 	}
 }
 
 @keyframes rollIn {
 	0% {
 		opacity: 0;
-		.translate3d_rotate3d(-100%, 0, 0, 0, 0, 1, -120deg);
+		@include translate3d_rotate3d(-100%, 0, 0, 0, 0, 1, -120deg);
 	}
 
 	100% {
 		opacity: 1;
-		.transform_none();
+		@include transform_none();
 	}
 }
 
 .rollIn {
-	.animation_name(rollIn);
+	@include animation_name(rollIn);
 }
 
 
@@ -2215,7 +2215,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 	100% {
 		opacity: 0;
-		.translate3d_rotate3d(100%, 0, 0, 0, 0, 1, 120deg);
+		@include translate3d_rotate3d(100%, 0, 0, 0, 0, 1, 120deg);
 	}
 }
 
@@ -2226,18 +2226,18 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 	100% {
 		opacity: 0;
-		.translate3d_rotate3d(100%, 0, 0, 0, 0, 1, 120deg);
+		@include translate3d_rotate3d(100%, 0, 0, 0, 0, 1, 120deg);
 	}
 }
 
 .rollOut {
-	.animation_name(rollOut);
+	@include animation_name(rollOut);
 }
 
 @-webkit-keyframes zoomIn {
 	0% {
 		opacity: 0;
-		.scale3d(.3, .3, .3);
+		@include scale3d(.3, .3, .3);
 	}
 
 	50% {
@@ -2248,7 +2248,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 @keyframes zoomIn {
 	0% {
 		opacity: 0;
-		.scale3d(.3, .3, .3);
+		@include scale3d(.3, .3, .3);
 	}
 
 	50% {
@@ -2257,7 +2257,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 }
 
 .zoomIn {
-	.animation_name(zoomIn);
+	@include animation_name(zoomIn);
 }
 
 @-webkit-keyframes zoomInDown {
@@ -2303,7 +2303,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 }
 
 .zoomInDown {
-	.animation_name(zoomInDown);
+	@include animation_name(zoomInDown);
 }
 
 
@@ -2350,7 +2350,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 }
 
 .zoomInLeft {
-	.animation_name(zoomInLeft);
+	@include animation_name(zoomInLeft);
 }
 
 @-webkit-keyframes zoomInRight {
@@ -2396,7 +2396,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 }
 
 .zoomInRight {
-	.animation_name(zoomInRight);
+	@include animation_name(zoomInRight);
 }
 
 @-webkit-keyframes zoomInUp {
@@ -2442,7 +2442,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 }
 
 .zoomInUp {
-	.animation_name(zoomInUp);
+	@include animation_name(zoomInUp);
 }
 
 @-webkit-keyframes zoomOut {
@@ -2452,7 +2452,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 	50% {
 		opacity: 0;
-		.scale3d(.3, .3, .3);
+		@include scale3d(.3, .3, .3);
 	}
 
 	100% {
@@ -2467,7 +2467,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 	50% {
 		opacity: 0;
-		.scale3d(.3, .3, .3);
+		@include scale3d(.3, .3, .3);
 	}
 
 	100% {
@@ -2476,7 +2476,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 }
 
 .zoomOut {
-	.animation_name(zoomOut);
+	@include animation_name(zoomOut);
 }
 
 @-webkit-keyframes zoomOutDown {
@@ -2494,7 +2494,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 		-webkit-transform: scale3d(.1, .1, .1) translate3d(0, 2000px, 0);
 		transform: scale3d(.1, .1, .1) translate3d(0, 2000px, 0);
 		
-		.transform_origin(center, bottom);
+		@include transform_origin(center, bottom);
 		-webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
 		animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
 	}
@@ -2517,14 +2517,14 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 		-ms-transform: scale3d(.1, .1, .1) translate3d(0, 2000px, 0);
 		transform: scale3d(.1, .1, .1) translate3d(0, 2000px, 0);
 
-		.transform_origin(center, bottom);	
+		@include transform_origin(center, bottom);	
 		-webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
 		animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
 	}
 }
 
 .zoomOutDown {
-	.animation_name(zoomOutDown);
+	@include animation_name(zoomOutDown);
 }
 
 @-webkit-keyframes zoomOutLeft {
@@ -2538,7 +2538,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 		opacity: 0;
 		-webkit-transform: scale(.1) translate3d(-2000px, 0, 0);
 		transform: scale(.1) translate3d(-2000px, 0, 0);
-		.transform_origin(left, center);
+		@include transform_origin(left, center);
 	}
 }
 
@@ -2555,12 +2555,12 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 		-webkit-transform: scale(.1) translate3d(-2000px, 0, 0);
 		-ms-transform: scale(.1) translate3d(-2000px, 0, 0);
 		transform: scale(.1) translate3d(-2000px, 0, 0);
-		.transform_origin(left, center);
+		@include transform_origin(left, center);
 	}
 }
 
 .zoomOutLeft {
-	.animation_name(zoomOutLeft);
+	@include animation_name(zoomOutLeft);
 }
 
 @-webkit-keyframes zoomOutRight {
@@ -2574,7 +2574,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 		opacity: 0;
 		-webkit-transform: scale(.1) translate3d(2000px, 0, 0);
 		transform: scale(.1) translate3d(2000px, 0, 0);
-		.transform_origin(right, center);
+		@include transform_origin(right, center);
 	}
 }
 
@@ -2591,12 +2591,12 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 		-webkit-transform: scale(.1) translate3d(2000px, 0, 0);
 		-ms-transform: scale(.1) translate3d(2000px, 0, 0);
 		transform: scale(.1) translate3d(2000px, 0, 0);
-		.transform_origin(right, center);
+		@include transform_origin(right, center);
 	}
 }
 
 .zoomOutRight {
-	.animation_name(zoomOutRight);
+	@include animation_name(zoomOutRight);
 }
 
 @-webkit-keyframes zoomOutUp {
@@ -2614,7 +2614,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 		-webkit-transform: scale3d(.1, .1, .1) translate3d(0, -2000px, 0);
 		transform: scale3d(.1, .1, .1) translate3d(0, -2000px, 0);
 		
-		.transform_origin(center, bottom);
+		@include transform_origin(center, bottom);
 		-webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
 		animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
 	}
@@ -2637,12 +2637,12 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 		-ms-transform: scale3d(.1, .1, .1) translate3d(0, -2000px, 0);
 		transform: scale3d(.1, .1, .1) translate3d(0, -2000px, 0);
 		
-		.transform_origin(center, bottom);
+		@include transform_origin(center, bottom);
 		-webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
 		animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
 	}
 }
 
 .zoomOutUp{
-	.animation_name(zoomOutUp);
+	@include animation_name(zoomOutUp);
 }
