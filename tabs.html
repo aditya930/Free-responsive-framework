@@ -135,6 +135,7 @@
 	</div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script async type="text/javascript" src="js/min/tabs.min.js"></script>
+<script>var control_color = document.body.querySelector('#control_color'),color_items = control_color.children,	length_color_items = color_items.length,control_size_window = document.body.querySelector('#control_size_window');for(var i = 1; i < length_color_items; i++){color_items[i].addEventListener( 'click', Select_color, false );}function Select_color(){var color_page = this.id;document.body.removeAttribute('class');document.body.classList.add(color_page);}</script>
 <script>(function($){var select_effect = $('#select_effect');select_effect.find('.select_effect_item').on('click', function(){var effect = $(this).text();select_effect.nextAll('.tabs_container').attr({'id' : effect});});})(jQuery);</script>
 <script>window.addEventListener('load', init_ga);function init_ga(){var script = document.createElement("script");script.src = "ga.js";script.async = true;document.body.appendChild(script);}</script>
 </body>
