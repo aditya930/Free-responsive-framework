@@ -28,7 +28,7 @@ http://stas-melnikov.ru/themes/responsive_ux_template/
 ##  Contacts
 
 Leave your questions on use or on donations. I will answer you!
-1) [e-mail](melnik909@ya.ru)
+1) e-mail: melnik909@ya.ru
 2) [linkedin](http://www.linkedin.com/in/melnik909)
 3) [facebook](https://www.facebook.com/melnik909)
 
