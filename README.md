@@ -16,22 +16,22 @@ Responsive UX template created with using Responsive Framework
 =========================
 http://stas-melnikov.ru/themes/responsive_ux_template/
 
-Articles
-=========================
-1) http://www.script-tutorials.com/responsive-web-site-using-responsive-framework/
-2) http://coliss.com/articles/build-websites/operation/work/free-responsive-framework.html
+##  Articles
+- [Responsive Framework on coliss.com](http://coliss.com/articles/build-websites/operation/work/free-responsive-framework.html)
+- [Responsive web-site using Responsive Framework](http://www.script-tutorials.com/responsive-web-site-using-responsive-framework)
 
-Video:
-=========================
-https://www.youtube.com/playlist?list=PLLu-WYoyebB0NmckvY8HbJil-F8UTzkyq
 
-Contacts
-=========================
+## Video:
+
+[Video-tutorials](https://www.youtube.com/playlist?list=PLLu-WYoyebB0NmckvY8HbJil-F8UTzkyq)
+
+##  Contacts
+
 Leave your questions on use or on donations. I will answer you!
-1) e-mail: melnik909@ya.ru
-2) linkedin: http://www.linkedin.com/in/melnik909
-3) facebook: https://www.facebook.com/melnik909
+1) [e-mail](melnik909@ya.ru)
+2) [linkedin](http://www.linkedin.com/in/melnik909)
+3) [facebook](https://www.facebook.com/melnik909)
 
-License
-=========================
+## License
+
 MIT
