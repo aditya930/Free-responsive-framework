@@ -3,7 +3,7 @@ Responsive framework
 author: Developed by Stas Melnikov. http://stas-melnikov.ru
 */
 
-@height_slide: 550px;
+@height_slide: 750px;
 
 .transform_rotate(@value) {
 
@@ -183,16 +183,25 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 
 .description{
 	position: absolute;
-	bottom: 0;
+	bottom: 0; 
 	left: 10px;
 }
-
+ 
 #control_slider{
 	margin: 15px 0;
 	
 	.control_slider_item{
 		margin: 0 5px;
 		cursor: pointer;
+	}
+}
+
+/***********1024px**************/
+
+@media screen and (max-width: 1024px){ 
+	
+	#slideshow,#slidesContainer, .slide{
+		height: 550px;
 	}
 }
 
