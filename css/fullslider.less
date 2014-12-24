@@ -3,7 +3,7 @@ Responsive framework
 author: Developed by Stas Melnikov. http://stas-melnikov.ru
 */
 
-@height_slide: 750px;
+@height_slide: 550px;
 
 .transform_rotate(@value) {
 
@@ -187,13 +187,21 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 	left: 10px;
 }
 
+#control_slider{
+	margin: 15px 0;
+	
+	.control_slider_item{
+		margin: 0 5px;
+		cursor: pointer;
+	}
+}
 
 /*******900********/
 
 @media screen and (max-width: 900px){ 
 	
 	#slideshow,#slidesContainer, .slide{
-		height: 660px;
+		height: 460px;
 	}
 }
 
@@ -202,16 +210,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 @media screen and (max-width: 800px){ 
 
 	#slideshow,#slidesContainer, .slide{
-		height: 585px;
-	}
-}
-
-/****************768px**********/
-
-@media screen and (max-width: 768px){ 
-
-	#slideshow,#slidesContainer, .slide{
-		height: 555px;
+		height: 440px;
 	}
 }
 
@@ -220,7 +219,11 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 @media screen and (max-width: 640px){ 
 
 	#slideshow,#slidesContainer, .slide{
-		height: 465px;
+		height: 265px;
+	}
+	
+	#control_slider{
+		display: none;
 	}
 }
 
@@ -238,7 +241,7 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 @media screen and (max-width: 480px){
 
 	#slideshow,#slidesContainer, .slide{
-		height: 345px;
+		height: 245px;
 	}
 }
 
