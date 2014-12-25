@@ -46,6 +46,46 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 	transform: scaleX(-1) rotate(@parametr1);
 }
 
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/fonts_forms/icomoon.eot?-agdeka');
+	src:url('../fonts/fonts_forms/icomoon.eot?#iefix-agdeka') format('embedded-opentype'),
+		url('../fonts/fonts_forms/icomoon.woff?-agdeka') format('woff'),
+		url('../fonts/fonts_forms/icomoon.ttf?-agdeka') format('truetype'),
+		url('../fonts/fonts_forms/icomoon.svg?-agdeka#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-search:before {
+	content: "\e986";
+}
+.icon-eye:before {
+	content: "\e9ce";
+}
+.icon-eye-blocked:before {
+	content: "\e9d1";
+}
+.icon-star-full:before {
+	content: "\e9d9";
+	.transition(color, .5s, ease-out);
+	cursor: pointer;
+}
+
 /*****************input text********************/
 
 .input_text{
@@ -88,6 +128,23 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 	
 	padding: 10px;
 }
+/*****************password*****************/
+
+.password{
+	position: relative;
+	
+	
+	#action_password{
+	
+		position: absolute;
+		right: 15px;
+		top: 13px;
+		z-index: 2;
+		
+		cursor: pointer;
+	}
+}
+
 
 /*****************checkbox********************/
 
@@ -254,6 +311,17 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 .button:active{
 	top: 1px;
 	box-shadow: 1px 3px 4px #19566f inset;
+}
+
+.middle_button{
+    padding: 10px 15px;
+    width: 120px; 
+}
+
+.small_button{
+    padding: 0;
+    width: 45px; 
+	height: 45px;
 }
 
 /*****************selectbox********************/
@@ -532,43 +600,37 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 	.translate(50px,0);
 }
 
-@font-face {
-	font-family: 'icomoon';
-	src:url('../fonts/fonts_forms/icomoon.eot?-xpswms');
-	src:url('../fonts/fonts_forms/icomoon.eot?#iefix-xpswms') format('embedded-opentype'),
-		url('../fonts/fonts_forms/icomoon.woff?-xpswms') format('woff'),
-		url('../fonts/fonts_forms/icomoon.ttf?-xpswms') format('truetype'),
-		url('../fonts/fonts_forms/icomoon.svg?-xpswms#icomoon') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-[class^="icon-"], [class*=" icon-"] {
-	font-family: 'icomoon';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-.icon-star:before {
-	content: "\e600";
-	.transition(color, .5s, ease-out);
-	cursor: pointer;
-}
-
 .icon-star:hover:before, .active_star:before, .hover_star:before{
 	color: #36BAE2;
 }
 
 .no_active_star:before{
 	color: #000;
+}
+
+/************search*********/
+
+.search{
+
+	position: relative;
+	overflow: hidden;
+	width: 300px;
+
+	.input_text{
+		.translate(30%, 0);
+		.transition(transform, .5s, ease-out)
+	}
+	
+	.input_text:focus{
+		.translate(0, 0)
+	}
+	
+	.small_button{
+		display: inline;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}	
 }
 
 /*********************basic style*******************************/

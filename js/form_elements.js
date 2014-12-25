@@ -8,6 +8,22 @@
 	stars = rating.find('.icon-star'),
 	drop_down_list_wrapper = $('.drop_down_list_wrapper');
 	
+	var password_action = $('#action_password');
+	
+	password_action.on('click',function(){
+	
+		var password_input = $(this).prev();
+	
+		if($(this).hasClass('icon-eye-blocked')){
+			$(this).removeClass('icon-eye-blocked');
+			password_input.attr({'type' : 'password'});
+		}
+		else{
+			$(this).addClass('icon-eye-blocked');
+			password_input.attr({'type': 'text'});
+		}	
+	});
+	
 	//Range
 	
 	range.on('change', function(){

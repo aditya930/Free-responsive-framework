@@ -30,6 +30,25 @@ author: Developed by Stas Melnikov. http://stas-melnikov.ru
 	
 	var i = 0;
 	
+	var password_action = document.body.querySelector('#action_password');
+	
+	//password
+	
+	password_action.addEventListener( 'click', PasswordAction, false );
+	
+	function PasswordAction(){
+		
+		var password_input = this.previousElementSibling;
+		
+		if(this.classList.contains('icon-eye-blocked')){
+			this.classList.remove('icon-eye-blocked');
+			password_input.type = 'password';
+		}
+		else{
+			this.classList.add('icon-eye-blocked');
+			password_input.type = 'text';		}
+	}
+	
 	//Range
 	
 	for( i = 0; i < ranges_count; i++){
